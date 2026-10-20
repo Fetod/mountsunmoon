@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="日月山 Mount Sun Moon 藏家系列耶誕預購：五位烘豆師、五種火候、一個盒子。每筆預購提撥 5% 支持孩子的藝術與音樂課程。">
+<title>日月山 Mount Sun Moon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;600&display=swap">
+<style>
+/* Layout: one long, quiet scroll. Charcoal ground, gold only for the mark and hairlines, roasters introduced as a ledger of rows rather than cards. */
+:root {
+  --ink: #141413;
+  --ink-2: #1c1b19;
+  --line: #34312c;
+  --paper: #ece6da;
+  --mute: #a39b8c;
+  --gold: #c9a45c;
+  --moon: #f7f3ea;
+  --sage: #2f5d50;
+  --peach: #e0867a;
+  --indigo: #4a5aa8;
+  --sun: #f2c230;
+  --clay: #8a6a8c;
+  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --latin: "Cormorant Garamond", "Times New Roman", serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+a { color: inherit; }
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.5; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.latin { font-family: var(--latin); letter-spacing: 0.08em; }
+.eyebrow { font-family: var(--latin); font-size: 15px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+section { padding-block: clamp(64px, 11vw, 120px); border-top: 1px solid var(--line); }
+section > .wrap > * + * { margin-top: 28px; }
+h2 { font-size: clamp(26px, 4.4vw, 40px); }
+.lead { color: var(--mute); max-width: 36em; }
+
+/* nav */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--ink); }
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--ink) 92%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 12px; }
+.brand { text-decoration: none; display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+.brand svg { height: 34px; width: auto; display: block; }
+.brand b { display: block; font-family: var(--serif); font-weight: 400; letter-spacing: 0.3em; font-size: 16px; line-height: 1.25; }
+.brand small { display: block; font-family: var(--latin); letter-spacing: 0.12em; font-size: 13px; line-height: 1.2; color: var(--mute); }
+.ln { fill: none; stroke: var(--gold); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.sun { fill: var(--gold); }
+.moon { fill: var(--moon); }
+nav { display: flex; gap: 22px; flex-wrap: wrap; justify-content: flex-end; font-size: 13px; }
+nav a { text-decoration: none; color: var(--mute); padding: 4px 0; }
+nav a:hover, nav a:focus-visible { color: var(--paper); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+@media (max-width: 940px) { nav { display: none; } }
+
+/* hero */
+.hero { border-top: 0; padding-block: clamp(48px, 9vw, 96px) clamp(56px, 9vw, 96px); text-align: center; }
+.hero svg { width: min(520px, 86%); height: auto; display: block; margin: 0 auto; }
+.hero h1 { font-size: clamp(30px, 6.2vw, 58px); letter-spacing: 0.14em; margin-top: 36px; }
+.hero .sub { margin-top: 20px; color: var(--mute); }
+.hero .sub span { display: block; }
+.cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 40px; }
+.btn { display: inline-block; padding: 12px 28px; border: 1px solid var(--gold); color: var(--paper); text-decoration: none; font-size: 14px; letter-spacing: 0.2em; transition: background .25s, color .25s; }
+.btn:hover, .btn:focus-visible { background: var(--gold); color: var(--ink); }
+.btn.quiet { border-color: var(--line); color: var(--mute); }
+.btn.quiet:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.ridge { display: block; width: 100%; height: auto; margin-top: 56px; }
+
+/* story */
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; padding-top: 12px; }
+.cols > div { border-top: 1px solid var(--gold); padding-top: 18px; min-width: 0; }
+.cols h3 { font-size: 20px; margin-bottom: 10px; }
+.cols p { color: var(--mute); font-size: 15px; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; gap: 28px; } }
+.pull { font-family: var(--serif); font-size: clamp(20px, 3.2vw, 28px); line-height: 1.8; max-width: 22em; }
+
+/* difference table */
+.tablebox { overflow-x: auto; border-top: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14.5px; }
+th, td { text-align: left; vertical-align: top; padding: 16px 18px 16px 0; border-bottom: 1px solid var(--line); line-height: 1.8; }
+th { font-family: var(--latin); font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mute); font-weight: 500; }
+td:first-child { font-family: var(--serif); white-space: nowrap; }
+td:nth-child(2) { color: var(--mute); }
+td:nth-child(3) { color: var(--paper); }
+
+/* brand spirit */
+.spirit .en { font-family: var(--latin); font-style: italic; font-size: clamp(24px, 4.2vw, 40px); line-height: 1.4; color: var(--gold); max-width: 20em; letter-spacing: 0.03em; }
+.spirit .zh-line { font-family: var(--serif); font-size: clamp(22px, 3.6vw, 32px); letter-spacing: 0.12em; }
+.cols.two { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .cols.two { grid-template-columns: 1fr; } }
+.eclipse { width: min(420px, 100%); height: auto; display: block; }
+.lbl { fill: var(--mute); font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; text-anchor: middle; }
+.sub-h { font-family: var(--serif); font-size: clamp(20px, 3vw, 26px); }
+
+/* artisans */
+.artisan { display: grid; grid-template-columns: 120px 1fr; gap: 12px 36px; padding-block: 36px; border-top: 1px solid var(--line); }
+.artisan:last-of-type { border-bottom: 1px solid var(--line); }
+.artisan .no { font-family: var(--latin); font-size: 54px; line-height: 1; color: var(--line); }
+.artisan .no i { display: block; width: 36px; height: 4px; margin-top: 14px; background: var(--tone); }
+.artisan h3 { font-size: 24px; }
+.artisan h3 small { font-family: var(--sans); font-size: 14px; color: var(--mute); margin-left: 10px; font-weight: 300; }
+.artisan .role { color: var(--mute); font-size: 14px; }
+.artisan .about { max-width: 38em; font-size: 15px; }
+.spec { display: flex; flex-wrap: wrap; gap: 6px 26px; font-size: 14px; margin-top: 4px; }
+.spec b { font-weight: 500; color: var(--gold); margin-right: 8px; font-family: var(--latin); font-size: 15px; letter-spacing: 0.15em; }
+.roast { display: inline-flex; gap: 3px; vertical-align: middle; margin-left: 8px; }
+.roast i { width: 14px; height: 4px; background: var(--line); }
+.roast i.on { background: var(--paper); }
+.flavor { max-width: 38em; }
+.flavor em { font-style: normal; color: var(--paper); font-family: var(--serif); }
+.verse { font-family: var(--serif); color: var(--mute); font-size: 15px; }
+.artisan > * { min-width: 0; }
+.artisan .body { display: flex; flex-direction: column; gap: 10px; }
+@media (max-width: 640px) { .artisan { grid-template-columns: 1fr; } .artisan .no { display: flex; align-items: center; gap: 16px; font-size: 40px; } .artisan .no i { margin-top: 0; } }
+.note { font-size: 14px; color: var(--mute); border-left: 1px solid var(--gold); padding-left: 16px; max-width: 40em; }
+
+/* plans */
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); }
+.plan { padding: 32px 26px 30px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.plan + .plan { border-left: 1px solid var(--line); }
+.plan.feature { background: var(--ink-2); }
+.plan .tag { font-family: var(--latin); letter-spacing: 0.22em; font-size: 14px; color: var(--gold); text-transform: uppercase; }
+.plan h3 { font-size: 22px; }
+.plan .price { font-family: var(--latin); font-size: 44px; line-height: 1; letter-spacing: 0.02em; font-variant-numeric: tabular-nums; }
+.plan .price small { font-size: 15px; margin-right: 6px; letter-spacing: 0.15em; color: var(--mute); }
+.plan ul { list-style: none; padding: 0; margin: 0; font-size: 14.5px; color: var(--mute); display: grid; gap: 6px; }
+.plan ul li::before { content: "—"; color: var(--gold); margin-right: 10px; }
+.plan .for { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--mute); }
+@media (max-width: 860px) { .plans { grid-template-columns: 1fr; } .plan + .plan { border-left: 0; border-top: 1px solid var(--line); } }
+.fine { font-size: 13.5px; color: var(--mute); }
+
+/* giving */
+.giving { background: var(--ink-2); }
+.giving .big { font-family: var(--latin); font-size: clamp(64px, 14vw, 140px); line-height: 1; color: var(--gold); letter-spacing: 0.02em; }
+.giving .big small { font-family: var(--serif); font-size: 0.22em; margin-left: 12px; color: var(--paper); letter-spacing: 0.1em; }
+
+/* order */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.steps div { border-top: 1px solid var(--line); padding-top: 14px; min-width: 0; }
+.steps b { display: block; font-family: var(--latin); font-size: 30px; font-weight: 400; color: var(--gold); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.steps span { color: var(--mute); font-size: 14.5px; }
+@media (max-width: 640px) { .steps { grid-template-columns: 1fr; gap: 18px; } }
+.ordering { border: 1px dashed var(--gold); padding: 22px 24px; max-width: 40em; }
+.ordering b { font-weight: 500; font-family: var(--serif); }
+.ordering .todo { display: block; color: var(--mute); font-size: 14px; margin-top: 6px; }
+details { border-top: 1px solid var(--line); }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; padding: 18px 0; font-family: var(--serif); font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--gold); font-family: var(--latin); font-size: 22px; line-height: 1.3; }
+details[open] summary::after { content: "−"; }
+details p { padding: 0 0 20px; color: var(--mute); font-size: 15px; max-width: 42em; }
+dl { display: grid; grid-template-columns: 8.5em 1fr; gap: 10px 20px; font-size: 14.5px; margin: 0; padding-bottom: 20px; }
+dt { color: var(--mute); }
+dd { margin: 0; }
+@media (max-width: 560px) { dl { grid-template-columns: 1fr; gap: 2px; } dd { margin-bottom: 10px; } }
+
+footer { border-top: 1px solid var(--line); padding-block: 48px 64px; text-align: center; color: var(--mute); font-size: 13.5px; }
+footer .wrap > * + * { margin-top: 10px; }
+footer .mark { font-family: var(--serif); color: var(--paper); letter-spacing: 0.4em; font-size: 16px; }
+footer a { color: var(--mute); }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="日月山 Mount Sun Moon 回到頂端">
+      <svg viewBox="30 30 540 290" aria-hidden="true">
+        <circle class="sun" cx="430" cy="78" r="38"/>
+        <circle class="moon" cx="452" cy="72" r="27"/>
+        <path class="ln" d="M40 300 C100 300 140 230 178 182 C190 168 202 170 212 184 C236 214 250 238 268 238 C300 238 330 190 362 148 C376 130 390 128 402 146 C440 204 480 296 560 300"/>
+      </svg>
+      <span><b>日月山</b><small>Mount Sun Moon</small></span>
+    </a>
+    <nav aria-label="主選單">
+      <a href="#story">品牌故事</a>
+      <a href="#spirit">品牌精神</a>
+      <a href="#philosophy">策展精神</a>
+      <a href="#artisans">手藝人</a>
+      <a href="#plans">藏家預購</a>
+      <a href="#giving">耶誕微光</a>
+      <a href="#order">訂購須知</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <svg viewBox="0 0 600 340" role="img" aria-label="日月山標誌：兩座山峰，山頂右上方是金色太陽與較小的白色月輪">
+        <circle class="sun" cx="430" cy="78" r="38"/>
+        <circle class="moon" cx="452" cy="72" r="27"/>
+        <path class="ln" d="M40 300 C100 300 140 230 178 182 C190 168 202 170 212 184 C236 214 250 238 268 238 C300 238 330 190 362 148 C376 130 390 128 402 146 C440 204 480 296 560 300"/>
+      </svg>
+      <h1>山不說話，靜承日月光芒。</h1>
+      <p class="sub"><span>藏家級精品咖啡 · 五行平衡風味地圖</span><span>一杯好咖啡，讓生活更有光。</span></p>
+      <div class="cta">
+        <a class="btn" href="#plans">探索五行預購方案</a>
+        <a class="btn quiet" href="#artisans">閱讀五位手藝人的故事</a>
+      </div>
+      <p class="eyebrow" style="margin-top:56px">Mount Sun Moon · Christmas 2026 Pre-order</p>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="wrap">
+      <p class="eyebrow">Our Story</p>
+      <h2>咖啡市場很滿，<br>因為大多數人都在比產區、比深淺焙、比 CP 值。</h2>
+      <p class="lead">日月山不走向單一風格的框架，而是化身為一座「策展型平台」。我們邀請五位生命歷練各異的烘豆師，以手上的火候詮釋風土。一個盒子，收納五種靈魂演繹。這不是一杯普通的提神飲料，而是一天裡讓人慢下來與自己和好的安靜片刻。</p>
+      <p class="pull">山不說話，卻看過千萬次日昇月落。</p>
+      <p class="lead">日月山的名字，來自這份天地的節律：白晝有極陽之光，夜裡有柔潤之月，一座山靜靜承接兩種光芒，也承接人們每一天的忙與累。燒水、等待、香氣升起。在這幾分鐘裡，人的關注可以溫柔地回到自己身上。</p>
+      <p class="lead">我們相信，生活從來不只有一種味道。五位手藝人、五種火候、一個盒子，就像生活本來的樣子：多元、平衡、本自具足。</p>
+      <div class="cols">
+        <div><h3>順應天地</h3><p>尊重風土與時序，萃取自然本來的樣子。日與月的交替，是日月山的起點。</p></div>
+        <div><h3>一人一味</h3><p>每位烘豆師都有自己的名字、故事與火候。讓人認識做咖啡的「人」，而不只是一包咖啡。</p></div>
+        <div><h3>把光傳下去</h3><p>每一份預購，提撥售價的 5% 支持偏鄉與實驗教育的藝術與音樂課程，讓喝下的每一杯，化為孩子們手中的畫筆與音符。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="spirit" class="spirit">
+    <div class="wrap">
+      <p class="eyebrow">Brand Spirit</p>
+      <h2>山靜心安，不語亦有光。</h2>
+      <p class="en">Still at heart as the mountain, radiant in celestial light.</p>
+      <p class="lead">仁者樂山。山不動，不是因為沒有風雨，而是根扎得深。日月山想說的第一件事，是內心的安定。燒水、等待、香氣升起，讓自己像山一樣，穩穩地坐下來。</p>
+      <p class="lead">高山上的咖啡樹，一年一年安靜地承接日月星辰的照拂，才長成一顆顆好豆子。這是「安定如山，靜成日月光芒」。</p>
+      <p class="lead">我們還想再往前走一步。日月的光照在我們身上，其實我們自己也有光。每個人都自帶光芒，那不是電燈泡那種亮，而是內心安定、帶著慈心與悲心時，身邊的人會感覺到的如沐春風。山不說話，卻也有光；人不說話，也有光。</p>
+      <p class="lead">所以這杯咖啡，希望先陪你把心安住，再讓你像日月星辰一樣，把自己的光輕輕照向身邊的人與這個世界。</p>
+      <p class="zh-line">山靜心安 · 不語亦有光</p>
+
+      <h3 class="sub-h" style="margin-top:56px">標誌裡的心意</h3>
+      <div class="cols two">
+        <div>
+          <h3>兩座山峰，步步高升</h3>
+          <p>山線有兩座山峰，一座接著一座往上走，是步步高升的意思。山的顏色取自黃土高原，是金黃色。做在金屬材質上，是閃亮的金；在非金屬材質上，是更深濃、帶一點斑駁的黃，像土地本來粗糙的質感。</p>
+        </div>
+        <div>
+          <h3>眼睛看見的，不一定是全貌</h3>
+          <p>山頂的金色大圓是太陽，前面較小的白色圓是皎潔的明月。日與月錯位，太陽被遮去一部分，看起來就像一彎金色的月牙。眼睛看到的不一定是完整的實像，也因此留下一點浪漫的想像空間。</p>
+        </div>
+      </div>
+      <svg class="eclipse" viewBox="0 0 360 120" role="img" aria-label="太陽與月亮錯位疊合，形成金色月牙的示意圖">
+        <circle class="sun" cx="60" cy="48" r="36"/>
+        <circle class="moon" cx="180" cy="48" r="26"/>
+        <circle class="sun" cx="288" cy="50" r="36"/>
+        <circle class="moon" cx="312" cy="44" r="26"/>
+        <text class="lbl" x="60" y="108">太陽</text>
+        <text class="lbl" x="180" y="108">月亮</text>
+        <text class="lbl" x="300" y="108">錯位疊合</text>
+      </svg>
+    </div>
+  </section>
+
+  <section id="philosophy">
+    <div class="wrap">
+      <p class="eyebrow">Philosophy &amp; Five Elements</p>
+      <h2>策展精神與五行平衡</h2>
+      <p class="lead">整組咖啡以「金、木、水、火、土」達到整體五行平衡。每位烘豆師的識別色只用於包裝角落，方便辨認，不對應五行屬性，也不作為個人標籤。</p>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>市場常見選擇</th><th>既有模式的侷限</th><th>日月山的策展堅持</th></tr></thead>
+          <tbody>
+            <tr><td>連鎖或量販節慶禮盒</td><td>通路廣但風味均質，品牌焦點集中在企業端，缺乏手藝人溫度。</td><td>大師署名策展：一次收藏五位獨立烘豆師的火候，每包皆有名字與故事。</td></tr>
+            <tr><td>單一烘豆師獨立品牌</td><td>風味專精，但受限於單一門市風格，缺乏多層次風味的完整對比。</td><td>五行平衡矩陣：打破門戶界線，以一個盒子拼繪出完整而平衡的味覺地圖。</td></tr>
+            <tr><td>傳統節慶伴手禮</td><td>外裝熱鬧繁複、塑料感重，節日過後即失去情感連結。</td><td>極簡低調文藝：減塑布質與軟木包裝、黑金克制美學，能長久陪伴日常。</td></tr>
+            <tr><td>商業功效型宣稱</td><td>標榜機能、抗疲勞，容易落入食品法規與功效爭議。</td><td>回歸風土與純粹：專注於風味層次、手藝人精神與生活美感，安心合規。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="artisans">
+    <div class="wrap">
+      <p class="eyebrow">The Artisans</p>
+      <h2>五位咖啡手藝人，五種火候</h2>
+      <p class="lead">每位手藝人各選一款代表豆，交給日月山收進同一個盒子。</p>
+
+      <article class="artisan" style="--tone: var(--sage)">
+        <div class="no">01<i aria-label="識別色 松綠"></i></div>
+        <div class="body">
+          <h3>蔡詩敏 <small class="latin">Emily</small></h3>
+          <p class="role">YOLO's CAFE 烘豆師 · 鴉埠咖啡 YABOO 共同創辦人</p>
+          <p class="about">擁有咖啡師、烘豆師、杯測師三項證照與國際考官資格，深耕台北精品咖啡十餘年，以極致嚴謹的手藝為風味定錨。</p>
+          <div class="spec"><span><b>BEAN</b>肯亞 麒麟雅加 AA 水洗</span><span><b>ROAST</b>淺焙<span class="roast" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span></span></div>
+          <p class="flavor"><em>精準與熟成。</em>結構清晰、明亮俐落，純淨的焦糖甜感與優雅黑醋栗果酸，是一杯平衡得恰到好處的基準。</p>
+          <p class="verse">「在精準的火候中，雕刻出果酸最純粹俐落的幾何線條。」</p>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--peach)">
+        <div class="no">02<i aria-label="識別色 胭脂桃"></i></div>
+        <div class="body">
+          <h3>陳啟仁 <small class="latin">Warren</small></h3>
+          <p class="role">WAZZA 哇塞咖啡主理人 · 國際認證考官</p>
+          <p class="about">前科技業背景轉身投入咖啡，歷任百年品牌麥斯威爾經理、超跑品牌日合作顧問與 CQI 品質鑑定師，把精品咖啡沖成一首詩。</p>
+          <div class="spec"><span><b>BEAN</b>WAZZA 經典莊園配方</span><span><b>ROAST</b>中深焙<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span></div>
+          <p class="flavor"><em>生機與舒展。</em>龍眼蜜、堅果杏仁香氣交織，中段散發甜可可與微柑橘芬芳，入喉質地順口，尾段厚實回甘。</p>
+          <p class="verse">「用溫暖的手沖時光，把生活過成一首舒展的詩。」</p>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--indigo)">
+        <div class="no">03<i aria-label="識別色 靛藍"></i></div>
+        <div class="body">
+          <h3>王神寶 <small>寶哥</small></h3>
+          <p class="role">咖神咖啡教育館創辦人 · 2020 史懷哲飲調大師</p>
+          <p class="about">結合農場、科學、教育與生活的咖啡實踐家，獨創科學化健康烘焙曲線，詮釋真誠與生活美學的力量。</p>
+          <div class="spec"><span><b>BEAN</b>多巴蜜 瓜地馬拉 微微特南果</span><span><b>ROAST</b>中焙<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span></div>
+          <p class="flavor"><em>流動與滋潤。</em>層次如水波緩緩推進，柔順滑口、酸質溫和細膩，適合放慢呼吸的安靜日常。</p>
+          <p class="verse">「讓咖啡如水般流動，滋潤日常裡每一個感知的瞬間。」</p>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--sun)">
+        <div class="no">04<i aria-label="識別色 暖陽黃"></i></div>
+        <div class="body">
+          <h3>Dahe</h3>
+          <p class="role">九咖工作室 NINECA STUDIO 主理人</p>
+          <p class="about">在專注與靜心中烘焙，以純粹的心境對話生豆，作品以乾淨純淨的風味著稱。</p>
+          <div class="spec"><span><b>BEAN</b>宏都拉斯 山嵐初醒 水洗</span><span><b>ROAST</b>中淺焙<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span></div>
+          <p class="flavor"><em>轉化與光明。</em>深邃的焦糖蜂蜜與熟果甜香，入喉圓潤柔和、層次細微，轉化為深邃回甘的溫暖力量。</p>
+          <p class="verse">「藉由火候的專注轉化，將太陽的熱情匯聚成一杯喚醒內在的光。」</p>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--clay)">
+        <div class="no">05<i aria-label="識別色 陶土紫"></i></div>
+        <div class="body">
+          <h3>Elias</h3>
+          <p class="role">露娜咖啡 Lunas Corp., Ltd 創辦人</p>
+          <p class="about">來自中美洲高山沃土的咖啡世家，宏都拉斯雷內家族莊園傳人，堅持自然農法無毒契作，把莊園生豆直送台灣。</p>
+          <div class="spec"><span><b>BEAN</b>宏都拉斯 高海拔火山沃土莊園</span><span><b>ROAST</b>中焙<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span></div>
+          <p class="flavor"><em>承載與風土。</em>質樸醇厚，深邃堅果與黑可可的底蘊扎實，帶著火山土地安定的重量。</p>
+          <p class="verse">「扎根於宏都拉斯高山沃土，承載著大地最質樸溫潤的告白。」</p>
+        </div>
+      </article>
+      <p class="note">包裝右下角的色塊標示烘豆師、豆款與焙度。金色只屬於日月山的標誌，所以 Dahe 的識別色是暖陽黃。</p>
+    </div>
+  </section>
+
+  <section id="plans">
+    <div class="wrap">
+      <p class="eyebrow">Pre-order Collection</p>
+      <h2>2026 年終首發 · 耶誕預購</h2>
+      <p class="lead">預購期間至 11 月 22 日。每一份預購，都會提撥售價的 5% 支持孩子們的藝術與音樂課程。</p>
+      <div class="plans">
+        <div class="plan">
+          <span class="tag">Plan 1</span>
+          <h3>五包掛耳體驗組</h3>
+          <p class="price"><small>NT$</small>230</p>
+          <ul>
+            <li>五位烘豆師各 1 包，共 5 包</li>
+            <li>附日月山訂製日常隨身布袋（天然棉麻）</li>
+          </ul>
+          <p class="for">適合初次嘗鮮、個人晨間日常品味。</p>
+        </div>
+        <div class="plan feature">
+          <span class="tag">Plan 2</span>
+          <h3>十包掛耳禮品組</h3>
+          <p class="price"><small>NT$</small>450</p>
+          <ul>
+            <li>五位烘豆師各 2 包，共 10 包</li>
+            <li>附天然棉質束口袋，或設計師手作彩點軟木包</li>
+          </ul>
+          <p class="for">適合送禮自用，重視生活美學的藏家。</p>
+        </div>
+        <div class="plan">
+          <span class="tag">Plan 3 · Christmas Limited</span>
+          <h3>耶誕限定尊榮禮盒</h3>
+          <p class="price"><small>NT$</small>1,180</p>
+          <ul>
+            <li>五位烘豆師各 2 包，共 10 包</li>
+            <li>小林煎餅限定組</li>
+            <li>日月山便攜細口手沖壺（無蓋款）</li>
+            <li>黑底燙金耶誕硬盒、酒紅緞帶與耶誕吊牌</li>
+          </ul>
+          <p class="for">適合交換禮物、企業年終謝禮、精品咖啡深度愛好者。</p>
+        </div>
+      </div>
+      <p class="fine">企業大宗採購：10 組以上享專屬企業折讓與客製吊牌服務。</p>
+    </div>
+  </section>
+
+  <section id="giving" class="giving">
+    <div class="wrap">
+      <p class="eyebrow">Impact &amp; Giving</p>
+      <h2>耶誕微光計畫</h2>
+      <p class="big">5%<small>每一筆預購</small></p>
+      <p class="pull">一杯好咖啡，讓生活有光，也照亮孩子的藝術與音樂之夢。</p>
+      <p class="lead">每一筆日月山耶誕預購訂單，我們都將提撥售價的 5%，定向支持 LIA 五明國際學苑實驗教育的藝術與音樂深度探索課程。正如烘豆師以熱情將咖啡豆淬鍊出各自的靈魂，每一個孩子在畫筆、音符與美感體驗裡，也值得被溫柔啟發。</p>
+      <p class="lead">這個冬天，你手中的咖啡是一場風味的旅行，也是一份送給孩子們的藝術禮物。</p>
+      <p class="fine">預購結算後，我們會在官網公開撥付金額與課程紀實。</p>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="wrap">
+      <p class="eyebrow">Ordering &amp; FAQ</p>
+      <h2>訂購須知</h2>
+      <div class="steps">
+        <div><b>~ 11/22</b><span>預購期間，即日起開放。</span></div>
+        <div><b>12/01 起</b><span>依訂單順序出貨。</span></div>
+        <div><b>12/21 前</b><span>保證於冬至與耶誕節前夕送達。</span></div>
+      </div>
+      <div class="ordering">
+        <b>如何下單</b>
+        <span class="todo">下單連結與付款方式確認後，會放在這裡。</span>
+      </div>
+      <div>
+        <details>
+          <summary>運費怎麼算？</summary>
+          <p>全館滿 NT$ 1,000 免運；未滿額，台灣本島常溫配送運費 NT$ 80。</p>
+        </details>
+        <details>
+          <summary>企業可以大量訂購嗎？</summary>
+          <p>10 組以上享專屬企業折讓，也提供客製吊牌服務。下單方式公布後，會附上企業洽詢表單。</p>
+        </details>
+        <details>
+          <summary>咖啡可以放多久？</summary>
+          <p>未開封常溫保存 12 個月。請放在陰涼乾燥處，避免高溫潮濕與陽光直射。開封後請儘速沖泡飲用。</p>
+        </details>
+        <details>
+          <summary>怎麼沖泡最好喝？</summary>
+          <p>輕拍袋身讓咖啡粉下沉，沿虛線輕撕開濾袋。拉開兩側掛耳折翼，平穩跨掛在杯口。先注少許熱水悶蒸 20 秒，再分次注水至 150 到 180 ml，取出內袋輕輕瀝乾水分，就可以享用。建議水溫 88 至 92℃。</p>
+        </details>
+        <details>
+          <summary>商品標示</summary>
+          <dl>
+            <dt>品名</dt><dd>日月山 精品濾掛咖啡</dd>
+            <dt>內容物名稱</dt><dd>100% 研磨咖啡粉</dd>
+            <dt>食品添加物</dt><dd>無</dd>
+            <dt>淨重</dt><dd>10g ± 1g / 包（單包裝）</dd>
+            <dt>生豆產地</dt><dd>肯亞、宏都拉斯、瓜地馬拉等，依各款標示</dd>
+            <dt>製造地</dt><dd>台灣</dd>
+            <dt>有效日期</dt><dd>標示於包裝封口處（西元年/月/日）</dd>
+            <dt>保存期限</dt><dd>12 個月（未開封常溫保存）</dd>
+            <dt>食品業者登錄字號</dt><dd>登錄中</dd>
+            <dt>產品責任險</dt><dd>已投保新台幣 1,000 萬元</dd>
+            <dt>出品單位</dt><dd>費陀有限公司（Fetod Ltd.）</dd>
+          </dl>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="mark">日 月 山</p>
+    <p class="latin">Mount Sun Moon</p>
+    <p>出品 費陀有限公司 Fetod Ltd. · mountsunmoon.com</p>
+    <p>商業所得支持 <a href="https://www.lia.tw" target="_blank" rel="noopener">LIA 五明國際學苑</a> 的教育計畫</p>
+    <p><a href="https://fetod.github.io/everlume/" target="_blank" rel="noopener">延伸閱讀：認識日月山背後的恆曜全球與創辦人故事 →</a></p>
+  </div>
+</footer>
+</body>
+</html>
