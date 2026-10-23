@@ -152,6 +152,39 @@ td:nth-child(3) { color: var(--paper); }
   .rows { grid-template-columns: 1fr; gap: 2px; } .rows dd { margin-bottom: 12px; }
   .detail dl { grid-template-columns: 4em 1fr; }
 }
+
+/* livelier artisan panels */
+.artisan { grid-template-columns: 120px 1fr 220px; }
+.artisan .no i { width: 56px; height: 14px; margin-top: 16px; }
+.artisan .body { grid-column: 2; grid-row: 1; }
+.portrait { grid-column: 3; grid-row: 1; align-self: start; position: sticky; top: 96px; margin: 0; aspect-ratio: 4 / 5; overflow: hidden;
+  background: linear-gradient(165deg, var(--tone) 0%, color-mix(in srgb, var(--tone) 55%, #0d0d0c) 100%); color: rgba(255,255,255,0.32); }
+.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.portrait .pm { position: absolute; left: 10%; right: 10%; bottom: 26%; width: 80%; }
+.portrait .pno { position: absolute; top: 14px; left: 16px; font-family: var(--latin); font-size: 15px; letter-spacing: 0.2em; color: rgba(255,255,255,0.75); }
+.portrait .pname { position: absolute; left: 16px; bottom: 14px; font-family: var(--latin); font-size: 30px; line-height: 1; color: #fff; text-shadow: 0 1px 12px rgba(0,0,0,0.25); }
+.portrait { position: sticky; }
+.rows dt { border-left: 3px solid var(--tone); padding-left: 10px; }
+@media (max-width: 900px) {
+  .artisan { grid-template-columns: 96px 1fr; }
+  .portrait { grid-column: 1 / -1; grid-row: auto; position: relative; top: 0; aspect-ratio: 16 / 7; order: -1; }
+  .artisan .no { grid-row: auto; }
+}
+@media (max-width: 640px) { .artisan { grid-template-columns: 1fr; } .artisan .body { grid-column: 1; grid-row: auto; } .portrait { grid-column: 1; aspect-ratio: 16 / 8; } .portrait .pno { display: none; } .portrait .pm { left: auto; right: 6%; width: 52%; bottom: 14%; } }
+
+/* origin notes */
+.origins { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); }
+.origin { padding: 28px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.origin:nth-child(3n) { border-right: 0; }
+.origin:nth-last-child(-n+3) { border-bottom: 0; }
+.origin .ctry { font-family: var(--latin); font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+.origin h3 { font-size: 20px; }
+.origin .alt { font-size: 13px; color: var(--mute); }
+.origin p.txt { font-size: 14.5px; color: var(--mute); }
+.origin .who { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13.5px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.origin .who span::before { content: ""; display: inline-block; width: 14px; height: 6px; margin-right: 6px; vertical-align: middle; background: var(--c); }
+@media (max-width: 860px) { .origins { grid-template-columns: 1fr 1fr; } .origin:nth-child(3n) { border-right: 1px solid var(--line); } .origin:nth-child(2n) { border-right: 0; } .origin:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); } .origin:nth-last-child(-n+2) { border-bottom: 0; } }
+@media (max-width: 560px) { .origins { grid-template-columns: 1fr; } .origin { border-right: 0 !important; border-bottom: 1px solid var(--line) !important; } .origin:last-child { border-bottom: 0 !important; } }
 .note { font-size: 14px; color: var(--mute); border-left: 1px solid var(--gold); padding-left: 16px; max-width: 40em; }
 
 /* plans */
@@ -219,6 +252,7 @@ footer a { color: var(--mute); }
       <a href="#story">品牌故事</a>
       <a href="#spirit">品牌精神</a>
       <a href="#artisans">手藝人</a>
+      <a href="#origins">產區手札</a>
       <a href="#plans">藏家預購</a>
       <a href="#giving">耶誕微光</a>
       <a href="#order">訂購須知</a>
@@ -327,10 +361,10 @@ footer a { color: var(--mute); }
 
       <article class="artisan" style="--tone: var(--sage)">
         <div class="no">01<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">01</span><span class="pname">Emily</span></figure>
         <div class="body">
           <h3>蔡詩敏 <small class="latin">Emily</small></h3>
           <p class="role">YOLO's CAFE 烘豆師 · 鴉埠咖啡 YABOO 共同創辦人</p>
-          <p class="hue"><span class="sw" aria-hidden="true"></span>識別色　松綠色 Pine Green</p>
           <dl class="rows">
             <dt>大師側寫</dt><dd>擁有咖啡師、烘豆師、杯測師三項證照與國際考官資格，深耕台北精品咖啡十餘年，以極致嚴謹的手藝為風味定錨。</dd>
             <dt>推薦豆款</dt><dd>肯亞 麒麟雅加 AA Top 粉象 水洗 <span class="en">Kenya Kirinyaga AA Top Washed</span></dd>
@@ -345,10 +379,10 @@ footer a { color: var(--mute); }
 
       <article class="artisan" style="--tone: var(--peach)">
         <div class="no">02<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">02</span><span class="pname">Warren</span></figure>
         <div class="body">
           <h3>陳啟仁 <small class="latin">Warren</small></h3>
           <p class="role">WAZZA 哇塞咖啡主理人 · 國際認證考官 · 評審 · 評鑑師</p>
-          <p class="hue"><span class="sw" aria-hidden="true"></span>識別色　胭脂桃 Carmine Peach</p>
           <dl class="rows">
             <dt>大師側寫</dt><dd>從事咖啡近 20 年，歷任百年品牌麥斯威爾咖啡台灣代言人、瑞士全自動咖啡機 SACHERER 品牌經理、三一國際頂級豪車、VISION 頂級自行車指定合作夥伴，把精品咖啡沖成一首詩。</dd>
             <dt>推薦豆款</dt><dd>WAZZA 經典莊園配方：印尼蘇門答臘 黃金曼特寧、瓜地馬拉 微微特南果、衣索比亞 果丁丁 耶加雪菲 日曬 G1、哥倫比亞 Supremo</dd>
@@ -372,10 +406,10 @@ footer a { color: var(--mute); }
 
       <article class="artisan" style="--tone: var(--indigo)">
         <div class="no">03<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">03</span><span class="pname">寶哥</span></figure>
         <div class="body">
           <h3>王神寶 <small>寶哥</small></h3>
           <p class="role">咖神咖啡教育館創辦人 · 2020 史懷哲飲調大師</p>
-          <p class="hue"><span class="sw" aria-hidden="true"></span>識別色　靛藍色 Indigo Blue</p>
           <dl class="rows">
             <dt>大師側寫</dt><dd>結合農場、科學、教育與生活的咖啡實踐家，獨創科學化健康烘焙曲線，詮釋真誠與生活美學的力量。</dd>
             <dt>推薦豆款</dt><dd>瓜地馬拉 微微特南果 水洗 <span class="en">Guatemala Huehuetenango Washed</span></dd>
@@ -390,10 +424,10 @@ footer a { color: var(--mute); }
 
       <article class="artisan" style="--tone: var(--sun)">
         <div class="no">04<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">04</span><span class="pname">Dahe</span></figure>
         <div class="body">
           <h3>Dahe</h3>
           <p class="role">九咖工作室 NINECA STUDIO 主理人</p>
-          <p class="hue"><span class="sw" aria-hidden="true"></span>識別色　暖陽黃 Warm Sunlight Yellow</p>
           <dl class="rows">
             <dt>大師側寫</dt><dd>在專注與靜心中烘焙，以純粹的心境對話生豆，作品以乾淨純淨的風味著稱。</dd>
             <dt>推薦豆款</dt><dd>宏都拉斯 山嵐初醒 水洗 <span class="en">Honduras Washed</span></dd>
@@ -408,10 +442,10 @@ footer a { color: var(--mute); }
 
       <article class="artisan" style="--tone: var(--clay)">
         <div class="no">05<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">05</span><span class="pname">Elias</span></figure>
         <div class="body">
           <h3>Elias</h3>
           <p class="role">露娜咖啡 Lunas Corp., Ltd 創辦人</p>
-          <p class="hue"><span class="sw" aria-hidden="true"></span>識別色　沉穩紫 / 陶土紫 Deep Earth Purple</p>
           <dl class="rows">
             <dt>大師側寫</dt><dd>來自中美洲高山沃土的咖啡世家，宏都拉斯雷內家族莊園傳人，堅持自然農法無毒契作，把莊園生豆直送台灣。</dd>
             <dt>推薦豆款</dt><dd>宏都拉斯 拉巴斯 愛麗絲莊園 Finca Iris 柳橙厭氧蜜處理 <span class="en">Honduras Finca Iris, Orange Anaerobic Honey</span></dd>
@@ -423,6 +457,59 @@ footer a { color: var(--mute); }
           
         </div>
       </article>
+    </div>
+  </section>
+
+  <section id="origins">
+    <div class="wrap">
+      <p class="eyebrow">Origin Notes</p>
+      <h2>產區手札：一杯咖啡，從哪座山來</h2>
+      <p class="lead">五位手藝人選的豆子，來自三大洲、六個國家的高山。認識一顆豆子的家鄉，就更懂杯子裡的味道。</p>
+      <div class="origins">
+        <article class="origin">
+          <span class="ctry">Kenya</span>
+          <h3>肯亞 · 麒麟雅加</h3>
+          <p class="alt">Kirinyaga ｜ 海拔約 1,600–1,900 公尺</p>
+          <p class="txt">位於肯亞山南麓，火山紅土孕育出明亮的酸質。肯亞以水洗處理見長，常帶黑醋栗與莓果調性。AA 是依生豆顆粒大小分級的最高等級。</p>
+          <p class="who"><span style="--c: var(--sage)">Emily</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Indonesia</span>
+          <h3>印尼 · 蘇門答臘</h3>
+          <p class="alt">Sumatra ｜ 曼特寧 Mandheling</p>
+          <p class="txt">曼特寧之名源自北蘇門答臘的曼特寧族。當地常用濕剝法處理，帶出厚實的醇度與可可、草本氣息；黃金曼特寧是再經多道手工挑選的精選等級。</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Guatemala</span>
+          <h3>瓜地馬拉 · 微微特南果</h3>
+          <p class="alt">Huehuetenango ｜ 海拔約 1,500–2,000 公尺</p>
+          <p class="txt">西北部高地，與墨西哥接壤，是瓜地馬拉海拔最高的產區之一。來自墨西哥平原的乾熱氣流讓高山不易結霜，風味乾淨、甜感飽滿。</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span><span style="--c: var(--indigo)">寶哥</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Ethiopia</span>
+          <h3>衣索比亞 · 耶加雪菲</h3>
+          <p class="alt">Yirgacheffe ｜ 海拔約 1,700–2,200 公尺</p>
+          <p class="txt">阿拉比卡咖啡的原鄉。耶加雪菲位於南部高地，以花香與柑橘調聞名；日曬處理則多了熟果般的甜。G1 是衣索比亞生豆的最高等級。</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Colombia</span>
+          <h3>哥倫比亞 · Supremo</h3>
+          <p class="alt">Andes ｜ 安地斯山脈</p>
+          <p class="txt">Supremo 不是產區，而是哥倫比亞依顆粒大小的分級，代表篩網 17 號以上的大顆粒豆。安地斯山脈縱貫全國，風味均衡、甜感圓潤。</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Honduras</span>
+          <h3>宏都拉斯</h3>
+          <p class="alt">La Paz ｜ 蒙特西猶斯山脈，海拔約 1,400–1,550 公尺</p>
+          <p class="txt">中美洲重要的咖啡產國，近年精品咖啡進步很快。Elias 家族的莊園在西南部拉巴斯省，小農與家族莊園也常嘗試蜜處理、厭氧發酵等實驗性處理。</p>
+          <p class="who"><span style="--c: var(--sun)">Dahe</span><span style="--c: var(--clay)">Elias</span></p>
+        </article>
+      </div>
+      <p class="fine">海拔為各產區常見範圍，實際依批次與莊園而異。</p>
     </div>
   </section>
 
