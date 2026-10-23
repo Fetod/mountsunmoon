@@ -118,26 +118,40 @@ td:nth-child(3) { color: var(--paper); }
 .lbl { fill: var(--mute); font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; text-anchor: middle; }
 .sub-h { font-family: var(--serif); font-size: clamp(20px, 3vw, 26px); }
 
-/* artisans */
-.artisan { display: grid; grid-template-columns: 120px 1fr; gap: 12px 36px; padding-block: 36px; border-top: 1px solid var(--line); }
+/* artisans: one full panel per artisan, every confirmed field shown */
+.artisan { display: grid; grid-template-columns: 120px 1fr; gap: 12px 36px; padding-block: 56px; border-top: 1px solid var(--line); }
 .artisan:last-of-type { border-bottom: 1px solid var(--line); }
 .artisan .no { font-family: var(--latin); font-size: 54px; line-height: 1; color: var(--line); }
 .artisan .no i { display: block; width: 36px; height: 4px; margin-top: 14px; background: var(--tone); }
-.artisan h3 { font-size: 24px; }
+.artisan h3 { font-size: 26px; }
 .artisan h3 small { font-family: var(--sans); font-size: 14px; color: var(--mute); margin-left: 10px; font-weight: 300; }
-.artisan .role { color: var(--mute); font-size: 14px; }
-.artisan .about { max-width: 38em; font-size: 15px; }
-.spec { display: flex; flex-wrap: wrap; gap: 6px 26px; font-size: 14px; margin-top: 4px; }
-.spec b { font-weight: 500; color: var(--gold); margin-right: 8px; font-family: var(--latin); font-size: 15px; letter-spacing: 0.15em; }
-.roast { display: inline-flex; gap: 3px; vertical-align: middle; margin-left: 8px; }
+.artisan .role { color: var(--mute); font-size: 14px; margin-top: -4px; }
+.artisan .hue { font-size: 13px; color: var(--mute); display: flex; align-items: center; gap: 8px; }
+.artisan .hue .sw { width: 12px; height: 12px; border-radius: 50%; background: var(--tone); }
+.rows { display: grid; grid-template-columns: 6.5em 1fr; gap: 14px 22px; margin: 8px 0 0; max-width: 46em; }
+.rows dt { color: var(--gold); font-size: 14px; letter-spacing: 0.12em; padding-top: 2px; }
+.rows dt.latin { font-family: var(--latin); font-size: 15px; letter-spacing: 0.2em; }
+.rows dd { margin: 0; font-size: 15px; }
+.rows dd em { font-style: normal; font-family: var(--serif); color: var(--paper); margin-right: 4px; }
+.rows .en { font-family: var(--latin); color: var(--mute); font-size: 15px; margin-left: 6px; }
+.rows .verse { font-family: var(--serif); color: var(--paper); }
+.rows .notes { font-family: var(--serif); letter-spacing: 0.08em; }
+.roast { display: inline-flex; gap: 3px; vertical-align: middle; margin-left: 10px; }
 .roast i { width: 14px; height: 4px; background: var(--line); }
 .roast i.on { background: var(--paper); }
-.flavor { max-width: 38em; }
-.flavor em { font-style: normal; color: var(--paper); font-family: var(--serif); }
-.verse { font-family: var(--serif); color: var(--mute); font-size: 15px; }
+.detail { margin-top: 10px; padding: 18px 22px; background: var(--ink-2); border-left: 2px solid var(--tone); max-width: 46em; }
+.detail-h { font-family: var(--serif); font-size: 16px; margin: 0 0 10px; }
+.detail dl { display: grid; grid-template-columns: 5em 1fr; gap: 8px 18px; margin: 0; font-size: 14px; color: var(--mute); }
+.detail dt { color: var(--paper); }
+.detail dd { margin: 0; }
 .artisan > * { min-width: 0; }
 .artisan .body { display: flex; flex-direction: column; gap: 10px; }
-@media (max-width: 640px) { .artisan { grid-template-columns: 1fr; } .artisan .no { display: flex; align-items: center; gap: 16px; font-size: 40px; } .artisan .no i { margin-top: 0; } }
+@media (max-width: 640px) {
+  .artisan { grid-template-columns: 1fr; padding-block: 40px; }
+  .artisan .no { display: flex; align-items: center; gap: 16px; font-size: 40px; } .artisan .no i { margin-top: 0; }
+  .rows { grid-template-columns: 1fr; gap: 2px; } .rows dd { margin-bottom: 12px; }
+  .detail dl { grid-template-columns: 4em 1fr; }
+}
 .note { font-size: 14px; color: var(--mute); border-left: 1px solid var(--gold); padding-left: 16px; max-width: 40em; }
 
 /* plans */
@@ -312,62 +326,101 @@ footer a { color: var(--mute); }
       <p class="lead">每位手藝人各選一款代表豆，交給日月山收進同一個盒子。</p>
 
       <article class="artisan" style="--tone: var(--sage)">
-        <div class="no">01<i aria-label="識別色 松綠"></i></div>
+        <div class="no">01<i aria-hidden="true"></i></div>
         <div class="body">
           <h3>蔡詩敏 <small class="latin">Emily</small></h3>
           <p class="role">YOLO's CAFE 烘豆師 · 鴉埠咖啡 YABOO 共同創辦人</p>
-          <p class="about">擁有咖啡師、烘豆師、杯測師三項證照與國際考官資格，深耕台北精品咖啡十餘年，以極致嚴謹的手藝為風味定錨。</p>
-          <div class="spec"><span><b>BEAN</b>肯亞 麒麟雅加 AA Top 粉象 水洗</span><span><b>ROAST</b>中淺焙<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span><span><b>NOTES</b>黑醋栗・烏梅・果香</span></div>
-          <p class="flavor"><em>精準與熟成。</em>結構清晰、明亮俐落，純淨的焦糖甜感與優雅黑醋栗果酸、烏梅汁、果香，是一杯酸甜平衡得恰到好處的基準。</p>
-          <p class="verse">「在精準的火候中，雕刻出果酸最純粹俐落的幾何線條。」</p>
+          <p class="hue"><span class="sw" aria-hidden="true"></span>識別色　松綠色 Pine Green</p>
+          <dl class="rows">
+            <dt>大師側寫</dt><dd>擁有咖啡師、烘豆師、杯測師三項證照與國際考官資格，深耕台北精品咖啡十餘年，以極致嚴謹的手藝為風味定錨。</dd>
+            <dt>推薦豆款</dt><dd>肯亞 麒麟雅加 AA Top 粉象 水洗 <span class="en">Kenya Kirinyaga AA Top Washed</span></dd>
+            <dt>烘焙度</dt><dd>淺焙 <span class="en">Light Roast</span><span class="roast" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span></dd>
+            <dt>風味詮釋</dt><dd><em>【精準與熟成】</em>結構清晰、明亮俐落，純淨的焦糖甜感與優雅黑醋栗果酸、烏梅汁、果香，是一杯酸甜平衡得恰到好處的基準。</dd>
+            <dt>文青詩語</dt><dd class="verse">「在精準的火候中，雕刻出果酸最純粹俐落的幾何線條。」</dd>
+            <dt class="latin">NOTES</dt><dd class="notes">黑醋栗・烏梅・果香</dd>
+          </dl>
+          
         </div>
       </article>
 
       <article class="artisan" style="--tone: var(--peach)">
-        <div class="no">02<i aria-label="識別色 胭脂桃"></i></div>
+        <div class="no">02<i aria-hidden="true"></i></div>
         <div class="body">
           <h3>陳啟仁 <small class="latin">Warren</small></h3>
           <p class="role">WAZZA 哇塞咖啡主理人 · 國際認證考官 · 評審 · 評鑑師</p>
-          <p class="about">從事咖啡近 20 年，歷任百年品牌麥斯威爾咖啡台灣代言人、瑞士全自動咖啡機 SACHERER 品牌經理、三一國際頂級豪車、VISION 頂級自行車指定合作夥伴，把精品咖啡沖成一首詩。</p>
-          <div class="spec"><span><b>BEAN</b>印尼蘇門答臘 黃金曼特寧、瓜地馬拉 微微特南果、衣索比亞 果丁丁 耶加雪菲 日曬 G1、哥倫比亞 Supremo</span><span><b>ROAST</b>淺中焙<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span><span><b>NOTES</b>龍眼蜜・杏仁・可可</span></div>
-          <p class="flavor"><em>生機與舒展。</em>龍眼蜜、堅果杏仁香氣交織，中段散發甜可可與微柑橘芬芳，入喉質地順口，尾段厚實回甘。</p>
-          <p class="verse">「用溫暖的手沖時光，把生活過成一首舒展的詩。」</p>
+          <p class="hue"><span class="sw" aria-hidden="true"></span>識別色　胭脂桃 Carmine Peach</p>
+          <dl class="rows">
+            <dt>大師側寫</dt><dd>從事咖啡近 20 年，歷任百年品牌麥斯威爾咖啡台灣代言人、瑞士全自動咖啡機 SACHERER 品牌經理、三一國際頂級豪車、VISION 頂級自行車指定合作夥伴，把精品咖啡沖成一首詩。</dd>
+            <dt>推薦豆款</dt><dd>印尼蘇門答臘 黃金曼特寧、瓜地馬拉 微微特南果、衣索比亞 果丁丁 耶加雪菲 日曬 G1、哥倫比亞 Supremo</dd>
+            <dt>烘焙度</dt><dd>淺中焙 <span class="en">Light-Medium Roast</span><span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></dd>
+            <dt>風味詮釋</dt><dd><em>【生機與舒展】</em>龍眼蜜、堅果杏仁香氣交織，中段散發甜可可與微柑橘芬芳，入喉質地順口，尾段厚實回甘。</dd>
+            <dt>文青詩語</dt><dd class="verse">「用溫暖的手沖時光，把生活過成一首舒展的詩。」</dd>
+            <dt class="latin">NOTES</dt><dd class="notes">龍眼蜜・杏仁・可可</dd>
+          </dl>
+          <div class="detail"><p class="detail-h">豆子配方與風味解析</p>
+            <dl>
+              <dt>配方</dt><dd>印尼蘇門答臘黃金曼特寧 ＋ 瓜地馬拉微微特南果 ＋ 衣索比亞果丁丁耶加雪菲日曬 G1 ＋ 哥倫比亞 Supremo</dd>
+              <dt>風味亮點</dt><dd>龍眼蜜、白松露、甜可可、巧克力、柑橘、杏仁</dd>
+              <dt>乾香</dt><dd>散發杏仁與白巧克力般的甜感。</dd>
+              <dt>濕香</dt><dd>交織著柑橘、果香、花香與微淡的白松露氣息。</dd>
+              <dt>前段</dt><dd>帶有明亮但溫和的微酸，入口立即化開。</dd>
+              <dt>中段</dt><dd>質地圓潤順口，層次豐富。</dd>
+              <dt>尾段</dt><dd>厚實回甘，尾韻悠長，伴隨堅果、甜可可與龍眼蜜香氣。</dd>
+            </dl></div>
         </div>
       </article>
 
       <article class="artisan" style="--tone: var(--indigo)">
-        <div class="no">03<i aria-label="識別色 靛藍"></i></div>
+        <div class="no">03<i aria-hidden="true"></i></div>
         <div class="body">
           <h3>王神寶 <small>寶哥</small></h3>
           <p class="role">咖神咖啡教育館創辦人 · 2020 史懷哲飲調大師</p>
-          <p class="about">結合農場、科學、教育與生活的咖啡實踐家，獨創科學化健康烘焙曲線，詮釋真誠與生活美學的力量。</p>
-          <div class="spec"><span><b>BEAN</b>瓜地馬拉 微微特南果</span><span><b>ROAST</b>中深焙<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span><span><b>NOTES</b>堅果・太妃糖口味微甜</span></div>
-          <p class="flavor"><em>流動與滋潤。</em>層次如水波緩緩推進，柔順滑口、酸質溫和細膩，適合放慢呼吸的安靜日常。</p>
-          <p class="verse">「讓咖啡如水般流動，滋潤日常裡每一個感知的瞬間。」</p>
+          <p class="hue"><span class="sw" aria-hidden="true"></span>識別色　靛藍色 Indigo Blue</p>
+          <dl class="rows">
+            <dt>大師側寫</dt><dd>結合農場、科學、教育與生活的咖啡實踐家，獨創科學化健康烘焙曲線，詮釋真誠與生活美學的力量。</dd>
+            <dt>推薦豆款</dt><dd>瓜地馬拉 微微特南果 <span class="en">Guatemala Huehuetenango</span></dd>
+            <dt>烘焙度</dt><dd>中深焙 <span class="en">Medium-Dark Roast</span><span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></dd>
+            <dt>風味詮釋</dt><dd><em>【流動與滋潤】</em>層次如水波緩緩推進，柔順滑口、酸質溫和細膩，適合放慢呼吸的安靜日常。</dd>
+            <dt>文青詩語</dt><dd class="verse">「讓咖啡如水般流動，滋潤日常裡每一個感知的瞬間。」</dd>
+            <dt class="latin">NOTES</dt><dd class="notes">堅果・太妃糖口味微甜</dd>
+          </dl>
+          
         </div>
       </article>
 
       <article class="artisan" style="--tone: var(--sun)">
-        <div class="no">04<i aria-label="識別色 暖陽黃"></i></div>
+        <div class="no">04<i aria-hidden="true"></i></div>
         <div class="body">
           <h3>Dahe</h3>
           <p class="role">九咖工作室 NINECA STUDIO 主理人</p>
-          <p class="about">在專注與靜心中烘焙，以純粹的心境對話生豆，作品以乾淨純淨的風味著稱。</p>
-          <div class="spec"><span><b>BEAN</b>宏都拉斯 山嵐初醒 水洗</span><span><b>ROAST</b>中淺焙<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span><span><b>NOTES</b>焦糖・蜂蜜・橘子</span></div>
-          <p class="flavor"><em>轉化與光明。</em>深邃的焦糖蜂蜜與熟果甜香，入喉圓潤柔和、層次細微，轉化為深邃回甘的溫暖力量。</p>
-          <p class="verse">「藉由火候的專注轉化，將太陽的熱情匯聚成一杯喚醒內在的光。」</p>
+          <p class="hue"><span class="sw" aria-hidden="true"></span>識別色　暖陽黃 Warm Sunlight Yellow</p>
+          <dl class="rows">
+            <dt>大師側寫</dt><dd>在專注與靜心中烘焙，以純粹的心境對話生豆，作品以乾淨純淨的風味著稱。</dd>
+            <dt>推薦豆款</dt><dd>宏都拉斯 山嵐初醒 水洗 <span class="en">Honduras Washed</span></dd>
+            <dt>烘焙度</dt><dd>中淺焙 <span class="en">Light-Medium Roast</span><span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></dd>
+            <dt>風味詮釋</dt><dd><em>【轉化與光明】</em>深邃的焦糖蜂蜜與熟果甜香，入喉圓潤柔和、層次細微，轉化為深邃回甘的溫暖力量。</dd>
+            <dt>文青詩語</dt><dd class="verse">「藉由火候的專注轉化，將太陽的熱情匯聚成一杯喚醒內在的光。」</dd>
+            <dt class="latin">NOTES</dt><dd class="notes">焦糖・蜂蜜・橘子</dd>
+          </dl>
+          
         </div>
       </article>
 
       <article class="artisan" style="--tone: var(--clay)">
-        <div class="no">05<i aria-label="識別色 陶土紫"></i></div>
+        <div class="no">05<i aria-hidden="true"></i></div>
         <div class="body">
           <h3>Elias</h3>
           <p class="role">露娜咖啡 Lunas Corp., Ltd 創辦人</p>
-          <p class="about">來自中美洲高山沃土的咖啡世家，宏都拉斯雷內家族莊園傳人，堅持自然農法無毒契作，把莊園生豆直送台灣。</p>
-          <div class="spec"><span><b>BEAN</b>宏都拉斯 拉巴斯 愛麗絲莊園 Finca Iris 柳橙厭氧蜜處理</span><span><b>ROAST</b>中焙<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span><span><b>NOTES</b>紅蘋果・蜂蜜・青檸・杏仁</span></div>
-          <p class="flavor"><em>承載與風土。</em>質樸醇厚，深邃堅果與黑可可的底蘊扎實，帶著火山土地安定的重量。</p>
-          <p class="verse">「扎根於宏都拉斯高山沃土，承載著大地最質樸溫潤的告白。」</p>
+          <p class="hue"><span class="sw" aria-hidden="true"></span>識別色　沉穩紫 / 陶土紫 Deep Earth Purple</p>
+          <dl class="rows">
+            <dt>大師側寫</dt><dd>來自中美洲高山沃土的咖啡世家，宏都拉斯雷內家族莊園傳人，堅持自然農法無毒契作，把莊園生豆直送台灣。</dd>
+            <dt>推薦豆款</dt><dd>宏都拉斯 拉巴斯 愛麗絲莊園 Finca Iris 柳橙厭氧蜜處理 <span class="en">Honduras Finca Iris, Orange Anaerobic Honey</span></dd>
+            <dt>烘焙度</dt><dd>中焙 <span class="en">Medium Roast</span><span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></dd>
+            <dt>風味詮釋</dt><dd><em>【承載與風土】</em>質樸醇厚，深邃堅果與黑可可的底蘊扎實，帶著火山土地安定的重量。</dd>
+            <dt>文青詩語</dt><dd class="verse">「扎根於宏都拉斯高山沃土，承載著大地最質樸溫潤的告白。」</dd>
+            <dt class="latin">NOTES</dt><dd class="notes">紅蘋果・蜂蜜・青檸・杏仁</dd>
+          </dl>
+          
         </div>
       </article>
     </div>
