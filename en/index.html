@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mount Sun Moon Collector Series Christmas pre-order: five roasters, five fires, one box. 5% of every pre-order supports children's arts and music programmes.">
+<title>Mount Sun Moon 日月山</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans:wght@300;400;500&family=Noto+Serif+TC:wght@400&display=swap">
+<style>
+/* Layout: one long, quiet scroll. Charcoal ground, gold only for the mark and hairlines, roasters introduced as a ledger of rows rather than cards. */
+:root {
+  --ink: #141413;
+  --ink-2: #1c1b19;
+  --line: #34312c;
+  --paper: #ece6da;
+  --mute: #a39b8c;
+  --gold: #c9a45c;
+  --moon: #f7f3ea;
+  --sage: #2f5d50;
+  --peach: #e0867a;
+  --indigo: #4a5aa8;
+  --sun: #f2c230;
+  --clay: #8a6a8c;
+  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --latin: "Cormorant Garamond", "Times New Roman", serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+a { color: inherit; }
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.5; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.latin { font-family: var(--latin); letter-spacing: 0.08em; }
+.eyebrow { font-family: var(--latin); font-size: 15px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+section { padding-block: clamp(64px, 11vw, 120px); border-top: 1px solid var(--line); }
+section > .wrap > * + * { margin-top: 28px; }
+h2 { font-size: clamp(26px, 4.4vw, 40px); }
+.lead { color: var(--mute); max-width: 36em; }
+
+/* nav */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--ink); }
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--ink) 92%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 12px; }
+.brand { text-decoration: none; display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+.brand img { height: 40px; width: auto; display: block; }
+.flogo { width: min(190px, 56%); height: auto; display: block; margin: 0 auto 28px; }
+.tdp > div { display: grid; grid-template-columns: 64px 1fr; gap: 6px 22px; padding: 24px 0; border-top: 1px solid var(--line); }
+.tdp > div:last-child { border-bottom: 1px solid var(--line); }
+.tdp b { font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.2; color: var(--gold); }
+.tdp h3 { font-size: 19px; margin-bottom: 6px; }
+.tdp p { color: var(--mute); font-size: 15px; max-width: 38em; }
+.tdp > div > * { min-width: 0; }
+.brand b { display: block; font-family: var(--serif); font-weight: 400; letter-spacing: 0.3em; font-size: 16px; line-height: 1.25; }
+.brand small { display: block; font-family: var(--latin); letter-spacing: 0.12em; font-size: 13px; line-height: 1.2; color: var(--mute); }
+.ln { fill: none; stroke: var(--gold); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.sun { fill: var(--gold); }
+.moon { fill: var(--moon); }
+nav { display: flex; gap: 22px; flex-wrap: wrap; justify-content: flex-end; font-size: 13px; }
+nav a { text-decoration: none; color: var(--mute); padding: 4px 0; }
+nav a:hover, nav a:focus-visible { color: var(--paper); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+@media (max-width: 940px) { nav { display: none; } }
+
+/* hero */
+.hero { border-top: 0; padding-block: clamp(48px, 9vw, 96px) clamp(56px, 9vw, 96px); text-align: center; }
+.hero svg { width: min(520px, 86%); height: auto; display: block; margin: 0 auto; }
+.hero h1 { font-size: clamp(30px, 6.2vw, 58px); letter-spacing: 0.14em; margin-top: 36px; }
+.hero .sub { margin-top: 20px; color: var(--mute); }
+.hero .sub span { display: block; }
+.cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 40px; }
+.btn { display: inline-block; padding: 12px 28px; border: 1px solid var(--gold); color: var(--paper); text-decoration: none; font-size: 14px; letter-spacing: 0.2em; transition: background .25s, color .25s; }
+.btn:hover, .btn:focus-visible { background: var(--gold); color: var(--ink); }
+.btn.quiet { border-color: var(--line); color: var(--mute); }
+.btn.quiet:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.ridge { display: block; width: 100%; height: auto; margin-top: 56px; }
+
+/* story */
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; padding-top: 12px; }
+.cols > div { border-top: 1px solid var(--gold); padding-top: 18px; min-width: 0; }
+.cols h3 { font-size: 20px; margin-bottom: 10px; }
+.cols p { color: var(--mute); font-size: 15px; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; gap: 28px; } }
+.pull { font-family: var(--serif); font-size: clamp(20px, 3.2vw, 28px); line-height: 1.8; max-width: 22em; }
+
+/* difference table */
+.tablebox { overflow-x: auto; border-top: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14.5px; }
+th, td { text-align: left; vertical-align: top; padding: 16px 18px 16px 0; border-bottom: 1px solid var(--line); line-height: 1.8; }
+th { font-family: var(--latin); font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mute); font-weight: 500; }
+td:first-child { font-family: var(--serif); white-space: nowrap; }
+td:nth-child(2) { color: var(--mute); }
+td:nth-child(3) { color: var(--paper); }
+
+/* brand spirit */
+.spirit .en { font-family: var(--latin); font-style: italic; font-size: clamp(24px, 4.2vw, 40px); line-height: 1.4; color: var(--gold); max-width: 20em; letter-spacing: 0.03em; }
+.spirit .zh-line { font-family: var(--serif); font-size: clamp(22px, 3.6vw, 32px); letter-spacing: 0.12em; }
+.cols.two { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .cols.two { grid-template-columns: 1fr; } }
+.eclipse { width: min(420px, 100%); height: auto; display: block; }
+.lbl { fill: var(--mute); font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; text-anchor: middle; }
+.sub-h { font-family: var(--serif); font-size: clamp(20px, 3vw, 26px); }
+
+/* artisans: one full panel per artisan, every confirmed field shown */
+.artisan { display: grid; grid-template-columns: 120px 1fr; gap: 12px 36px; padding-block: 56px; border-top: 1px solid var(--line); }
+.artisan:last-of-type { border-bottom: 1px solid var(--line); }
+.artisan .no { font-family: var(--latin); font-size: 54px; line-height: 1; color: var(--line); }
+.artisan .no i { display: block; width: 36px; height: 4px; margin-top: 14px; background: var(--tone); }
+.artisan h3 { font-size: 26px; }
+.artisan h3 small { font-family: var(--sans); font-size: 14px; color: var(--mute); margin-left: 10px; font-weight: 300; }
+.artisan .role { color: var(--mute); font-size: 14px; margin-top: -4px; }
+.artisan .hue { font-size: 13px; color: var(--mute); display: flex; align-items: center; gap: 8px; }
+.artisan .hue .sw { width: 12px; height: 12px; border-radius: 50%; background: var(--tone); }
+.rows { display: grid; grid-template-columns: 6.5em 1fr; gap: 14px 22px; margin: 8px 0 0; max-width: 46em; }
+.rows dt { color: var(--gold); font-size: 14px; letter-spacing: 0.12em; padding-top: 2px; }
+.rows dt.latin { font-family: var(--latin); font-size: 15px; letter-spacing: 0.2em; }
+.rows dd { margin: 0; font-size: 15px; }
+.rows dd em { font-style: normal; font-family: var(--serif); color: var(--paper); margin-right: 4px; }
+.rows .en { font-family: var(--latin); color: var(--mute); font-size: 15px; margin-left: 6px; }
+.rows .verse { font-family: var(--serif); color: var(--paper); }
+.rows .notes { font-family: var(--serif); letter-spacing: 0.08em; }
+.roast { display: inline-flex; gap: 3px; vertical-align: middle; margin-left: 10px; }
+.roast i { width: 14px; height: 4px; background: var(--line); }
+.roast i.on { background: var(--paper); }
+.detail { margin-top: 10px; padding: 18px 22px; background: var(--ink-2); border-left: 2px solid var(--tone); max-width: 46em; }
+.detail-h { font-family: var(--serif); font-size: 16px; margin: 0 0 10px; }
+.detail dl { display: grid; grid-template-columns: 5em 1fr; gap: 8px 18px; margin: 0; font-size: 14px; color: var(--mute); }
+.detail dt { color: var(--paper); }
+.detail dd { margin: 0; }
+.artisan > * { min-width: 0; }
+.artisan .body { display: flex; flex-direction: column; gap: 10px; }
+@media (max-width: 640px) {
+  .artisan { grid-template-columns: 1fr; padding-block: 40px; }
+  .artisan .no { display: flex; align-items: center; gap: 16px; font-size: 40px; } .artisan .no i { margin-top: 0; }
+  .rows { grid-template-columns: 1fr; gap: 2px; } .rows dd { margin-bottom: 12px; }
+  .detail dl { grid-template-columns: 4em 1fr; }
+}
+
+/* livelier artisan panels */
+.artisan { grid-template-columns: 120px 1fr 220px; }
+.artisan .no i { width: 56px; height: 14px; margin-top: 16px; }
+.artisan .body { grid-column: 2; grid-row: 1; }
+.portrait { grid-column: 3; grid-row: 1; align-self: start; position: sticky; top: 96px; margin: 0; aspect-ratio: 4 / 5; overflow: hidden;
+  background: linear-gradient(165deg, var(--tone) 0%, color-mix(in srgb, var(--tone) 55%, #0d0d0c) 100%); color: rgba(255,255,255,0.32); }
+.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.portrait .pm { position: absolute; left: 10%; right: 10%; bottom: 26%; width: 80%; }
+.portrait .pno { position: absolute; top: 14px; left: 16px; font-family: var(--latin); font-size: 15px; letter-spacing: 0.2em; color: rgba(255,255,255,0.75); }
+.portrait .pname { position: absolute; left: 16px; bottom: 14px; font-family: var(--latin); font-size: 30px; line-height: 1; color: #fff; text-shadow: 0 1px 12px rgba(0,0,0,0.25); }
+.portrait { position: sticky; }
+.rows dt { border-left: 3px solid var(--tone); padding-left: 10px; }
+@media (max-width: 900px) {
+  .artisan { grid-template-columns: 96px 1fr; }
+  .portrait { grid-column: 1 / -1; grid-row: auto; position: relative; top: 0; aspect-ratio: 16 / 7; order: -1; }
+  .artisan .no { grid-row: auto; }
+}
+@media (max-width: 640px) { .artisan { grid-template-columns: 1fr; } .artisan .body { grid-column: 1; grid-row: auto; } .portrait { grid-column: 1; aspect-ratio: 16 / 8; } .portrait .pno { display: none; } .portrait .pm { left: auto; right: 6%; width: 52%; bottom: 14%; } }
+
+.rows dt.theme { border-left: 0; padding-left: 0; color: var(--paper); font-family: var(--serif); letter-spacing: 0.04em; white-space: nowrap; }
+.sub-en { font-family: var(--latin); font-style: italic; font-size: 22px; letter-spacing: 0.04em; color: var(--gold); }
+section > .wrap > .sub-en + .lead { margin-top: 6px; }
+/* origin notes */
+.origins { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); }
+.origin { padding: 28px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.origin:nth-child(3n) { border-right: 0; }
+.origin:nth-last-child(-n+3) { border-bottom: 0; }
+.origin .ctry { font-family: var(--latin); font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+.origin h3 { font-size: 20px; }
+.origin .alt { font-size: 13px; color: var(--mute); }
+.origin p.txt { font-size: 14.5px; color: var(--mute); }
+.origin .who { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13.5px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.origin .who span::before { content: ""; display: inline-block; width: 14px; height: 6px; margin-right: 6px; vertical-align: middle; background: var(--c); }
+@media (max-width: 860px) { .origins { grid-template-columns: 1fr 1fr; } .origin:nth-child(3n) { border-right: 1px solid var(--line); } .origin:nth-child(2n) { border-right: 0; } .origin:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); } .origin:nth-last-child(-n+2) { border-bottom: 0; } }
+@media (max-width: 560px) { .origins { grid-template-columns: 1fr; } .origin { border-right: 0 !important; border-bottom: 1px solid var(--line) !important; } .origin:last-child { border-bottom: 0 !important; } }
+.note { font-size: 14px; color: var(--mute); border-left: 1px solid var(--gold); padding-left: 16px; max-width: 40em; }
+
+/* plans */
+.giftfig { margin: 0 0 28px; }
+.giftfig img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.giftfig figcaption { font-size: 13px; color: var(--mute); margin-top: 8px; }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); }
+.plan { padding: 32px 26px 30px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.plan + .plan { border-left: 1px solid var(--line); }
+.plan.feature { background: var(--ink-2); }
+.plan .tag { font-family: var(--latin); letter-spacing: 0.22em; font-size: 14px; color: var(--gold); text-transform: uppercase; }
+.plan h3 { font-size: 22px; }
+.plan .price { font-family: var(--latin); font-size: 44px; line-height: 1; letter-spacing: 0.02em; font-variant-numeric: tabular-nums; }
+.plan .price small { font-size: 15px; margin-right: 6px; letter-spacing: 0.15em; color: var(--mute); }
+.plan ul { list-style: none; padding: 0; margin: 0; font-size: 14.5px; color: var(--mute); display: grid; gap: 6px; }
+.plan ul li::before { content: "—"; color: var(--gold); margin-right: 10px; }
+.plan .for { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--mute); }
+@media (max-width: 860px) { .plans { grid-template-columns: 1fr; } .plan + .plan { border-left: 0; border-top: 1px solid var(--line); } }
+.fine { font-size: 13.5px; color: var(--mute); }
+
+/* giving */
+.giving { background: var(--ink-2); }
+.giving .big { font-family: var(--latin); font-size: clamp(64px, 14vw, 140px); line-height: 1; color: var(--gold); letter-spacing: 0.02em; }
+.giving .big small { font-family: var(--serif); font-size: 0.22em; margin-left: 12px; color: var(--paper); letter-spacing: 0.1em; }
+
+/* order */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.steps div { border-top: 1px solid var(--line); padding-top: 14px; min-width: 0; }
+.steps b { display: block; font-family: var(--latin); font-size: 30px; font-weight: 400; color: var(--gold); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.steps span { color: var(--mute); font-size: 14.5px; }
+@media (max-width: 640px) { .steps { grid-template-columns: 1fr; gap: 18px; } }
+.ordering { border: 1px dashed var(--gold); padding: 22px 24px; max-width: 40em; }
+.ordering b { font-weight: 500; font-family: var(--serif); }
+.ordering .todo { display: block; color: var(--mute); font-size: 14px; margin-top: 6px; }
+details { border-top: 1px solid var(--line); }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; padding: 18px 0; font-family: var(--serif); font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--gold); font-family: var(--latin); font-size: 22px; line-height: 1.3; }
+details[open] summary::after { content: "−"; }
+details p { padding: 0 0 20px; color: var(--mute); font-size: 15px; max-width: 42em; }
+dl { display: grid; grid-template-columns: 8.5em 1fr; gap: 10px 20px; font-size: 14.5px; margin: 0; padding-bottom: 20px; }
+dt { color: var(--mute); }
+dd { margin: 0; }
+@media (max-width: 560px) { dl { grid-template-columns: 1fr; gap: 2px; } dd { margin-bottom: 10px; } }
+
+footer { border-top: 1px solid var(--line); padding-block: 48px 64px; text-align: center; color: var(--mute); font-size: 13.5px; }
+footer .wrap > * + * { margin-top: 10px; }
+footer .mark { font-family: var(--serif); color: var(--paper); letter-spacing: 0.4em; font-size: 16px; }
+footer a { color: var(--mute); }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+
+/* language switcher */
+.langs { display: flex; gap: 2px; font-size: 12px; letter-spacing: 0.06em; flex-shrink: 0; }
+.langs a { text-decoration: none; color: var(--mute); padding: 4px 7px; border: 1px solid transparent; }
+.langs a:hover, .langs a:focus-visible { color: var(--paper); }
+.langs a[aria-current] { color: var(--gold); border-color: var(--line); }
+header nav { margin-left: auto; }
+@media (max-width: 420px) { .langs a { padding: 4px 5px; } .brand small { display: none; } }
+
+:root { --serif: "Cormorant Garamond", "Noto Serif TC", Georgia, serif; --sans: "Noto Sans", "Helvetica Neue", Arial, sans-serif; }
+body { letter-spacing: 0.005em; line-height: 1.75; }
+h1, h2, h3 { font-weight: 500; }
+.hero h1 { letter-spacing: 0.02em; font-size: clamp(28px, 5vw, 50px); line-height: 1.3; }
+h2 { font-size: clamp(30px, 4.8vw, 46px); line-height: 1.25; }
+.cols h3, .tdp h3 { font-size: 23px; }
+.artisan h3 { font-size: 30px; }
+.rows { grid-template-columns: 9.5em 1fr; }
+.rows dt.theme { white-space: normal; font-size: 17px; }
+.rows .verse { font-style: italic; font-size: 18px; }
+td:first-child { white-space: normal; min-width: 11em; font-size: 17px; }
+.tdp b, .brand b, footer .mark { font-family: "Noto Serif TC", serif; }
+.spirit .zh-line { font-family: "Noto Serif TC", serif; }
+.spirit p.en { font-size: clamp(20px, 3vw, 28px); }
+summary { font-size: 19px; }
+.pull { font-size: clamp(22px, 3.4vw, 30px); line-height: 1.5; }
+.plan h3 { font-size: 25px; }
+.steps b { font-size: 26px; }
+</style>
+<link rel="alternate" hreflang="zh-Hant" href="https://mountsunmoon.com/">
+<link rel="alternate" hreflang="zh-Hans" href="https://mountsunmoon.com/zh-hans/">
+<link rel="alternate" hreflang="en" href="https://mountsunmoon.com/en/">
+<link rel="alternate" hreflang="ja" href="https://mountsunmoon.com/ja/">
+<link rel="alternate" hreflang="x-default" href="https://mountsunmoon.com/">
+
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Mount Sun Moon, back to top">
+      <img src="../assets/mark.png" alt="" width="62" height="40">
+      <span><b>日月山</b><small>Mount Sun Moon</small></span>
+    </a>
+    <nav aria-label="Main menu">
+      <a href="#positioning">Positioning</a>
+      <a href="#story">Our Story</a>
+      <a href="#spirit">Spirit</a>
+      <a href="#artisans">Artisans</a>
+      <a href="#origins">Origins</a>
+      <a href="#plans">Pre-order</a>
+      <a href="#giving">Giving</a>
+      <a href="#order">Ordering</a>
+    </nav>
+    <div class="langs" aria-label="Language"><a href="../" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简中</a><a href="../en/" hreflang="en" lang="en" aria-current="page">EN</a><a href="../ja/" hreflang="ja" lang="ja">日本語</a></div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <svg viewBox="0 0 600 340" role="img" aria-label="Mount Sun Moon mark: two peaks, with a gold sun and a smaller white moon above and to the right">
+        <circle class="sun" cx="430" cy="78" r="38"/>
+        <circle class="moon" cx="450" cy="72" r="33"/>
+        <path class="ln" d="M20 330 C75 330 125 270 166 226 C182 208 196 208 208 224 C232 254 252 270 270 268 C304 264 332 192 362 150 C376 130 390 128 402 146 C440 204 486 322 570 330"/>
+      </svg>
+      <h1>The mountain keeps its silence,<br>and quietly holds the light of sun and moon.</h1>
+      <p class="sub"><span>Collector-grade specialty coffee · a five-element map of flavour</span><span>A good cup of coffee brings more light to life.</span></p>
+      <div class="cta">
+        <a class="btn" href="#plans">Explore the pre-order sets</a>
+        <a class="btn quiet" href="#artisans">Meet the five artisans</a>
+      </div>
+      <p class="eyebrow" style="margin-top:56px">Mount Sun Moon · Christmas 2026 Pre-order</p>
+    </div>
+  </section>
+
+  <section id="positioning">
+    <div class="wrap">
+      <p class="eyebrow">Our Positioning</p>
+      <h2>One box, five crafts</h2>
+      <p class="lead">The coffee market is crowded. Most brands compete on origin, on light versus dark roast, on value for money.</p>
+      <p class="lead">Mount Sun Moon does not chase a single style. It is a curated platform. Good coffee comes in more than one form, and every roaster has their own fire and their own taste. So rather than one brand declaring one standard, we invited five artisans with very different lives behind them to interpret the land in their own way. Mount Sun Moon then selects, arranges and places their work in one box.</p>
+      <p class="lead">One box of drip-bag coffee, five flavours, laid out like a map. All you need is hot water and a cup to get to know five artisans, one at a time, and find the one you love. Together the five flavours stand for balance across the five elements: metal, wood, water, fire and earth.</p>
+      <h3 class="sub-h" style="margin-top:48px">How we differ from what's on the shelf</h3>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>Common choice</th><th>Where it falls short</th><th>What Mount Sun Moon holds to</th></tr></thead>
+          <tbody>
+            <tr><td>Chain-store or mass-market gift sets</td><td>Widely available but uniform in taste; the brand centres on the company, with little warmth from the people who make it.</td><td>Curated and signed: collect the craft of five independent roasters at once, every bag carrying a name and a story.</td></tr>
+            <tr><td>Single-roaster independent brands</td><td>Expert in their style, but bound to one shop's character, without a full contrast across layers of flavour.</td><td>A five-element matrix: crossing the lines between houses to draw a complete, balanced map of taste in one box.</td></tr>
+            <tr><td>Traditional festive gift boxes</td><td>Loud, elaborate, plastic-heavy packaging that loses its meaning once the holiday is over.</td><td>Quiet, minimal, literary: less plastic, cloth materials and a restrained palette of navy, gold and silver, made to stay with you day to day.</td></tr>
+            <tr><td>Brands built on packaging and hype</td><td>Buzz and price are pushed up by marketing, yet popular does not mean good, and expensive does not always taste better.</td><td>Back to the land and to purity: focused on layers of flavour, the artisan's spirit and everyday beauty, so every bag has a name that answers for it.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="wrap">
+      <p class="eyebrow">Our Story</p>
+      <h2>Heaven, earth and people in a name</h2>
+      <p class="lead">Sun, moon, mountain: three characters that paint a picture of heaven, earth and people.</p>
+      <div class="tdp">
+        <div><b>天</b><div><h3>Heaven · Sun and moon</h3><p>The fullest light by day, the soft moon by night, and the stars farther still. Light comes from above; it makes all things grow and gives time its rhythm.</p></div></div>
+        <div><b>地</b><div><h3>Earth · The mountain</h3><p>The mountain never speaks, yet it holds everything, and it has watched the sun and moon rise and set countless times. Coffee trees on its slopes take in the land and the essence of sun and moon, and that is where the taste of every bean begins.</p></div></div>
+        <div><b>人</b><div><h3>People · The artisans, and you with your cup</h3><p>Five artisans turn the land into flavour through fire. You, drinking this cup, are the final brushstroke of the painting. Heaven and earth give light and nourishment; people settle their hearts and become light themselves.</p></div></div>
+      </div>
+      <div class="cols">
+        <div><h3>In tune with heaven and earth</h3><p>We respect the land and the seasons, and draw out nature as it is. The turning of sun and moon is where Mount Sun Moon begins.</p></div>
+        <div><h3>One person, one flavour</h3><p>Every roaster has a name, a story and a fire of their own. We want you to know the people who make the coffee, not just a bag of coffee.</p></div>
+        <div><h3>Passing the light on</h3><p>Sun, moon and stars shine quietly, watching over every life on Earth from across the vast universe: people, animals and plants, mountains, rivers and forests. Mount Sun Moon wants to pass that light on, to the people who drink our coffee and to children. Every pre-order gives 5% of the product price to arts and music programmes in experimental education.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="spirit" class="spirit">
+    <div class="wrap">
+      <p class="eyebrow">Brand Spirit</p>
+      <h2>Still at heart as the mountain,<br>radiant in celestial light.</h2>
+      <p class="zh-line" lang="zh-Hant">山靜心安，不語亦有光。</p>
+      <p class="lead">"The benevolent delight in mountains," as the old saying goes. A mountain stands firm not because it escapes wind and rain, but because its roots run deep. The first thing Mount Sun Moon wants to say is about inner calm. Boil the water, wait, let the aroma rise, and sit down steady, like a mountain.</p>
+      <p class="lead">High on the mountain, coffee trees quietly receive the care of sun, moon and stars year after year, until they bear good beans. Steady as a mountain, quietly holding the light of sun and moon.</p>
+      <p class="lead">We want to take one more step. The light of sun and moon falls on us, but we carry light of our own too. Everyone shines. Not the brightness of a light bulb, but the warmth people feel around someone whose heart is settled and full of kindness and compassion, like a spring breeze. The mountain does not speak, yet it has light; a person need not speak to have light either.</p>
+      <p class="lead">So we hope this cup first helps you settle your heart, then lets you shine your own light, gently, like the sun, moon and stars, on the people around you and on the world.</p>
+      <p class="lead">Brewing yourself a cup every morning is a ritual, a taste, a set of values, and a way of living.</p>
+      <p class="en">Still at heart · radiant without a word</p>
+
+      <h3 class="sub-h" style="margin-top:56px">The meaning in the mark</h3>
+      <div class="cols two">
+        <div>
+          <h3>Two peaks, climbing high to see far</h3>
+          <p>The mountain line has two peaks, one after another, rising as if to lead people onward, to climb high and see far. The colour of the mountain and the sun comes from the golden yellow of the Loess Plateau: on metal it becomes a flowing, shimmering gold; on other materials it turns a deep, slightly mottled yellow, like the natural roughness of the earth. The moon is a clear, bright white, which on metal becomes a silvery glow.</p>
+        </div>
+        <div>
+          <h3>Beyond what we see, endless possibility</h3>
+          <p>The large gold circle at the summit is the sun; the smaller white circle in front is the bright moon. Offset from each other, the moon covers part of the sun, so what you see looks like a golden crescent. What the eye sees is not always the whole picture. May we look at the world with a wider view, enjoy what is beautiful, and imagine endless possibilities.</p>
+        </div>
+      </div>
+      <svg class="eclipse" viewBox="0 0 360 120" role="img" aria-label="The sun and moon overlapping off-centre to form a golden crescent">
+        <circle class="sun" cx="60" cy="48" r="36"/>
+        <circle class="moon" cx="180" cy="48" r="26"/>
+        <circle class="sun" cx="288" cy="50" r="36"/>
+        <circle class="moon" cx="302" cy="46.5" r="28"/>
+        <text class="lbl" x="60" y="108">Sun</text>
+        <text class="lbl" x="180" y="108">Moon</text>
+        <text class="lbl" x="300" y="108">Overlapped</text>
+      </svg>
+    </div>
+  </section>
+
+  <section id="artisans">
+    <div class="wrap">
+      <p class="eyebrow">The Artisans</p>
+      <h2>Five coffee artisans, five fires</h2>
+      <p class="sub-en">The Collector's Choices</p>
+      <p class="lead">Each artisan chose one signature bean and handed it to Mount Sun Moon to share one box.</p>
+
+      <article class="artisan" style="--tone: var(--sage)">
+        <div class="no">01<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">01</span><span class="pname">Emily</span></figure>
+        <div class="body">
+          <h3>Emily <small lang="zh-Hant">蔡詩敏</small></h3>
+          <p class="role">Roaster at YOLO's CAFE · Co-founder of YABOO Coffee</p>
+          <dl class="rows">
+            <dt>Profile</dt><dd>Certified barista, roaster and cupper, and an international examiner, with more than ten years in Taipei specialty coffee. Her rigorous craft anchors the flavour.</dd>
+            <dt>Bean</dt><dd>Kenya Kirinyaga AA Top, Washed</dd>
+            <dt>Roast</dt><dd>Light Roast<span class="roast" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span></dd>
+            <dt>In the cup</dt><dd>Clear in structure, bright and clean: pure caramel sweetness with elegant blackcurrant acidity, sour-plum juice and fruit. A benchmark cup with sweetness and acidity in just the right balance.</dd>
+            <dt class="theme">[Precision &amp; Maturity]</dt><dd class="verse">"In a precise fire, carving acidity into its purest, cleanest geometry."</dd>
+            <dt>Notes</dt><dd class="notes">Blackcurrant · Sour plum · Fruit</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--peach)">
+        <div class="no">02<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">02</span><span class="pname">Warren</span></figure>
+        <div class="body">
+          <h3>Warren <small lang="zh-Hant">陳啟仁</small></h3>
+          <p class="role">Owner of WAZZA Coffee · International certified examiner, judge and evaluator</p>
+          <dl class="rows">
+            <dt>Profile</dt><dd>Nearly 20 years in coffee: former Taiwan ambassador for the century-old Maxwell House brand, brand manager for SACHERER Swiss automatic coffee machines, and appointed partner of San-Yi International luxury cars and VISION premium bicycles. He brews specialty coffee into a poem.</dd>
+            <dt>Bean</dt><dd>WAZZA Classic Estate Blend: Sumatra Golden Mandheling, Guatemala Huehuetenango, Ethiopia Gotiti Yirgacheffe Natural G1, Colombia Supremo</dd>
+            <dt>Roast</dt><dd>Light-Medium Roast<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></dd>
+            <dt>In the cup</dt><dd>Longan honey woven with nutty almond; sweet cocoa and a hint of citrus in the middle; smooth on the palate, with a full, lingering sweet finish.</dd>
+            <dt class="theme">[Vitality &amp; Ease]</dt><dd class="verse">"With warm hand-brewed moments, living life as an unfolding poem."</dd>
+            <dt>Notes</dt><dd class="notes">Longan honey · Almond · Cocoa</dd>
+          </dl>
+          <div class="detail"><p class="detail-h">The blend and its flavour</p>
+            <dl>
+              <dt>Blend</dt><dd>Sumatra Golden Mandheling + Guatemala Huehuetenango + Ethiopia Gotiti Yirgacheffe Natural G1 + Colombia Supremo</dd>
+              <dt>Highlights</dt><dd>Longan honey, white truffle, sweet cocoa, chocolate, citrus, almond</dd>
+              <dt>Dry aroma</dt><dd>Sweetness like almond and white chocolate.</dd>
+              <dt>Wet aroma</dt><dd>Citrus, fruit and florals, with a faint hint of white truffle.</dd>
+              <dt>Opening</dt><dd>A bright but gentle acidity that melts as soon as you sip.</dd>
+              <dt>Middle</dt><dd>Round, smooth texture with rich layers.</dd>
+              <dt>Finish</dt><dd>Full and sweet, long-lasting, with nuts, sweet cocoa and longan honey.</dd>
+            </dl></div>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--indigo)">
+        <div class="no">03<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">03</span><span class="pname">Bao Ge</span></figure>
+        <div class="body">
+          <h3>Bao Ge <small lang="zh-Hant">王神寶 · 寶哥</small></h3>
+          <p class="role">Founder of Ka Shen Coffee Education Center · 2020 Schweitzer Beverage Master</p>
+          <dl class="rows">
+            <dt>Profile</dt><dd>A coffee practitioner who brings together farm, science, education and daily life. He created his own science-based healthy roasting curve, expressing the power of sincerity and the art of living.</dd>
+            <dt>Bean</dt><dd>Guatemala Huehuetenango, Washed</dd>
+            <dt>Roast</dt><dd>Medium-Dark Roast<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></dd>
+            <dt>In the cup</dt><dd>Layers unfold slowly like ripples on water: silky and smooth, with gentle, delicate acidity. For quiet days when you want to slow your breathing.</dd>
+            <dt class="theme">[Flow &amp; Nourishment]</dt><dd class="verse">"Letting coffee flow like water, nourishing every moment of everyday awareness."</dd>
+            <dt>Notes</dt><dd class="notes">Nuts · Toffee · Lightly sweet</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--sun)">
+        <div class="no">04<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">04</span><span class="pname">Dahe</span></figure>
+        <div class="body">
+          <h3>Dahe</h3>
+          <p class="role">Owner of NINECA STUDIO</p>
+          <dl class="rows">
+            <dt>Profile</dt><dd>Roasts in focus and stillness, in quiet dialogue with the green beans. Known for clean, pure flavours.</dd>
+            <dt>Bean</dt><dd>Honduras "Mountain Mist Awakening", Washed</dd>
+            <dt>Roast</dt><dd>Light-Medium Roast<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></dd>
+            <dt>In the cup</dt><dd>Deep caramel and honey with the sweetness of ripe fruit; round and soft on the palate with subtle layers, turning into a warm, lingering sweetness.</dd>
+            <dt class="theme">[Transformation &amp; Light]</dt><dd class="verse">"Through the focus of fire, gathering the sun's warmth into a cup that wakes the light within."</dd>
+            <dt>Notes</dt><dd class="notes">Caramel · Honey · Orange</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--clay)">
+        <div class="no">05<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">05</span><span class="pname">Elias</span></figure>
+        <div class="body">
+          <h3>Elias</h3>
+          <p class="role">Founder of Lunas Coffee (Lunas Corp., Ltd)</p>
+          <dl class="rows">
+            <dt>Profile</dt><dd>From a coffee family in the fertile highlands of Central America, heir to the René family estate in Honduras. He holds to natural, chemical-free contract farming and ships green beans from the estate directly to Taiwan.</dd>
+            <dt>Bean</dt><dd>Honduras La Paz, Finca Iris, Orange Anaerobic Honey</dd>
+            <dt>Roast</dt><dd>Medium Roast<span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></dd>
+            <dt>In the cup</dt><dd>Earthy and full-bodied, with a solid base of deep nuts and dark cocoa, carrying the steady weight of volcanic soil.</dd>
+            <dt class="theme">[Grounding &amp; Terroir]</dt><dd class="verse">"Rooted in the fertile highlands of Honduras, carrying the earth's most honest, gentle confession."</dd>
+            <dt>Notes</dt><dd class="notes">Red apple · Honey · Lime · Almond</dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="origins">
+    <div class="wrap">
+      <p class="eyebrow">Origin Notes</p>
+      <h2>Origin notes: which mountain your cup comes from</h2>
+      <p class="lead">The beans our five artisans chose come from the highlands of six countries on three continents. Get to know a bean's home, and you understand the taste in your cup a little better.</p>
+      <div class="origins">
+        <article class="origin">
+          <span class="ctry">Kenya</span>
+          <h3>Kirinyaga</h3>
+          <p class="alt">Approx. 1,600–1,900 m above sea level</p>
+          <p class="txt">On the southern slopes of Mount Kenya, red volcanic soil gives a bright acidity. Kenya excels at washed processing, often with blackcurrant and berry notes. AA is the top grade, based on bean size.</p>
+          <p class="who"><span style="--c: var(--sage)">Emily</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Indonesia</span>
+          <h3>Sumatra · Mandheling</h3>
+          <p class="alt">North Sumatra</p>
+          <p class="txt">Mandheling takes its name from the Mandailing people of North Sumatra. Beans here are often wet-hulled, giving a heavy body with cocoa and herbal notes. Golden Mandheling is a select grade, hand-sorted several more times.</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Guatemala</span>
+          <h3>Huehuetenango</h3>
+          <p class="alt">Approx. 1,500–2,000 m above sea level</p>
+          <p class="txt">In the north-western highlands bordering Mexico, one of Guatemala's highest-growing regions. Hot, dry air from the Mexican plains keeps the high slopes frost-free, giving clean flavours and full sweetness.</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span><span style="--c: var(--indigo)">Bao Ge</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Ethiopia</span>
+          <h3>Yirgacheffe</h3>
+          <p class="alt">Approx. 1,700–2,200 m above sea level</p>
+          <p class="txt">The birthplace of Arabica coffee. Yirgacheffe, in the southern highlands, is famous for florals and citrus; natural processing adds a ripe-fruit sweetness. G1 is Ethiopia's highest grade of green coffee.</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Colombia</span>
+          <h3>Supremo</h3>
+          <p class="alt">The Andes</p>
+          <p class="txt">Supremo is not a region but a Colombian size grade, meaning large beans of screen 17 and above. The Andes run the length of the country, giving balanced flavour and round sweetness.</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Honduras</span>
+          <h3>La Paz</h3>
+          <p class="alt">Montecillos range, approx. 1,400–1,550 m above sea level</p>
+          <p class="txt">An important coffee country in Central America whose specialty coffee has improved fast in recent years. Elias's family estate is in La Paz in the south-west, where smallholders and family farms often try experimental processes such as honey and anaerobic fermentation.</p>
+          <p class="who"><span style="--c: var(--sun)">Dahe</span><span style="--c: var(--clay)">Elias</span></p>
+        </article>
+      </div>
+      <p class="fine">Altitudes are typical ranges for each region; actual figures vary by lot and estate.</p>
+    </div>
+  </section>
+
+  <section id="plans">
+    <div class="wrap">
+      <p class="eyebrow">Pre-order Collection</p>
+      <h2>2026 Year-end Debut · Christmas Pre-order</h2>
+      <p class="lead">The first pre-order round runs until 25 November. Every pre-order gives 5% of the product price to arts and music programmes for children.</p>
+      <figure class="giftfig"><img src="../assets/gift.jpg" alt="Mount Sun Moon Christmas gift box: gifts under a Christmas tree, drip-bag coffee and Mount Sun Moon senbei" loading="lazy" width="1200" height="800"><figcaption>Christmas limited gift box for pre-order. Final packaging may differ.</figcaption></figure>
+      <div class="plans">
+        <div class="plan">
+          <span class="tag">Plan 1</span>
+          <h3>5-Bag Discovery Set</h3>
+          <p class="price"><small>NT$</small>265</p>
+          <ul>
+            <li>1 bag from each of the five roasters, 5 bags in all</li>
+            <li>Paper box with carry cord, no plastic bag</li>
+          </ul>
+          <p class="for">For a first taste, or your own morning ritual.</p>
+        </div>
+        <div class="plan feature">
+          <span class="tag">Plan 2</span>
+          <h3>10-Bag Gift Set</h3>
+          <p class="price"><small>NT$</small>520</p>
+          <ul>
+            <li>2 bags from each of the five roasters, 10 bags in all</li>
+            <li>Comes with a natural cotton drawstring bag</li>
+          </ul>
+          <p class="for">For gifting or for yourself; for collectors who value everyday beauty.</p>
+        </div>
+        <div class="plan">
+          <span class="tag">Plan 3 · Christmas Limited</span>
+          <h3>Christmas Signature Gift Box</h3>
+          <p class="price"><small>NT$</small>1,180</p>
+          <ul>
+            <li>2 bags from each of the five roasters, 10 bags in all</li>
+            <li>Limited-edition Kobayashi Senbei set</li>
+            <li>Mount Sun Moon portable gooseneck pour-over kettle</li>
+            <li>Gift-box packaging with a Mount Sun Moon Christmas card</li>
+          </ul>
+          <p class="for">For gift exchanges, year-end corporate thank-yous and dedicated specialty-coffee lovers.</p>
+        </div>
+      </div>
+      <p class="fine">Single bag NT$55; the 5-bag set works out at about NT$53 per bag; the 10-bag set about NT$52 per bag, plus a natural cotton drawstring bag.</p>
+      <p class="fine">Corporate orders: special corporate pricing from 10 sets; custom hang tags available from 50 boxes.</p>
+    </div>
+  </section>
+
+  <section id="giving" class="giving">
+    <div class="wrap">
+      <p class="eyebrow">Impact &amp; Giving</p>
+      <h2>Christmas Glimmer Project</h2>
+      <p class="big">5%<small>of every pre-order</small></p>
+      <p class="pull">A good cup of coffee brings light to life, and lights up children's dreams of art and music.</p>
+      <p class="lead">For every Mount Sun Moon Christmas pre-order, we give 5% of the product price (excluding shipping) directly to in-depth arts and music programmes at Lumière International Academy (LIA), an experimental education school. Just as roasters use their passion to bring out each bean's soul, every child deserves to be gently inspired through brushes, notes and experiences of beauty.</p>
+      <p class="lead">This winter, the coffee in your hands is a journey of flavour, and an art gift for children.</p>
+      <p class="fine">Once the pre-order closes, we will publish the amount given and a record of the programmes on this site.</p>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="wrap">
+      <p class="eyebrow">Ordering &amp; FAQ</p>
+      <h2>Ordering information</h2>
+      <div class="steps">
+        <div><b>Until 11/25</b><span>First pre-order round, open now.</span></div>
+        <div><b>From 12/01</b><span>Orders ship in the order received; we keep taking orders while stock lasts.</span></div>
+        <div><b>By 12/18</b><span>Orders placed and paid by this date are guaranteed to arrive before Christmas.</span></div>
+      </div>
+      <div class="ordering">
+        <b>How to order</b>
+        <span class="todo">The order link and payment options will be posted here once confirmed.</span>
+      </div>
+      <div>
+        <details>
+          <summary>How do shipping and delivery work?</summary>
+          <p>Free shipping on orders of NT$2,000 or more; below that, delivery within main-island Taiwan at room temperature is NT$85. Orders ship from 1 December in the order received, and we keep taking orders while stock lasts. Orders placed after 18 December cannot be guaranteed to arrive before Christmas.</p>
+        </details>
+        <details>
+          <summary>Can companies order in bulk?</summary>
+          <p>Special corporate pricing from 10 sets; custom hang tags from 50 boxes. A corporate enquiry form will be added once ordering opens.</p>
+        </details>
+        <details>
+          <summary>How long does the coffee keep?</summary>
+          <p>12 months unopened at room temperature. Store in a cool, dry place away from heat, humidity and direct sunlight. Brew soon after opening.</p>
+        </details>
+        <details>
+          <summary>How do I brew it best?</summary>
+          <p>Tap the bag so the grounds settle, then tear the filter open along the dotted line. Pull out the side hooks and hang the bag steadily over your cup. Pour a little hot water and let it bloom for 20 seconds, then pour in stages up to 150–180 ml. Lift out the filter, let it drain gently, and enjoy. Recommended water temperature: 88–92°C.</p>
+        </details>
+        <details>
+          <summary>Product information</summary>
+          <dl>
+            <dt>Product</dt><dd>Mount Sun Moon Specialty Drip Coffee</dd>
+            <dt>Ingredients</dt><dd>100% ground coffee</dd>
+            <dt>Food additives</dt><dd>None</dd>
+            <dt>Net weight</dt><dd>10 g ± 1 g per bag (single pack)</dd>
+            <dt>Bean origin</dt><dd>Kenya, Honduras, Guatemala and others, as labelled for each</dd>
+            <dt>Made in</dt><dd>Taiwan</dd>
+            <dt>Best before</dt><dd>Printed at the seal (year/month/day)</dd>
+            <dt>Shelf life</dt><dd>12 months (unopened, room temperature)</dd>
+            <dt>Food business registration</dt><dd>In progress</dd>
+            <dt>Product liability insurance</dt><dd>Insured for NT$10,000,000</dd>
+            <dt>Produced by</dt><dd>Fetod Ltd. (費陀有限公司)</dd>
+          </dl>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="flogo" src="../assets/logo.png" alt="Mount Sun Moon" width="420" height="449">
+    <p>Produced by Fetod Ltd. · mountsunmoon.com</p>
+    <p>Business income supports the education programmes of <a href="https://www.lia.tw" target="_blank" rel="noopener">Lumière International Academy (LIA)</a></p>
+    <p><a href="https://fetod.github.io/everlume/" target="_blank" rel="noopener">Read more: Everlume Global and the founder behind Mount Sun Moon →</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="日月山 Mount Sun Moon 藏家系列圣诞预购：五位烘豆师、五种火候、一个盒子。每笔预购提拨商品售价 5% 支持孩子的艺术与音乐课程。">
+<title>日月山 Mount Sun Moon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@400;600&family=Noto+Serif+TC:wght@400&display=swap">
+<style>
+/* Layout: one long, quiet scroll. Charcoal ground, gold only for the mark and hairlines, roasters introduced as a ledger of rows rather than cards. */
+:root {
+  --ink: #141413;
+  --ink-2: #1c1b19;
+  --line: #34312c;
+  --paper: #ece6da;
+  --mute: #a39b8c;
+  --gold: #c9a45c;
+  --moon: #f7f3ea;
+  --sage: #2f5d50;
+  --peach: #e0867a;
+  --indigo: #4a5aa8;
+  --sun: #f2c230;
+  --clay: #8a6a8c;
+  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --latin: "Cormorant Garamond", "Times New Roman", serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+a { color: inherit; }
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.5; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.latin { font-family: var(--latin); letter-spacing: 0.08em; }
+.eyebrow { font-family: var(--latin); font-size: 15px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+section { padding-block: clamp(64px, 11vw, 120px); border-top: 1px solid var(--line); }
+section > .wrap > * + * { margin-top: 28px; }
+h2 { font-size: clamp(26px, 4.4vw, 40px); }
+.lead { color: var(--mute); max-width: 36em; }
+
+/* nav */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--ink); }
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--ink) 92%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 12px; }
+.brand { text-decoration: none; display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+.brand img { height: 40px; width: auto; display: block; }
+.flogo { width: min(190px, 56%); height: auto; display: block; margin: 0 auto 28px; }
+.tdp > div { display: grid; grid-template-columns: 64px 1fr; gap: 6px 22px; padding: 24px 0; border-top: 1px solid var(--line); }
+.tdp > div:last-child { border-bottom: 1px solid var(--line); }
+.tdp b { font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.2; color: var(--gold); }
+.tdp h3 { font-size: 19px; margin-bottom: 6px; }
+.tdp p { color: var(--mute); font-size: 15px; max-width: 38em; }
+.tdp > div > * { min-width: 0; }
+.brand b { display: block; font-family: var(--serif); font-weight: 400; letter-spacing: 0.3em; font-size: 16px; line-height: 1.25; }
+.brand small { display: block; font-family: var(--latin); letter-spacing: 0.12em; font-size: 13px; line-height: 1.2; color: var(--mute); }
+.ln { fill: none; stroke: var(--gold); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.sun { fill: var(--gold); }
+.moon { fill: var(--moon); }
+nav { display: flex; gap: 22px; flex-wrap: wrap; justify-content: flex-end; font-size: 13px; }
+nav a { text-decoration: none; color: var(--mute); padding: 4px 0; }
+nav a:hover, nav a:focus-visible { color: var(--paper); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+@media (max-width: 940px) { nav { display: none; } }
+
+/* hero */
+.hero { border-top: 0; padding-block: clamp(48px, 9vw, 96px) clamp(56px, 9vw, 96px); text-align: center; }
+.hero svg { width: min(520px, 86%); height: auto; display: block; margin: 0 auto; }
+.hero h1 { font-size: clamp(30px, 6.2vw, 58px); letter-spacing: 0.14em; margin-top: 36px; }
+.hero .sub { margin-top: 20px; color: var(--mute); }
+.hero .sub span { display: block; }
+.cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 40px; }
+.btn { display: inline-block; padding: 12px 28px; border: 1px solid var(--gold); color: var(--paper); text-decoration: none; font-size: 14px; letter-spacing: 0.2em; transition: background .25s, color .25s; }
+.btn:hover, .btn:focus-visible { background: var(--gold); color: var(--ink); }
+.btn.quiet { border-color: var(--line); color: var(--mute); }
+.btn.quiet:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.ridge { display: block; width: 100%; height: auto; margin-top: 56px; }
+
+/* story */
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; padding-top: 12px; }
+.cols > div { border-top: 1px solid var(--gold); padding-top: 18px; min-width: 0; }
+.cols h3 { font-size: 20px; margin-bottom: 10px; }
+.cols p { color: var(--mute); font-size: 15px; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; gap: 28px; } }
+.pull { font-family: var(--serif); font-size: clamp(20px, 3.2vw, 28px); line-height: 1.8; max-width: 22em; }
+
+/* difference table */
+.tablebox { overflow-x: auto; border-top: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14.5px; }
+th, td { text-align: left; vertical-align: top; padding: 16px 18px 16px 0; border-bottom: 1px solid var(--line); line-height: 1.8; }
+th { font-family: var(--latin); font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mute); font-weight: 500; }
+td:first-child { font-family: var(--serif); white-space: nowrap; }
+td:nth-child(2) { color: var(--mute); }
+td:nth-child(3) { color: var(--paper); }
+
+/* brand spirit */
+.spirit .en { font-family: var(--latin); font-style: italic; font-size: clamp(24px, 4.2vw, 40px); line-height: 1.4; color: var(--gold); max-width: 20em; letter-spacing: 0.03em; }
+.spirit .zh-line { font-family: var(--serif); font-size: clamp(22px, 3.6vw, 32px); letter-spacing: 0.12em; }
+.cols.two { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .cols.two { grid-template-columns: 1fr; } }
+.eclipse { width: min(420px, 100%); height: auto; display: block; }
+.lbl { fill: var(--mute); font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; text-anchor: middle; }
+.sub-h { font-family: var(--serif); font-size: clamp(20px, 3vw, 26px); }
+
+/* artisans: one full panel per artisan, every confirmed field shown */
+.artisan { display: grid; grid-template-columns: 120px 1fr; gap: 12px 36px; padding-block: 56px; border-top: 1px solid var(--line); }
+.artisan:last-of-type { border-bottom: 1px solid var(--line); }
+.artisan .no { font-family: var(--latin); font-size: 54px; line-height: 1; color: var(--line); }
+.artisan .no i { display: block; width: 36px; height: 4px; margin-top: 14px; background: var(--tone); }
+.artisan h3 { font-size: 26px; }
+.artisan h3 small { font-family: var(--sans); font-size: 14px; color: var(--mute); margin-left: 10px; font-weight: 300; }
+.artisan .role { color: var(--mute); font-size: 14px; margin-top: -4px; }
+.artisan .hue { font-size: 13px; color: var(--mute); display: flex; align-items: center; gap: 8px; }
+.artisan .hue .sw { width: 12px; height: 12px; border-radius: 50%; background: var(--tone); }
+.rows { display: grid; grid-template-columns: 6.5em 1fr; gap: 14px 22px; margin: 8px 0 0; max-width: 46em; }
+.rows dt { color: var(--gold); font-size: 14px; letter-spacing: 0.12em; padding-top: 2px; }
+.rows dt.latin { font-family: var(--latin); font-size: 15px; letter-spacing: 0.2em; }
+.rows dd { margin: 0; font-size: 15px; }
+.rows dd em { font-style: normal; font-family: var(--serif); color: var(--paper); margin-right: 4px; }
+.rows .en { font-family: var(--latin); color: var(--mute); font-size: 15px; margin-left: 6px; }
+.rows .verse { font-family: var(--serif); color: var(--paper); }
+.rows .notes { font-family: var(--serif); letter-spacing: 0.08em; }
+.roast { display: inline-flex; gap: 3px; vertical-align: middle; margin-left: 10px; }
+.roast i { width: 14px; height: 4px; background: var(--line); }
+.roast i.on { background: var(--paper); }
+.detail { margin-top: 10px; padding: 18px 22px; background: var(--ink-2); border-left: 2px solid var(--tone); max-width: 46em; }
+.detail-h { font-family: var(--serif); font-size: 16px; margin: 0 0 10px; }
+.detail dl { display: grid; grid-template-columns: 5em 1fr; gap: 8px 18px; margin: 0; font-size: 14px; color: var(--mute); }
+.detail dt { color: var(--paper); }
+.detail dd { margin: 0; }
+.artisan > * { min-width: 0; }
+.artisan .body { display: flex; flex-direction: column; gap: 10px; }
+@media (max-width: 640px) {
+  .artisan { grid-template-columns: 1fr; padding-block: 40px; }
+  .artisan .no { display: flex; align-items: center; gap: 16px; font-size: 40px; } .artisan .no i { margin-top: 0; }
+  .rows { grid-template-columns: 1fr; gap: 2px; } .rows dd { margin-bottom: 12px; }
+  .detail dl { grid-template-columns: 4em 1fr; }
+}
+
+/* livelier artisan panels */
+.artisan { grid-template-columns: 120px 1fr 220px; }
+.artisan .no i { width: 56px; height: 14px; margin-top: 16px; }
+.artisan .body { grid-column: 2; grid-row: 1; }
+.portrait { grid-column: 3; grid-row: 1; align-self: start; position: sticky; top: 96px; margin: 0; aspect-ratio: 4 / 5; overflow: hidden;
+  background: linear-gradient(165deg, var(--tone) 0%, color-mix(in srgb, var(--tone) 55%, #0d0d0c) 100%); color: rgba(255,255,255,0.32); }
+.portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.portrait .pm { position: absolute; left: 10%; right: 10%; bottom: 26%; width: 80%; }
+.portrait .pno { position: absolute; top: 14px; left: 16px; font-family: var(--latin); font-size: 15px; letter-spacing: 0.2em; color: rgba(255,255,255,0.75); }
+.portrait .pname { position: absolute; left: 16px; bottom: 14px; font-family: var(--latin); font-size: 30px; line-height: 1; color: #fff; text-shadow: 0 1px 12px rgba(0,0,0,0.25); }
+.portrait { position: sticky; }
+.rows dt { border-left: 3px solid var(--tone); padding-left: 10px; }
+@media (max-width: 900px) {
+  .artisan { grid-template-columns: 96px 1fr; }
+  .portrait { grid-column: 1 / -1; grid-row: auto; position: relative; top: 0; aspect-ratio: 16 / 7; order: -1; }
+  .artisan .no { grid-row: auto; }
+}
+@media (max-width: 640px) { .artisan { grid-template-columns: 1fr; } .artisan .body { grid-column: 1; grid-row: auto; } .portrait { grid-column: 1; aspect-ratio: 16 / 8; } .portrait .pno { display: none; } .portrait .pm { left: auto; right: 6%; width: 52%; bottom: 14%; } }
+
+.rows dt.theme { border-left: 0; padding-left: 0; color: var(--paper); font-family: var(--serif); letter-spacing: 0.04em; white-space: nowrap; }
+.sub-en { font-family: var(--latin); font-style: italic; font-size: 22px; letter-spacing: 0.04em; color: var(--gold); }
+section > .wrap > .sub-en + .lead { margin-top: 6px; }
+/* origin notes */
+.origins { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); }
+.origin { padding: 28px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.origin:nth-child(3n) { border-right: 0; }
+.origin:nth-last-child(-n+3) { border-bottom: 0; }
+.origin .ctry { font-family: var(--latin); font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+.origin h3 { font-size: 20px; }
+.origin .alt { font-size: 13px; color: var(--mute); }
+.origin p.txt { font-size: 14.5px; color: var(--mute); }
+.origin .who { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13.5px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.origin .who span::before { content: ""; display: inline-block; width: 14px; height: 6px; margin-right: 6px; vertical-align: middle; background: var(--c); }
+@media (max-width: 860px) { .origins { grid-template-columns: 1fr 1fr; } .origin:nth-child(3n) { border-right: 1px solid var(--line); } .origin:nth-child(2n) { border-right: 0; } .origin:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); } .origin:nth-last-child(-n+2) { border-bottom: 0; } }
+@media (max-width: 560px) { .origins { grid-template-columns: 1fr; } .origin { border-right: 0 !important; border-bottom: 1px solid var(--line) !important; } .origin:last-child { border-bottom: 0 !important; } }
+.note { font-size: 14px; color: var(--mute); border-left: 1px solid var(--gold); padding-left: 16px; max-width: 40em; }
+
+/* plans */
+.giftfig { margin: 0 0 28px; }
+.giftfig img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.giftfig figcaption { font-size: 13px; color: var(--mute); margin-top: 8px; }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); }
+.plan { padding: 32px 26px 30px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.plan + .plan { border-left: 1px solid var(--line); }
+.plan.feature { background: var(--ink-2); }
+.plan .tag { font-family: var(--latin); letter-spacing: 0.22em; font-size: 14px; color: var(--gold); text-transform: uppercase; }
+.plan h3 { font-size: 22px; }
+.plan .price { font-family: var(--latin); font-size: 44px; line-height: 1; letter-spacing: 0.02em; font-variant-numeric: tabular-nums; }
+.plan .price small { font-size: 15px; margin-right: 6px; letter-spacing: 0.15em; color: var(--mute); }
+.plan ul { list-style: none; padding: 0; margin: 0; font-size: 14.5px; color: var(--mute); display: grid; gap: 6px; }
+.plan ul li::before { content: "—"; color: var(--gold); margin-right: 10px; }
+.plan .for { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--mute); }
+@media (max-width: 860px) { .plans { grid-template-columns: 1fr; } .plan + .plan { border-left: 0; border-top: 1px solid var(--line); } }
+.fine { font-size: 13.5px; color: var(--mute); }
+
+/* giving */
+.giving { background: var(--ink-2); }
+.giving .big { font-family: var(--latin); font-size: clamp(64px, 14vw, 140px); line-height: 1; color: var(--gold); letter-spacing: 0.02em; }
+.giving .big small { font-family: var(--serif); font-size: 0.22em; margin-left: 12px; color: var(--paper); letter-spacing: 0.1em; }
+
+/* order */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.steps div { border-top: 1px solid var(--line); padding-top: 14px; min-width: 0; }
+.steps b { display: block; font-family: var(--latin); font-size: 30px; font-weight: 400; color: var(--gold); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.steps span { color: var(--mute); font-size: 14.5px; }
+@media (max-width: 640px) { .steps { grid-template-columns: 1fr; gap: 18px; } }
+.ordering { border: 1px dashed var(--gold); padding: 22px 24px; max-width: 40em; }
+.ordering b { font-weight: 500; font-family: var(--serif); }
+.ordering .todo { display: block; color: var(--mute); font-size: 14px; margin-top: 6px; }
+details { border-top: 1px solid var(--line); }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; padding: 18px 0; font-family: var(--serif); font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--gold); font-family: var(--latin); font-size: 22px; line-height: 1.3; }
+details[open] summary::after { content: "−"; }
+details p { padding: 0 0 20px; color: var(--mute); font-size: 15px; max-width: 42em; }
+dl { display: grid; grid-template-columns: 8.5em 1fr; gap: 10px 20px; font-size: 14.5px; margin: 0; padding-bottom: 20px; }
+dt { color: var(--mute); }
+dd { margin: 0; }
+@media (max-width: 560px) { dl { grid-template-columns: 1fr; gap: 2px; } dd { margin-bottom: 10px; } }
+
+footer { border-top: 1px solid var(--line); padding-block: 48px 64px; text-align: center; color: var(--mute); font-size: 13.5px; }
+footer .wrap > * + * { margin-top: 10px; }
+footer .mark { font-family: var(--serif); color: var(--paper); letter-spacing: 0.4em; font-size: 16px; }
+footer a { color: var(--mute); }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+
+/* language switcher */
+.langs { display: flex; gap: 2px; font-size: 12px; letter-spacing: 0.06em; flex-shrink: 0; }
+.langs a { text-decoration: none; color: var(--mute); padding: 4px 7px; border: 1px solid transparent; }
+.langs a:hover, .langs a:focus-visible { color: var(--paper); }
+.langs a[aria-current] { color: var(--gold); border-color: var(--line); }
+header nav { margin-left: auto; }
+@media (max-width: 420px) { .langs a { padding: 4px 5px; } .brand small { display: none; } }
+
+:root { --serif: "Noto Serif SC", "Songti SC", "SimSun", serif; --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; }
+.brand b, .tdp b { font-family: "Noto Serif TC", "Noto Serif SC", serif; }
+</style>
+<link rel="alternate" hreflang="zh-Hant" href="https://mountsunmoon.com/">
+<link rel="alternate" hreflang="zh-Hans" href="https://mountsunmoon.com/zh-hans/">
+<link rel="alternate" hreflang="en" href="https://mountsunmoon.com/en/">
+<link rel="alternate" hreflang="ja" href="https://mountsunmoon.com/ja/">
+<link rel="alternate" hreflang="x-default" href="https://mountsunmoon.com/">
+
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="日月山 Mount Sun Moon 回到顶部">
+      <img src="../assets/mark.png" alt="" width="62" height="40">
+      <span><b>日月山</b><small>Mount Sun Moon</small></span>
+    </a>
+    <nav aria-label="主菜单">
+      <a href="#positioning">品牌定位</a>
+      <a href="#story">品牌故事</a>
+      <a href="#spirit">品牌精神</a>
+      <a href="#artisans">手艺人</a>
+      <a href="#origins">产区手札</a>
+      <a href="#plans">藏家预购</a>
+      <a href="#giving">圣诞微光</a>
+      <a href="#order">订购须知</a>
+    </nav>
+    <div class="langs" aria-label="Language"><a href="../" hreflang="zh-Hant" lang="zh-Hant">繁中</a><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" aria-current="page">简中</a><a href="../en/" hreflang="en" lang="en">EN</a><a href="../ja/" hreflang="ja" lang="ja">日本語</a></div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <svg viewBox="0 0 600 340" role="img" aria-label="日月山标志：两座山峰，山顶右上方是金色太阳与较小的白色月轮">
+        <circle class="sun" cx="430" cy="78" r="38"/>
+        <circle class="moon" cx="450" cy="72" r="33"/>
+        <path class="ln" d="M20 330 C75 330 125 270 166 226 C182 208 196 208 208 224 C232 254 252 270 270 268 C304 264 332 192 362 150 C376 130 390 128 402 146 C440 204 486 322 570 330"/>
+      </svg>
+      <h1>山不说话，静承日月光芒。</h1>
+      <p class="sub"><span>藏家级精品咖啡 · 五行平衡风味地图</span><span>一杯好咖啡，让生活更有光。</span></p>
+      <div class="cta">
+        <a class="btn" href="#plans">探索五行预购方案</a>
+        <a class="btn quiet" href="#artisans">阅读五位手艺人的故事</a>
+      </div>
+      <p class="eyebrow" style="margin-top:56px">Mount Sun Moon · Christmas 2026 Pre-order</p>
+    </div>
+  </section>
+
+  <section id="positioning">
+    <div class="wrap">
+      <p class="eyebrow">Our Positioning</p>
+      <h2>一个盒子，五种手艺</h2>
+      <p class="lead">咖啡市场很满，大多数人都在比产区、比深浅烘焙、比性价比。</p>
+      <p class="lead">日月山没有走向单一风格，而是做一个“策展型平台”。好咖啡不只有一种样子，每位烘豆师都有自己的火候与品味。与其由一个品牌说一种标准，不如邀请五位人生阅历各异的手艺人，各自诠释风土，再由日月山挑选、整理，放进同一个盒子。</p>
+      <p class="lead">一盒挂耳咖啡，五种风味，像一张风味地图。只要一杯热水、一个杯子，就能慢慢认识五位手艺人，也找到自己喜欢的那一种。五种风味放在一起，取金、木、水、火、土的整体平衡之意。</p>
+      <h3 class="sub-h" style="margin-top:48px">和市场上的选择，有什么不一样</h3>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>市场常见选择</th><th>现有模式的局限</th><th>日月山的策展坚持</th></tr></thead>
+          <tbody>
+            <tr><td>连锁或量贩节日礼盒</td><td>渠道广但风味同质，品牌焦点集中在企业端，缺少手艺人的温度。</td><td>大师署名策展：一次收藏五位独立烘豆师的火候，每包都有名字与故事。</td></tr>
+            <tr><td>单一烘豆师独立品牌</td><td>风味专精，但受限于单一门店风格，缺少多层次风味的完整对比。</td><td>五行平衡矩阵：打破门户界线，以一个盒子拼绘出完整而平衡的味觉地图。</td></tr>
+            <tr><td>传统节日伴手礼</td><td>外包装热闹繁复、塑料感重，节日过后就失去情感连接。</td><td>极简低调文艺：减塑布质、藏青金银的克制美学，能长久陪伴日常。</td></tr>
+            <tr><td>靠包装与营销炒作的品牌</td><td>声量与价格被宣传推高，但热门不一定代表品质好，贵也不一定好喝。</td><td>回归风土与纯粹：专注于风味层次、手艺人精神与生活美感，让每一包咖啡都有名字可以负责。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="wrap">
+      <p class="eyebrow">Our Story</p>
+      <h2>名字里的天、地、人</h2>
+      <p class="lead">日、月、山，三个字是一幅天、地、人的画。</p>
+      <div class="tdp">
+        <div><b>天</b><div><h3>日与月</h3><p>白昼有极阳之光，夜里有柔润之月，还有更远的星辰。光从天上来，让万物生长，也给时间一个节律。</p></div></div>
+        <div><b>地</b><div><h3>山</h3><p>山不说话，却承载一切，看过千万次日升月落。山上的咖啡树承接风土与日月精华，才有每一颗豆子的味道。</p></div></div>
+        <div><b>人</b><div><h3>手艺人与喝咖啡的你</h3><p>五位手艺人用火候，把风土变成味道。喝下这杯咖啡的你，是这幅画的最后一笔。天地给了光与养分，人用心安住，也成为光。</p></div></div>
+      </div>
+      <div class="cols">
+        <div><h3>顺应天地</h3><p>尊重风土与时序，萃取自然本来的样子。日与月的交替，是日月山的起点。</p></div>
+        <div><h3>一人一味</h3><p>每位烘豆师都有自己的名字、故事与火候。让人认识做咖啡的“人”，而不只是一包咖啡。</p></div>
+        <div><h3>把光传下去</h3><p>日月星辰静静放光，从浩瀚宇宙眷顾着地球上的每一个生命，加持着人，也加持着动物花草、山川流水与森林。日月山也想把这份光传下去，传给喝咖啡的人，也传给孩子们。每一份预购，提拨商品售价的 5% 支持实验教育的艺术与音乐课程。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="spirit" class="spirit">
+    <div class="wrap">
+      <p class="eyebrow">Brand Spirit</p>
+      <h2>山静心安，不语亦有光。</h2>
+      <p class="en">Still at heart as the mountain,<br>radiant in celestial light.</p>
+      <p class="lead">仁者乐山。山不动，不是因为没有风雨，而是根扎得深。日月山想说的第一件事，是内心的安定。烧水、等待、香气升起，让自己像山一样，稳稳地坐下来。</p>
+      <p class="lead">高山上的咖啡树，一年一年安静地承接日月星辰的照拂，才长成一颗颗好豆子。这是“安定如山，静承日月光芒”。</p>
+      <p class="lead">我们还想再往前走一步。日月的光照在我们身上，其实我们自己也有光。每个人都自带光芒，那不是电灯泡那种亮，而是内心安定、带着慈心与悲心时，身边的人会感觉到的如沐春风。山不说话，却也有光；人不说话，也有光。</p>
+      <p class="lead">所以这杯咖啡，希望先陪你把心安住，再让你像日月星辰一样，把自己的光轻轻照向身边的人与这个世界。</p>
+      <p class="lead">每天早晨给自己冲一杯咖啡，是一种仪式，一种品味，一种价值观，也是一种生活态度。</p>
+      <p class="zh-line">山静心安 · 不语亦有光</p>
+
+      <h3 class="sub-h" style="margin-top:56px">图腾里的心意</h3>
+      <div class="cols two">
+        <div>
+          <h3>两座山峰，登高望远</h3>
+          <p>山线有两座山峰，一座接着一座往上走，仿佛引领人向前行，登高望远。山色与日色，取自黄土高原的金黄：在金属材质上，是流光溢彩的金；在非金属材质上，转为深浓而略带斑驳的黄，如同大地本有的粗粝质感。月色则是皎洁的白，在金属材质上，映成银白的清辉。</p>
+        </div>
+        <div>
+          <h3>所见之外，有无限可能</h3>
+          <p>山顶的金色大圆是太阳，前面较小的白色圆是皎洁的明月。日与月错位，太阳被遮去一部分，看起来就像一弯金色的月牙。眼睛看到的，不一定是完整的样子。愿我们用更开阔的视角看世界，欣赏美好，想象无限可能。</p>
+        </div>
+      </div>
+      <svg class="eclipse" viewBox="0 0 360 120" role="img" aria-label="太阳与月亮错位叠合，形成金色月牙的示意图">
+        <circle class="sun" cx="60" cy="48" r="36"/>
+        <circle class="moon" cx="180" cy="48" r="26"/>
+        <circle class="sun" cx="288" cy="50" r="36"/>
+        <circle class="moon" cx="302" cy="46.5" r="28"/>
+        <text class="lbl" x="60" y="108">太阳</text>
+        <text class="lbl" x="180" y="108">月亮</text>
+        <text class="lbl" x="300" y="108">错位叠合</text>
+      </svg>
+    </div>
+  </section>
+
+  <section id="artisans">
+    <div class="wrap">
+      <p class="eyebrow">The Artisans</p>
+      <h2>五位咖啡手艺人，五种火候</h2>
+      <p class="sub-en">The Collector's Choices</p>
+      <p class="lead">每位手艺人各选一款代表豆，交给日月山收进同一个盒子。</p>
+
+      <article class="artisan" style="--tone: var(--sage)">
+        <div class="no">01<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">01</span><span class="pname">Emily</span></figure>
+        <div class="body">
+          <h3>蔡诗敏 <small class="latin">Emily</small></h3>
+          <p class="role">YOLO's CAFE 烘豆师 · 鸦埠咖啡 YABOO 联合创始人</p>
+          <dl class="rows">
+            <dt>大师侧写</dt><dd>拥有咖啡师、烘豆师、杯测师三项证书与国际考官资格，深耕台北精品咖啡十余年，以极致严谨的手艺为风味定锚。</dd>
+            <dt>推荐豆款</dt><dd>肯尼亚 麒麟雅加 AA Top 粉象 水洗 <span class="en">Kenya Kirinyaga AA Top Washed</span></dd>
+            <dt>烘焙度</dt><dd>浅焙 <span class="en">Light Roast</span><span class="roast" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span></dd>
+            <dt>风味诠释</dt><dd>结构清晰、明亮利落，纯净的焦糖甜感与优雅黑加仑果酸、乌梅汁、果香，是一杯酸甜平衡得恰到好处的基准。</dd>
+            <dt class="theme">【精准与熟成】</dt><dd class="verse">“在精准的火候中，雕刻出果酸最纯粹利落的几何线条。”</dd>
+            <dt>风味笔记</dt><dd class="notes">黑加仑・乌梅・果香</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--peach)">
+        <div class="no">02<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">02</span><span class="pname">Warren</span></figure>
+        <div class="body">
+          <h3>陈启仁 <small class="latin">Warren</small></h3>
+          <p class="role">WAZZA 哇塞咖啡主理人 · 国际认证考官 · 评审 · 评鉴师</p>
+          <dl class="rows">
+            <dt>大师侧写</dt><dd>从事咖啡近 20 年，历任百年品牌麦斯威尔咖啡台湾代言人、瑞士全自动咖啡机 SACHERER 品牌经理、三一国际顶级豪车、VISION 顶级自行车指定合作伙伴，把精品咖啡冲成一首诗。</dd>
+            <dt>推荐豆款</dt><dd>印度尼西亚苏门答腊 黄金曼特宁、危地马拉 薇薇特南果、埃塞俄比亚 果丁丁 耶加雪菲 日晒 G1、哥伦比亚 Supremo</dd>
+            <dt>烘焙度</dt><dd>浅中焙 <span class="en">Light-Medium Roast</span><span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></dd>
+            <dt>风味诠释</dt><dd>龙眼蜜、坚果杏仁香气交织，中段散发甜可可与微柑橘芬芳，入喉质地顺口，尾段厚实回甘。</dd>
+            <dt class="theme">【生机与舒展】</dt><dd class="verse">“用温暖的手冲时光，把生活过成一首舒展的诗。”</dd>
+            <dt>风味笔记</dt><dd class="notes">龙眼蜜・杏仁・可可</dd>
+          </dl>
+          <div class="detail"><p class="detail-h">豆子配方与风味解析</p>
+            <dl>
+              <dt>配方</dt><dd>印度尼西亚苏门答腊黄金曼特宁 ＋ 危地马拉薇薇特南果 ＋ 埃塞俄比亚果丁丁耶加雪菲日晒 G1 ＋ 哥伦比亚 Supremo</dd>
+              <dt>风味亮点</dt><dd>龙眼蜜、白松露、甜可可、巧克力、柑橘、杏仁</dd>
+              <dt>干香</dt><dd>散发杏仁与白巧克力般的甜感。</dd>
+              <dt>湿香</dt><dd>交织着柑橘、果香、花香与淡淡的白松露气息。</dd>
+              <dt>前段</dt><dd>带有明亮但温和的微酸，入口立即化开。</dd>
+              <dt>中段</dt><dd>质地圆润顺口，层次丰富。</dd>
+              <dt>尾段</dt><dd>厚实回甘，尾韵悠长，伴随坚果、甜可可与龙眼蜜香气。</dd>
+            </dl></div>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--indigo)">
+        <div class="no">03<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">03</span><span class="pname">宝哥</span></figure>
+        <div class="body">
+          <h3>王神宝 <small>宝哥</small></h3>
+          <p class="role">咖神咖啡教育馆创始人 · 2020 史怀哲饮调大师</p>
+          <dl class="rows">
+            <dt>大师侧写</dt><dd>结合农场、科学、教育与生活的咖啡实践家，独创科学化健康烘焙曲线，诠释真诚与生活美学的力量。</dd>
+            <dt>推荐豆款</dt><dd>危地马拉 薇薇特南果 水洗 <span class="en">Guatemala Huehuetenango Washed</span></dd>
+            <dt>烘焙度</dt><dd>中深焙 <span class="en">Medium-Dark Roast</span><span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></dd>
+            <dt>风味诠释</dt><dd>层次如水波缓缓推进，柔顺滑口、酸质温和细腻，适合放慢呼吸的安静日常。</dd>
+            <dt class="theme">【流动与滋润】</dt><dd class="verse">“让咖啡如水般流动，滋润日常里每一个感知的瞬间。”</dd>
+            <dt>风味笔记</dt><dd class="notes">坚果・太妃糖口味微甜</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--sun)">
+        <div class="no">04<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">04</span><span class="pname">Dahe</span></figure>
+        <div class="body">
+          <h3>Dahe</h3>
+          <p class="role">九咖工作室 NINECA STUDIO 主理人</p>
+          <dl class="rows">
+            <dt>大师侧写</dt><dd>在专注与静心中烘焙，以纯粹的心境对话生豆，作品以干净纯净的风味著称。</dd>
+            <dt>推荐豆款</dt><dd>洪都拉斯 山岚初醒 水洗 <span class="en">Honduras Washed</span></dd>
+            <dt>烘焙度</dt><dd>中浅焙 <span class="en">Light-Medium Roast</span><span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></dd>
+            <dt>风味诠释</dt><dd>深邃的焦糖蜂蜜与熟果甜香，入喉圆润柔和、层次细微，转化为深邃回甘的温暖力量。</dd>
+            <dt class="theme">【转化与光明】</dt><dd class="verse">“借由火候的专注转化，将太阳的热情汇聚成一杯唤醒内在的光。”</dd>
+            <dt>风味笔记</dt><dd class="notes">焦糖・蜂蜜・橘子</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="artisan" style="--tone: var(--clay)">
+        <div class="no">05<i aria-hidden="true"></i></div>
+        <figure class="portrait" aria-hidden="true"><svg viewBox="0 0 100 60" class="pm"><path d="M4 56 L34 18 L50 36 L70 10 L96 56" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="pno">05</span><span class="pname">Elias</span></figure>
+        <div class="body">
+          <h3>Elias</h3>
+          <p class="role">露娜咖啡 Lunas Corp., Ltd 创始人</p>
+          <dl class="rows">
+            <dt>大师侧写</dt><dd>来自中美洲高山沃土的咖啡世家，洪都拉斯雷内家族庄园传人，坚持自然农法无毒契作，把庄园生豆直送台湾。</dd>
+            <dt>推荐豆款</dt><dd>洪都拉斯 拉巴斯 爱丽丝庄园 Finca Iris 柳橙厌氧蜜处理 <span class="en">Honduras Finca Iris, Orange Anaerobic Honey</span></dd>
+            <dt>烘焙度</dt><dd>中焙 <span class="en">Medium Roast</span><span class="roast" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></dd>
+            <dt>风味诠释</dt><dd>质朴醇厚，深邃坚果与黑可可的底蕴扎实，带着火山土地安定的重量。</dd>
+            <dt class="theme">【承载与风土】</dt><dd class="verse">“扎根于洪都拉斯高山沃土，承载着大地最质朴温润的告白。”</dd>
+            <dt>风味笔记</dt><dd class="notes">红苹果・蜂蜜・青柠・杏仁</dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="origins">
+    <div class="wrap">
+      <p class="eyebrow">Origin Notes</p>
+      <h2>产区手札：一杯咖啡，从哪座山来</h2>
+      <p class="lead">五位手艺人选的豆子，来自三大洲、六个国家的高山。认识一颗豆子的家乡，就更懂杯子里的味道。</p>
+      <div class="origins">
+        <article class="origin">
+          <span class="ctry">Kenya</span>
+          <h3>肯尼亚 · 麒麟雅加</h3>
+          <p class="alt">Kirinyaga ｜ 海拔约 1,600–1,900 米</p>
+          <p class="txt">位于肯尼亚山南麓，火山红土孕育出明亮的酸质。肯尼亚以水洗处理见长，常带黑加仑与莓果调性。AA 是按生豆颗粒大小分级的最高等级。</p>
+          <p class="who"><span style="--c: var(--sage)">Emily</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Indonesia</span>
+          <h3>印度尼西亚 · 苏门答腊</h3>
+          <p class="alt">Sumatra ｜ 曼特宁 Mandheling</p>
+          <p class="txt">曼特宁之名源自北苏门答腊的曼特宁族。当地常用湿刨法处理，带出厚实的醇度与可可、草本气息；黄金曼特宁是再经多道手工挑选的精选等级。</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Guatemala</span>
+          <h3>危地马拉 · 薇薇特南果</h3>
+          <p class="alt">Huehuetenango ｜ 海拔约 1,500–2,000 米</p>
+          <p class="txt">西北部高地，与墨西哥接壤，是危地马拉海拔最高的产区之一。来自墨西哥平原的干热气流让高山不易结霜，风味干净、甜感饱满。</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span><span style="--c: var(--indigo)">宝哥</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Ethiopia</span>
+          <h3>埃塞俄比亚 · 耶加雪菲</h3>
+          <p class="alt">Yirgacheffe ｜ 海拔约 1,700–2,200 米</p>
+          <p class="txt">阿拉比卡咖啡的原乡。耶加雪菲位于南部高地，以花香与柑橘调闻名；日晒处理则多了熟果般的甜。G1 是埃塞俄比亚生豆的最高等级。</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Colombia</span>
+          <h3>哥伦比亚 · Supremo</h3>
+          <p class="alt">Andes ｜ 安第斯山脉</p>
+          <p class="txt">Supremo 不是产区，而是哥伦比亚按颗粒大小的分级，代表筛网 17 目以上的大颗粒豆。安第斯山脉纵贯全国，风味均衡、甜感圆润。</p>
+          <p class="who"><span style="--c: var(--peach)">Warren</span></p>
+        </article>
+        <article class="origin">
+          <span class="ctry">Honduras</span>
+          <h3>洪都拉斯</h3>
+          <p class="alt">La Paz ｜ 蒙特西略斯山脉，海拔约 1,400–1,550 米</p>
+          <p class="txt">中美洲重要的咖啡产国，近年精品咖啡进步很快。Elias 家族的庄园在西南部拉巴斯省，小农与家族庄园也常尝试蜜处理、厌氧发酵等实验性处理。</p>
+          <p class="who"><span style="--c: var(--sun)">Dahe</span><span style="--c: var(--clay)">Elias</span></p>
+        </article>
+      </div>
+      <p class="fine">海拔为各产区常见范围，实际依批次与庄园而异。</p>
+    </div>
+  </section>
+
+  <section id="plans">
+    <div class="wrap">
+      <p class="eyebrow">Pre-order Collection</p>
+      <h2>2026 年终首发 · 圣诞预购</h2>
+      <p class="lead">第一波预购至 11 月 25 日。每一份预购，都会提拨商品售价的 5% 支持孩子们的艺术与音乐课程。</p>
+      <figure class="giftfig"><img src="../assets/gift.jpg" alt="日月山圣诞限定礼盒：圣诞树下的礼物、挂耳咖啡与日月山煎饼" loading="lazy" width="1200" height="800"><figcaption>预购圣诞限定礼盒，实际包装以出货为准。</figcaption></figure>
+      <div class="plans">
+        <div class="plan">
+          <span class="tag">Plan 1</span>
+          <h3>五包挂耳体验组</h3>
+          <p class="price"><small>NT$</small>265</p>
+          <ul>
+            <li>五位烘豆师各 1 包，共 5 包</li>
+            <li>五入纸盒包装，附提绳，不使用塑料袋，更环保</li>
+          </ul>
+          <p class="for">适合初次尝鲜、个人晨间日常品味。</p>
+        </div>
+        <div class="plan feature">
+          <span class="tag">Plan 2</span>
+          <h3>十包挂耳礼品组</h3>
+          <p class="price"><small>NT$</small>520</p>
+          <ul>
+            <li>五位烘豆师各 2 包，共 10 包</li>
+            <li>附天然棉质束口袋</li>
+          </ul>
+          <p class="for">适合送礼自用，重视生活美学的藏家。</p>
+        </div>
+        <div class="plan">
+          <span class="tag">Plan 3 · Christmas Limited</span>
+          <h3>圣诞限定尊荣礼盒</h3>
+          <p class="price"><small>NT$</small>1,180</p>
+          <ul>
+            <li>五位烘豆师各 2 包，共 10 包</li>
+            <li>小林煎饼限定组</li>
+            <li>日月山便携细口手冲壶</li>
+            <li>礼盒包装，附赠日月山圣诞小卡，送礼大方</li>
+          </ul>
+          <p class="for">适合交换礼物、企业年终谢礼、精品咖啡深度爱好者。</p>
+        </div>
+      </div>
+      <p class="fine">单包散装 NT$55；五包组平均每包 NT$53；十包组平均每包 NT$52，另附天然棉质束口袋。</p>
+      <p class="fine">企业大宗采购：10 组以上享专属企业折扣；50 盒以上提供定制吊牌服务。</p>
+      <p class="fine">价格以新台币（NT$）计。</p>
+    </div>
+  </section>
+
+  <section id="giving" class="giving">
+    <div class="wrap">
+      <p class="eyebrow">Impact &amp; Giving</p>
+      <h2>圣诞微光计划</h2>
+      <p class="big">5%<small>每一笔预购</small></p>
+      <p class="pull">一杯好咖啡，让生活有光，也照亮孩子的艺术与音乐之梦。</p>
+      <p class="lead">每一笔日月山圣诞预购订单，我们都将提拨商品售价的 5%（不含运费），定向支持 LIA 五明国际学苑实验教育的艺术与音乐深度探索课程。正如烘豆师以热情将咖啡豆淬炼出各自的灵魂，每一个孩子在画笔、音符与美感体验里，也值得被温柔启发。</p>
+      <p class="lead">这个冬天，你手中的咖啡是一场风味的旅行，也是一份送给孩子们的艺术礼物。</p>
+      <p class="fine">预购结算后，我们会在官网公开拨付金额与课程纪实。</p>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="wrap">
+      <p class="eyebrow">Ordering &amp; FAQ</p>
+      <h2>订购须知</h2>
+      <div class="steps">
+        <div><b>~ 11/25</b><span>第一波预购，即日起开放。</span></div>
+        <div><b>12/01 起</b><span>按订单顺序发货，商品未售完前持续接单。</span></div>
+        <div><b>12/18 前</b><span>完成下单与付款的订单，保证在圣诞节前送达。</span></div>
+      </div>
+      <div class="ordering">
+        <b>如何下单</b>
+        <span class="todo">下单链接与付款方式确认后，会放在这里。</span>
+      </div>
+      <div>
+        <details>
+          <summary>运费与发货怎么安排？</summary>
+          <p>全店满 NT$ 2,000 包邮；未满额，台湾本岛常温配送运费 NT$ 85。12 月 1 日起按订单顺序发货，商品未售完前持续接单。12 月 18 日后的订单，无法保证在圣诞节前送达。</p>
+        </details>
+        <details>
+          <summary>企业可以大量订购吗？</summary>
+          <p>10 组以上享专属企业折扣；50 盒以上提供定制吊牌服务。下单方式公布后，会附上企业咨询表单。</p>
+        </details>
+        <details>
+          <summary>咖啡可以放多久？</summary>
+          <p>未开封常温保存 12 个月。请放在阴凉干燥处，避免高温潮湿与阳光直射。开封后请尽快冲泡饮用。</p>
+        </details>
+        <details>
+          <summary>怎么冲泡最好喝？</summary>
+          <p>轻拍袋身让咖啡粉下沉，沿虚线轻撕开滤袋。拉开两侧挂耳折翼，平稳挂在杯口。先注少许热水闷蒸 20 秒，再分次注水至 150 到 180 ml，取出内袋轻轻沥干水分，就可以享用。建议水温 88 至 92℃。</p>
+        </details>
+        <details>
+          <summary>商品标示</summary>
+          <dl>
+            <dt>品名</dt><dd>日月山 精品挂耳咖啡</dd>
+            <dt>配料</dt><dd>100% 研磨咖啡粉</dd>
+            <dt>食品添加剂</dt><dd>无</dd>
+            <dt>净含量</dt><dd>10g ± 1g / 包（单包装）</dd>
+            <dt>生豆产地</dt><dd>肯尼亚、洪都拉斯、危地马拉等，依各款标示</dd>
+            <dt>产地</dt><dd>台湾</dd>
+            <dt>有效日期</dt><dd>标示于包装封口处（年/月/日）</dd>
+            <dt>保质期</dt><dd>12 个月（未开封常温保存）</dd>
+            <dt>食品业者登录字号</dt><dd>登录中</dd>
+            <dt>产品责任险</dt><dd>已投保新台币 1,000 万元</dd>
+            <dt>出品单位</dt><dd>费陀有限公司（Fetod Ltd.）</dd>
+          </dl>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="flogo" src="../assets/logo.png" alt="日月山 Mount Sun Moon" width="420" height="449">
+    <p>出品 费陀有限公司 Fetod Ltd. · mountsunmoon.com</p>
+    <p>商业所得支持 <a href="https://www.lia.tw" target="_blank" rel="noopener">LIA 五明国际学苑</a> 的教育计划</p>
+    <p><a href="https://fetod.github.io/everlume/" target="_blank" rel="noopener">延伸阅读：认识日月山背后的恒曜全球与创始人故事 →</a></p>
+  </div>
+</footer>
+</body>
+</html>

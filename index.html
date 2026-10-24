@@ -240,7 +240,20 @@ footer .mark { font-family: var(--serif); color: var(--paper); letter-spacing: 0
 footer a { color: var(--mute); }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+
+/* language switcher */
+.langs { display: flex; gap: 2px; font-size: 12px; letter-spacing: 0.06em; flex-shrink: 0; }
+.langs a { text-decoration: none; color: var(--mute); padding: 4px 7px; border: 1px solid transparent; }
+.langs a:hover, .langs a:focus-visible { color: var(--paper); }
+.langs a[aria-current] { color: var(--gold); border-color: var(--line); }
+header nav { margin-left: auto; }
+@media (max-width: 420px) { .langs a { padding: 4px 5px; } .brand small { display: none; } }
 </style>
+<link rel="alternate" hreflang="zh-Hant" href="https://mountsunmoon.com/">
+<link rel="alternate" hreflang="zh-Hans" href="https://mountsunmoon.com/zh-hans/">
+<link rel="alternate" hreflang="en" href="https://mountsunmoon.com/en/">
+<link rel="alternate" hreflang="ja" href="https://mountsunmoon.com/ja/">
+<link rel="alternate" hreflang="x-default" href="https://mountsunmoon.com/">
 
 </head>
 <body>
@@ -260,6 +273,7 @@ footer a { color: var(--mute); }
       <a href="#giving">耶誕微光</a>
       <a href="#order">訂購須知</a>
     </nav>
+    <div class="langs" aria-label="Language"><a href="./" hreflang="zh-Hant" lang="zh-Hant" aria-current="page">繁中</a><a href="zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简中</a><a href="en/" hreflang="en" lang="en">EN</a><a href="ja/" hreflang="ja" lang="ja">日本語</a></div>
   </div>
 </header>
 
