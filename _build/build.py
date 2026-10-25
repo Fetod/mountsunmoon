@@ -7,9 +7,9 @@ src = (root / "index.html").read_text(encoding="utf-8")
 
 LANGS = [  # (code, folder, label)
     ("zh-Hant", "", "繁中"),
-    ("zh-Hans", "zh-hans/", "简中"),
+    ("zh-Hans", "zh/", "简中"),
     ("en", "en/", "EN"),
-    ("ja", "ja/", "日本語"),
+    ("ja", "jp/", "日本語"),
 ]
 
 def switcher(cur, depth):
@@ -112,6 +112,9 @@ for code, folder, _ in LANGS[1:]:
 if 'class="langs"' not in src:
     s = src.replace("</style>", SWITCH_CSS + "</style>\n" + hreflang(), 1)
     s = s.replace("    </nav>\n  </div>\n</header>", "    </nav>\n    " + switcher("zh-Hant", 0) + "\n  </div>\n</header>", 1)
-    assert 'class="langs"' in s
-    (root / "index.html").write_text(s, encoding="utf-8")
-    print("updated index.html")
+else:  # refresh switcher and hreflang links when folders change
+    s = re.sub(r'<div class="langs".*?</div>', lambda m: switcher("zh-Hant", 0), src, count=1)
+    s = re.sub(r'(<link rel="alternate" hreflang=[^>]*>\n?)+', lambda m: hreflang() + "\n", s, count=1)
+assert 'class="langs"' in s
+(root / "index.html").write_text(s, encoding="utf-8")
+print("updated index.html")
