@@ -250,6 +250,16 @@ footer a { color: var(--mute); }
 header nav { margin-left: auto; }
 @media (max-width: 420px) { .langs a { padding: 4px 5px; } .brand small { display: none; } }
 
+/* ordering */
+.plan .give { font-size: 13px; color: var(--gold); letter-spacing: 0.06em; margin-top: -4px; }
+.plan .btn { align-self: stretch; text-align: center; margin-top: 4px; }
+.ordering { max-width: 46em; }
+.ordering ol { margin: 14px 0 0; padding-left: 1.3em; display: grid; gap: 10px; color: var(--mute); font-size: 14.5px; }
+.ordering ol b { font-family: var(--sans); font-weight: 500; color: var(--paper); }
+.ordering .soon { display: inline-block; font-size: 12px; letter-spacing: 0.1em; color: var(--gold); border: 1px solid var(--gold); padding: 0 8px; margin-left: 6px; }
+.ordering .cta { justify-content: flex-start; margin-top: 22px; }
+.ordering a:not(.btn) { color: var(--gold); }
+
 /* language switcher */
 .langs { display: flex; gap: 2px; font-size: 12px; letter-spacing: 0.06em; flex-shrink: 0; }
 .langs a { text-decoration: none; color: var(--mute); padding: 4px 7px; border: 1px solid transparent; }
@@ -571,36 +581,41 @@ nav { gap: 16px; font-size: 12.5px; }
     <div class="wrap">
       <p class="eyebrow">Pre-order Collection</p>
       <h2>2026 年末デビュー · クリスマス予約</h2>
-      <p class="lead">第一弾のご予約は 11 月 25 日まで。ご予約ごとに商品価格の 5% を、子どもたちの芸術・音楽の授業の支援に充てます。</p>
+      <p class="lead">2026 年クリスマス初登場。尊栄ギフトボックスは限定 30 箱です。12 月 25 日までのご注文ごとに商品価格の 5% を、子どもたちの芸術・音楽の授業の支援に充てます。</p>
       <figure class="giftfig"><img src="../assets/gift.jpg" alt="日月山クリスマス限定ギフトボックス：クリスマスツリーの下のプレゼント、ドリップバッグコーヒーと日月山の煎餅" loading="lazy" width="1200" height="800"><figcaption>クリスマス限定ギフトボックスのご予約。実際の包装はお届けするものが基準となります。</figcaption></figure>
       <div class="plans">
         <div class="plan">
           <span class="tag">Plan 1</span>
           <h3>ドリップバッグ 5 袋 お試しセット</h3>
           <p class="price"><small>NT$</small>265</p>
-          <p class="limit">限定 100 箱</p>
+          <p class="limit">クリスマス初登場</p>
+          <p class="give">12/25 まで 1 箱ごとに約 NT$13 を子どもたちへ</p>
           <ul>
             <li>五人の焙煎士から各 1 袋、計 5 袋</li>
             <li>持ち手ひも付きの紙箱入り。ビニール袋を使わない環境にやさしい包装</li>
           </ul>
           <p class="for">はじめての方や、ご自身の朝の習慣に。</p>
+          <a class="btn" href="https://shop.mountsunmoon.com/products/mss-5-pack" target="_blank" rel="noopener">予約する</a>
         </div>
         <div class="plan feature">
           <span class="tag">Plan 2</span>
           <h3>ドリップバッグ 10 袋 ギフトセット</h3>
           <p class="price"><small>NT$</small>520</p>
-          <p class="limit">限定 100 箱</p>
+          <p class="limit">クリスマス初登場</p>
+          <p class="give">12/25 まで 1 箱ごとに NT$26 を子どもたちへ</p>
           <ul>
             <li>五人の焙煎士から各 2 袋、計 10 袋</li>
             <li>天然コットンの巾着袋付き</li>
           </ul>
           <p class="for">贈り物にもご自宅用にも。暮らしの美しさを大切にするコレクターへ。</p>
+          <a class="btn" href="https://shop.mountsunmoon.com/products/mss-10-gift" target="_blank" rel="noopener">予約する</a>
         </div>
         <div class="plan">
           <span class="tag">Plan 3 · Christmas Limited</span>
           <h3>クリスマス限定 プレミアムギフトボックス</h3>
           <p class="price"><small>NT$</small>1,180</p>
           <p class="limit">限定 30 箱</p>
+          <p class="give">12/25 まで 1 箱ごとに NT$59 を子どもたちへ</p>
           <ul>
             <li>五人の焙煎士から各 2 袋、計 10 袋</li>
             <li>小林煎餅 限定セット</li>
@@ -608,11 +623,12 @@ nav { gap: 16px; font-size: 12.5px; }
             <li>ギフトボックス包装、日月山クリスマスカード付き</li>
           </ul>
           <p class="for">プレゼント交換、企業の年末のお礼、スペシャルティコーヒーを深く愛する方へ。</p>
+          <a class="btn" href="https://shop.mountsunmoon.com/products/mss-christmas-box" target="_blank" rel="noopener">予約する</a>
         </div>
       </div>
       <p class="fine">単品 1 袋 NT$55。5 袋セットは 1 袋あたり約 NT$53、10 袋セットは 1 袋あたり約 NT$52 で、天然コットンの巾着袋付きです。</p>
-      <p class="fine">法人まとめ買い：10 セット以上で法人特別割引、50 箱以上でオリジナル下げ札を承ります。</p>
-      <p class="fine">表示価格は台湾での販売価格（台湾ドル NT$）です。台湾内へのお届けは NT$2,000 以上のご注文で送料無料、海外からのご注文は送料を別途申し受けます。</p>
+      <p class="fine">法人まとめ買い：100 セット以上で法人特別価格。オリジナルのコラボギフトボックスも承ります。</p>
+      <p class="fine">表示価格は台湾での販売価格（台湾ドル NT$）です。台湾内へのお届けは NT$1,000 以上のご注文で送料無料、海外からのご注文は送料を別途申し受けます。</p>
     </div>
   </section>
 
@@ -620,11 +636,11 @@ nav { gap: 16px; font-size: 12.5px; }
     <div class="wrap">
       <p class="eyebrow">Impact &amp; Giving</p>
       <h2>クリスマスの灯りプロジェクト</h2>
-      <p class="big">5%<small>すべてのご予約から</small></p>
+      <p class="big">5%<small>12/25 までのすべてのご注文から</small></p>
       <p class="pull">一杯のよいコーヒーが暮らしに光をもたらし、子どもたちの芸術と音楽の夢も照らします。</p>
-      <p class="lead">日月山のクリスマス予約一件ごとに、商品価格の 5%（送料を除く）を、LIA 五明国際学苑（Lumière International Academy）の実験教育における芸術・音楽の探究授業の支援に充てます。焙煎士が情熱をもって豆それぞれの魂を引き出すように、子どもたちもまた、絵筆や音符、美しいものとの出会いの中で、やさしく導かれるべき存在です。</p>
+      <p class="lead">2026 年 12 月 25 日までの日月山のご注文一件ごとに、商品価格の 5%（送料を除く）を、LIA 五明国際学苑（Lumière International Academy）の実験教育における芸術・音楽の探究授業の支援に充てます。焙煎士が情熱をもって豆それぞれの魂を引き出すように、子どもたちもまた、絵筆や音符、美しいものとの出会いの中で、やさしく導かれるべき存在です。</p>
       <p class="lead">この冬、あなたの手の中のコーヒーは、風味をめぐる旅であり、子どもたちへの芸術の贈り物でもあります。</p>
-      <p class="fine">予約受付の終了後、支援金額と授業の記録をこのサイトで公開します。</p>
+      <p class="fine">12 月 25 日の集計後、支援金額と授業の記録をこのサイトで公開します。</p>
     </div>
   </section>
 
@@ -633,21 +649,31 @@ nav { gap: 16px; font-size: 12.5px; }
       <p class="eyebrow">Ordering &amp; FAQ</p>
       <h2>ご注文について</h2>
       <div class="steps" style="grid-template-columns:repeat(2,1fr)">
-        <div><b>〜 11/25</b><span>第一弾のご予約、受付中です。</span></div>
+        <div><b>受付中</b><span>クリスマス初登場。尊栄ギフトボックスは限定 30 箱、なくなり次第終了。</span></div>
         <div><b>12/01 〜</b><span>順次発送します。在庫がなくなるまで受付を続けます。</span></div>
       </div>
       <div class="ordering">
         <b>ご注文方法</b>
-        <span class="todo">注文リンクとお支払い方法が決まり次第、こちらに掲載します。</span>
+        <ol>
+          <li><b>オンライン予約</b>：各プランの「予約する」から、日月山オンラインショップでご注文ください。</li>
+          <li><b>銀行振込</b>：ご注文後、振込先は注文完了ページと確認メールに表示されます。3 日以内にお振込のうえ、「振込のご報告」から注文番号と口座番号の下 5 桁をお知らせください。入金確認後、ご注文順に発送します。</li>
+          <li><b>クレジットカード</b><span class="soon">近日対応</span></li>
+          <li><b>法人のご注文</b>：<a href="https://shop.mountsunmoon.com/pages/business" target="_blank" rel="noopener">法人向けお問い合わせフォーム</a>よりご連絡ください。</li>
+        </ol>
+        <div class="cta">
+          <a class="btn" href="https://shop.mountsunmoon.com/collections/all" target="_blank" rel="noopener">オンラインショップへ</a>
+          <a class="btn quiet" href="https://shop.mountsunmoon.com/pages/remit" target="_blank" rel="noopener">振込のご報告</a>
+        </div>
+        <span class="todo">その他のお問い合わせ：<a href="mailto:hello@mountsunmoon.com">hello@mountsunmoon.com</a></span>
       </div>
       <div>
         <details>
           <summary>送料と発送について</summary>
-          <p>NT$2,000 以上のご注文で送料無料。それ未満の場合、台湾本島への常温配送料は NT$85 です。海外からのご注文は送料を別途申し受けます。12 月 1 日より順次発送し、在庫がなくなるまで受付を続けます。</p>
+          <p>NT$1,000 以上のご注文で送料無料。それ未満の場合、台湾本島への常温配送料は NT$85 です。海外からのご注文は送料を別途申し受けます。12 月 1 日より順次発送し、在庫がなくなるまで受付を続けます。</p>
         </details>
         <details>
           <summary>法人の大口注文はできますか？</summary>
-          <p>10 セット以上で法人特別割引、50 箱以上でオリジナル下げ札を承ります。ご注文方法の公開後、法人向けお問い合わせフォームを掲載します。</p>
+          <p>はい。100 セット以上で法人特別価格となり、御社ロゴ入りのコラボギフトボックスも承ります。<a href="https://shop.mountsunmoon.com/pages/business" target="_blank" rel="noopener">法人向けお問い合わせフォーム</a>よりご連絡ください。</p>
         </details>
         <details>
           <summary>コーヒーはどのくらい日持ちしますか？</summary>
@@ -668,7 +694,6 @@ nav { gap: 16px; font-size: 12.5px; }
             <dt>製造国</dt><dd>台湾</dd>
             <dt>賞味期限</dt><dd>包装の封口部に記載（西暦 年/月/日）</dd>
             <dt>保存期間</dt><dd>12 か月（未開封・常温）</dd>
-            <dt>食品事業者登録番号</dt><dd>登録手続き中</dd>
             <dt>生産物賠償責任保険</dt><dd>新台湾ドル 1,000 万元 加入済み</dd>
             <dt>販売者</dt><dd>費陀有限公司（Fetod Ltd.）</dd>
           </dl>
