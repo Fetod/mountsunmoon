@@ -250,6 +250,16 @@ footer a { color: var(--mute); }
 header nav { margin-left: auto; }
 @media (max-width: 420px) { .langs a { padding: 4px 5px; } .brand small { display: none; } }
 
+/* ordering */
+.plan .give { font-size: 13px; color: var(--gold); letter-spacing: 0.06em; margin-top: -4px; }
+.plan .btn { align-self: stretch; text-align: center; margin-top: 4px; }
+.ordering { max-width: 46em; }
+.ordering ol { margin: 14px 0 0; padding-left: 1.3em; display: grid; gap: 10px; color: var(--mute); font-size: 14.5px; }
+.ordering ol b { font-family: var(--sans); font-weight: 500; color: var(--paper); }
+.ordering .soon { display: inline-block; font-size: 12px; letter-spacing: 0.1em; color: var(--gold); border: 1px solid var(--gold); padding: 0 8px; margin-left: 6px; }
+.ordering .cta { justify-content: flex-start; margin-top: 22px; }
+.ordering a:not(.btn) { color: var(--gold); }
+
 /* language switcher */
 .langs { display: flex; gap: 2px; font-size: 12px; letter-spacing: 0.06em; flex-shrink: 0; }
 .langs a { text-decoration: none; color: var(--mute); padding: 4px 7px; border: 1px solid transparent; }
@@ -566,7 +576,7 @@ header nav { margin-left: auto; }
     <div class="wrap">
       <p class="eyebrow">Pre-order Collection</p>
       <h2>2026 年终首发 · 圣诞预购</h2>
-      <p class="lead">第一波预购至 11 月 25 日。每一份预购，都会提拨商品售价的 5% 支持孩子们的艺术与音乐课程。</p>
+      <p class="lead">三款均为圣诞限量，售完即止。每一份预购，都会提拨商品售价的 5% 支持孩子们的艺术与音乐课程。</p>
       <figure class="giftfig"><img src="../assets/gift.jpg" alt="日月山圣诞限定礼盒：圣诞树下的礼物、挂耳咖啡与日月山煎饼" loading="lazy" width="1200" height="800"><figcaption>预购圣诞限定礼盒，实际包装以出货为准。</figcaption></figure>
       <div class="plans">
         <div class="plan">
@@ -627,12 +637,12 @@ header nav { margin-left: auto; }
       <p class="eyebrow">Ordering &amp; FAQ</p>
       <h2>订购须知</h2>
       <div class="steps" style="grid-template-columns:repeat(2,1fr)">
-        <div><b>~ 11/25</b><span>第一波预购，即日起开放。</span></div>
+        <div><b>即日起</b><span>圣诞限量预购，售完即止。</span></div>
         <div><b>12/01 起</b><span>陆续出货，商品未售完前持续接单。</span></div>
       </div>
       <div class="ordering">
         <b>如何下单</b>
-        <span class="todo">下单链接与付款方式确认后，会放在这里。</span>
+        <span class="todo">请来信 <a href="mailto:hello@mountsunmoon.com">hello@mountsunmoon.com</a> 预订，我们会回复付款与配送方式。</span>
       </div>
       <div>
         <details>
@@ -641,7 +651,7 @@ header nav { margin-left: auto; }
         </details>
         <details>
           <summary>企业可以大量订购吗？</summary>
-          <p>10 组以上享专属企业折扣；50 盒以上提供定制吊牌服务。下单方式公布后，会附上企业咨询表单。</p>
+          <p>10 组以上享专属企业折扣；50 盒以上提供定制吊牌服务。请来信 <a href="mailto:hello@mountsunmoon.com">hello@mountsunmoon.com</a> 咨询。</p>
         </details>
         <details>
           <summary>咖啡可以放多久？</summary>
@@ -662,7 +672,6 @@ header nav { margin-left: auto; }
             <dt>产地</dt><dd>台湾</dd>
             <dt>有效日期</dt><dd>标示于包装封口处（年/月/日）</dd>
             <dt>保质期</dt><dd>12 个月（未开封常温保存）</dd>
-            <dt>食品业者登录字号</dt><dd>登录中</dd>
             <dt>产品责任险</dt><dd>已投保新台币 1,000 万元</dd>
             <dt>出品单位</dt><dd>费陀有限公司（Fetod Ltd.）</dd>
           </dl>

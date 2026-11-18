@@ -250,6 +250,16 @@ footer a { color: var(--mute); }
 header nav { margin-left: auto; }
 @media (max-width: 420px) { .langs a { padding: 4px 5px; } .brand small { display: none; } }
 
+/* ordering */
+.plan .give { font-size: 13px; color: var(--gold); letter-spacing: 0.06em; margin-top: -4px; }
+.plan .btn { align-self: stretch; text-align: center; margin-top: 4px; }
+.ordering { max-width: 46em; }
+.ordering ol { margin: 14px 0 0; padding-left: 1.3em; display: grid; gap: 10px; color: var(--mute); font-size: 14.5px; }
+.ordering ol b { font-family: var(--sans); font-weight: 500; color: var(--paper); }
+.ordering .soon { display: inline-block; font-size: 12px; letter-spacing: 0.1em; color: var(--gold); border: 1px solid var(--gold); padding: 0 8px; margin-left: 6px; }
+.ordering .cta { justify-content: flex-start; margin-top: 22px; }
+.ordering a:not(.btn) { color: var(--gold); }
+
 /* language switcher */
 .langs { display: flex; gap: 2px; font-size: 12px; letter-spacing: 0.06em; flex-shrink: 0; }
 .langs a { text-decoration: none; color: var(--mute); padding: 4px 7px; border: 1px solid transparent; }
@@ -582,7 +592,7 @@ summary { font-size: 19px; }
     <div class="wrap">
       <p class="eyebrow">Pre-order Collection</p>
       <h2>2026 Year-end Debut · Christmas Pre-order</h2>
-      <p class="lead">The first pre-order round runs until 25 November. Every pre-order gives 5% of the product price to arts and music programmes for children.</p>
+      <p class="lead">All three sets are Christmas limited editions, available while stocks last. Every pre-order gives 5% of the product price to arts and music programmes for children.</p>
       <figure class="giftfig"><img src="../assets/gift.jpg" alt="Mount Sun Moon Christmas gift box: gifts under a Christmas tree, drip-bag coffee and Mount Sun Moon senbei" loading="lazy" width="1200" height="800"><figcaption>Christmas limited gift box for pre-order. Final packaging may differ.</figcaption></figure>
       <div class="plans">
         <div class="plan">
@@ -643,12 +653,12 @@ summary { font-size: 19px; }
       <p class="eyebrow">Ordering &amp; FAQ</p>
       <h2>Ordering information</h2>
       <div class="steps" style="grid-template-columns:repeat(2,1fr)">
-        <div><b>Until 11/25</b><span>First pre-order round, open now.</span></div>
+        <div><b>Open now</b><span>Christmas limited pre-order, while stocks last.</span></div>
         <div><b>From 12/01</b><span>Orders begin shipping; we keep taking orders while stock lasts.</span></div>
       </div>
       <div class="ordering">
         <b>How to order</b>
-        <span class="todo">The order link and payment options will be posted here once confirmed.</span>
+        <span class="todo">To order, email <a href="mailto:hello@mountsunmoon.com">hello@mountsunmoon.com</a> and we will reply with payment and delivery options.</span>
       </div>
       <div>
         <details>
@@ -657,7 +667,7 @@ summary { font-size: 19px; }
         </details>
         <details>
           <summary>Can companies order in bulk?</summary>
-          <p>Special corporate pricing from 10 sets; custom hang tags from 50 boxes. A corporate enquiry form will be added once ordering opens.</p>
+          <p>Special corporate pricing from 10 sets; custom hang tags from 50 boxes. Please email <a href="mailto:hello@mountsunmoon.com">hello@mountsunmoon.com</a>.</p>
         </details>
         <details>
           <summary>How long does the coffee keep?</summary>
@@ -678,7 +688,6 @@ summary { font-size: 19px; }
             <dt>Made in</dt><dd>Taiwan</dd>
             <dt>Best before</dt><dd>Printed at the seal (year/month/day)</dd>
             <dt>Shelf life</dt><dd>12 months (unopened, room temperature)</dd>
-            <dt>Food business registration</dt><dd>In progress</dd>
             <dt>Product liability insurance</dt><dd>Insured for NT$10,000,000</dd>
             <dt>Produced by</dt><dd>Fetod Ltd. (費陀有限公司)</dd>
           </dl>
