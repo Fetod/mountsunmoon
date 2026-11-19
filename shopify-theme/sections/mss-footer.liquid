@@ -1,0 +1,43 @@
+{% render 'mss-styles' %}
+<footer class="mss-foot">
+  <div class="mss-foot__in">
+    <div class="mss-foot__brand">
+      <div class="mss-foot__logo">日月山</div>
+      <p>Mount Sun Moon・藏家級精品咖啡</p>
+      <p>五位烘豆師，五種火候，收進同一個盒子。一杯好咖啡，讓生活更有光。</p>
+      <p>商業所得支持 LIA 五明國際學苑的教育計畫。</p>
+    </div>
+    <div>
+      <h4>購物</h4>
+      <ul>
+        <li><a href="/collections/all">全部商品</a></li>
+        <li><a href="/pages/remit">匯款回報</a></li>
+        <li><a href="/pages/business">企業訂購與合作</a></li>
+        <li><a href="/#faq">訂購須知與 FAQ</a></li>
+        <li><a href="/search">搜尋</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>聯絡日月山</h4>
+      <ul>
+        <li><a href="https://lin.ee/qiXpWYM" target="_blank" rel="noopener">LINE 官方帳號</a></li>
+        <li><a href="mailto:hello@mountsunmoon.com">hello@mountsunmoon.com</a></li>
+        <li><a href="https://mountsunmoon.com" target="_blank" rel="noopener">日月山品牌官網</a></li>
+        {%- for link in shop.policies -%}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+  <div class="mss-foot__bottom">
+    <span>出品　費陀有限公司 Fetod Ltd.</span>
+    <span>&copy; {{ 'now' | date: '%Y' }} 日月山 Mount Sun Moon</span>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "日月山頁尾",
+  "settings": []
+}
+{% endschema %}

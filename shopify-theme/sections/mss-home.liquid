@@ -1,0 +1,286 @@
+{%- comment -%} 日月山 Mount Sun Moon — 首頁（明亮自然光版） {%- endcomment -%}
+{%- assign p5 = all_products['mss-5-pack'] -%}
+{%- assign p10 = all_products['mss-10-gift'] -%}
+{%- assign pbox = all_products['mss-christmas-box'] -%}
+{% render 'mss-styles' %}
+
+<div class="mss">
+
+  <!-- 1. 主視覺 -->
+  <section class="mss-hero">
+    <div class="mss-hero__media">
+      <img src="{{ 'mss-hero.jpg' | asset_url }}" alt="日月山掛耳咖啡與手沖壺，放在自然光下的木桌上" width="1264" height="848" fetchpriority="high">
+    </div>
+    <div class="mss-hero__text">
+      <p class="mss-eyebrow">2026 耶誕首發・限量 195 盒</p>
+      <h1 class="mss-h1">山不說話，<br>靜承日月光芒。</h1>
+      <p class="mss-lead">五位烘豆師，五種火候，收進同一個盒子。<br>一杯好咖啡，讓生活更有光。</p>
+      <div class="mss-btns">
+        <a class="mss-btn" href="#shop">立即選購</a>
+        <a class="mss-btn mss-btn--ghost" href="#artisans">認識五位手藝人</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 信任列 -->
+  <ul class="mss-trust">
+    <li><strong>5 位</strong>獨立烘豆師</li>
+    <li><strong>6 國</strong>高山產區</li>
+    <li><strong>滿 NT$1,000</strong>免運</li>
+    <li><strong>5%</strong>捐給孩子的藝術課</li>
+  </ul>
+
+  <!-- 2. 方案 -->
+  <section class="mss-sec" id="shop">
+    <div class="mss-head">
+      <p class="mss-eyebrow">Pre-order Collection</p>
+      <h2 class="mss-h2">選一盒，開始認識五種火候</h2>
+      <p class="mss-sub">耶誕首發限量，首批售完為止。五包組與十包組是常態商品，耶誕過後仍可加訂。</p>
+    </div>
+    <div class="mss-plans">
+      {%- for p in (1..3) -%}
+        {%- case p -%}
+{%- when 1 -%}
+{%- assign prod = p5 -%}
+{%- assign img = 'mss-p5.jpg' | asset_url -%}
+{%- assign tag = '自用嘗鮮' -%}
+{%- assign limit = '首發限量 100 盒' -%}
+{%- assign give = '每盒捐出約 NT$13' -%}
+{%- assign cups = '5 包・可沖 5 杯' -%}
+{%- when 2 -%}
+{%- assign prod = p10 -%}
+{%- assign img = 'mss-p10.jpg' | asset_url -%}
+{%- assign tag = '送禮自用' -%}
+{%- assign limit = '首發限量 70 盒' -%}
+{%- assign give = '每盒捐出 NT$26' -%}
+{%- assign cups = '10 包・可沖 10 杯' -%}
+{%- when 3 -%}
+{%- assign prod = pbox -%}
+{%- assign img = pbox.featured_image | image_url: width: 1100 -%}
+{%- assign tag = '耶誕限定' -%}
+{%- assign limit = '限量 25 盒' -%}
+{%- assign give = '每盒捐出 NT$59' -%}
+{%- assign cups = '10 包＋手沖壺＋煎餅' -%}
+{%- endcase -%}
+        {%- if prod != blank -%}
+        <article class="mss-plan{% if p == 3 %} mss-plan--feature{% endif %}">
+          <a href="{{ prod.url }}" class="mss-plan__img">
+            <img src="{{ img }}" alt="{{ prod.title | escape }}" loading="lazy" width="1100" height="1100">
+            <span class="mss-badge">{{ tag }}</span>
+          </a>
+          <div class="mss-plan__body">
+            <p class="mss-plan__limit">{{ limit }}{% unless prod.available %}・已售完{% endunless %}</p>
+            <h3 class="mss-h3"><a href="{{ prod.url }}">
+              {%- case p -%}
+                {%- when 1 -%}五包掛耳體驗組
+                {%- when 2 -%}十包掛耳禮品組
+                {%- when 3 -%}耶誕限定尊榮禮盒
+              {%- endcase -%}
+            </a></h3>
+            <p class="mss-plan__price">{{ prod.price | money_without_trailing_zeros }}</p>
+            <p class="mss-plan__cups">{{ cups }}</p>
+            <ul class="mss-list">
+              {%- case p -%}
+                {%- when 1 -%}
+                  <li>五位烘豆師各 1 包，共 5 包</li>
+                  <li>五入紙盒附提繩，不使用塑膠袋</li>
+                  <li>適合初次嘗鮮、個人晨間日常</li>
+                {%- when 2 -%}
+                  <li>五位烘豆師各 2 包，共 10 包</li>
+                  <li>附天然棉質束口袋</li>
+                  <li>適合送禮自用、重視生活美學的你</li>
+                {%- when 3 -%}
+                  <li>五位烘豆師各 2 包，共 10 包</li>
+                  <li>小林煎餅限定組</li>
+                  <li>日月山便攜細口手沖壺</li>
+                  <li>禮盒包裝，附日月山耶誕小卡</li>
+              {%- endcase -%}
+            </ul>
+            <p class="mss-plan__give">{{ give }}給孩子們的藝術與音樂課</p>
+            {%- if prod.available -%}
+              <form method="post" action="{{ routes.cart_add_url }}" class="mss-plan__form">
+                <input type="hidden" name="id" value="{{ prod.selected_or_first_available_variant.id }}">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="mss-btn mss-btn--full">加入購物車</button>
+              </form>
+            {%- else -%}
+              <span class="mss-btn mss-btn--full mss-btn--disabled">已售完</span>
+            {%- endif -%}
+            <a href="{{ prod.url }}" class="mss-link">看商品詳情 →</a>
+          </div>
+        </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    <p class="mss-note">五包組平均每包 NT$53，十包組平均每包 NT$52。全館滿 NT$1,000 免運，未滿額運費 NT$85（台灣本島常溫配送）。</p>
+    <p class="mss-note">企業大宗採購：100 組以上享企業專屬報價，也歡迎訂製客製聯名禮盒。<a href="/pages/business">企業洽詢 →</a></p>
+  </section>
+
+  <!-- 3. 品牌定位 -->
+  <section class="mss-sec mss-sec--paper">
+    <div class="mss-split">
+      <div>
+        <p class="mss-eyebrow">Our Positioning</p>
+        <h2 class="mss-h2">一個盒子，五種手藝</h2>
+        <p>咖啡市場很滿，大多數人都在比產區、比深淺焙、比 CP 值。日月山沒有走向單一風格，而是做一座「策展型平台」。</p>
+        <p>好咖啡不只有一種樣子，每位烘豆師都有自己的火候與品味。與其由一個品牌說一種標準，不如邀請五位生命歷練各異的手藝人，各自詮釋風土，再由日月山挑選、整理，放進同一個盒子。</p>
+        <p>一盒濾掛式咖啡，五種風味，像一張風味地圖。只要一杯熱水、一個杯子，就能慢慢認識五位手藝人，也找到自己喜歡的那一種。五種風味放在一起，取金、木、水、火、土的整體平衡之意。</p>
+      </div>
+      <div class="mss-compare">
+        <div class="mss-compare__row"><span>大師署名策展</span><p>一次收藏五位獨立烘豆師的火候，每包皆有名字與故事。</p></div>
+        <div class="mss-compare__row"><span>五行平衡風味</span><p>打破門戶界線，以一個盒子拼出完整而平衡的味覺地圖。</p></div>
+        <div class="mss-compare__row"><span>極簡低調文藝</span><p>減塑布質、藏青金銀的克制美學，能長久陪伴日常。</p></div>
+        <div class="mss-compare__row"><span>回歸風土與純粹</span><p>專注於風味層次、手藝人精神與生活美感，讓每一包咖啡都有名字可以負責。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 五位手藝人 -->
+  <section class="mss-sec" id="artisans">
+    <div class="mss-head">
+      <p class="mss-eyebrow">The Artisans</p>
+      <h2 class="mss-h2">五位咖啡手藝人，五種火候</h2>
+      <p class="mss-sub">每位手藝人各選一款代表豆，收進同一個盒子。第五款為 Elias 的宏都拉斯限量豆或 Fetod 的印尼黃金曼特寧，每盒隨機搭配其一，無法指定。</p>
+    </div>
+    <div class="mss-artisans">
+      {%- render 'mss-artisan', no: '01', name: '蔡詩敏 Emily', role: 'YOLO’s CAFE 烘豆師・鴉埠咖啡 YABOO 共同創辦人', bean: '肯亞 麒麟雅加 AA Top 粉象 水洗', roast: '淺焙', notes: '黑醋栗・烏梅・果香', quote: '在精準的火候中，雕刻出果酸最純粹俐落的幾何線條。', bio: '擁有咖啡師、烘豆師、杯測師三項證照與國際考官資格，深耕台北精品咖啡十餘年。' -%}
+      {%- render 'mss-artisan', no: '02', name: '陳啟仁 Warren', role: 'WAZZA 哇塞咖啡主理人・國際認證考官', bean: '幸福的滋味 配方豆（曼特寧・微微特南果・耶加雪菲・Supremo）', roast: '淺中焙', notes: '龍眼蜜・杏仁・可可', quote: '用溫暖的手沖時光，把生活過成一首舒展的詩。', bio: '從事咖啡近 20 年，曾任麥斯威爾咖啡台灣代言人，把精品咖啡沖成一首詩。' -%}
+      {%- render 'mss-artisan', no: '03', name: '寶哥 & Chuck', role: '珈神咖啡教育館創辦人・2020 史懷哲飲調大師', bean: '瓜地馬拉 微微特南果 水洗', roast: '中深焙', notes: '堅果・太妃糖・微甜', quote: '讓咖啡如水般流動，滋潤日常裡每一個感知的瞬間。', bio: '結合農場、科學、教育與生活的咖啡實踐家，獨創科學化健康烘焙曲線。' -%}
+      {%- render 'mss-artisan', no: '04', name: 'Dahe', role: '九咖工作室 NINECA STUDIO 主理人', bean: '宏都拉斯 山嵐初醒 水洗', roast: '中淺焙', notes: '焦糖・蜂蜜・橘子', quote: '藉由火候的專注轉化，將太陽的熱情匯聚成一杯喚醒內在的光。', bio: '在專注與靜心中烘焙，以純粹的心境對話生豆，作品以乾淨的風味著稱。' -%}
+      {%- render 'mss-artisan', no: '05', name: 'Elias', role: '露娜咖啡 Lunas 創辦人・隨機其一・限量', bean: '宏都拉斯 愛麗絲莊園 柳橙厭氧蜜處理', roast: '中焙', notes: '紅蘋果・蜂蜜・青檸・杏仁', quote: '扎根於宏都拉斯高山沃土，承載著大地最質樸溫潤的告白。', bio: '宏都拉斯雷內家族莊園傳人，堅持自然農法無毒契作，把莊園生豆直送台灣。' -%}
+      {%- render 'mss-artisan', no: '05', name: 'Fetod', role: '日月山創辦人・隨機其一', bean: '印尼 黃金曼特寧 G1 日曬（西蘇門答臘 Solok）', roast: '中焙', notes: '焦糖・黑巧克力・堅果', quote: '從師父手中接過的第一爐火，慢慢烘成自己的光。', bio: '跟著寶哥從第一爐黃金曼特寧開始學烘豆，這是 Fetod 與咖啡結緣的第一支豆子。' -%}
+    </div>
+  </section>
+
+  <!-- 5. 天地人 -->
+  <section class="mss-sec mss-sec--paper">
+    <div class="mss-head">
+      <p class="mss-eyebrow">Our Story</p>
+      <h2 class="mss-h2">名字裡的天、地、人</h2>
+      <p class="mss-sub">日、月、山，三個字是一幅天、地、人的畫。</p>
+    </div>
+    <div class="mss-trio">
+      <div><span class="mss-trio__k">天</span><h3 class="mss-h3">日與月</h3><p>白晝有極陽之光，夜裡有柔潤之月，還有更遠的星辰。光從天上來，讓萬物生長，也給時間一個節律。</p></div>
+      <div><span class="mss-trio__k">地</span><h3 class="mss-h3">山</h3><p>山不說話，卻承載一切，看過千萬次日昇月落。山上的咖啡樹承接風土與日月精華，才有每一顆豆子的味道。</p></div>
+      <div><span class="mss-trio__k">人</span><h3 class="mss-h3">手藝人與喝咖啡的你</h3><p>五位手藝人用火候，把風土變成味道。喝下這杯咖啡的你，是這幅畫的最後一筆。</p></div>
+    </div>
+    <div class="mss-spirit">
+      <p class="mss-eyebrow">Brand Spirit</p>
+      <p class="mss-quote">山靜心安，不語亦有光。</p>
+      <p>仁者樂山。山不動，不是因為沒有風雨，而是根扎得深。燒水、等待、香氣升起，讓自己像山一樣，穩穩地坐下來。日月的光照在我們身上，其實我們自己也有光——內心安定、帶著慈心與悲心時，身邊的人會感覺到的如沐春風。</p>
+      <p>每天早晨給自己沖一杯咖啡，是一種儀式，一種品味，也是一種生活態度。</p>
+    </div>
+    <div class="mss-split mss-logo-meaning">
+      <img src="https://mountsunmoon.com/assets/mark.png" alt="日月山圖騰" loading="lazy" width="300" height="194">
+      <div>
+        <h3 class="mss-h3">圖騰裡的心意</h3>
+        <p><strong>兩座山峰，登高望遠。</strong>山線有兩座山峰，一座接著一座往上走，彷彿引領人向前行。山色與日色取自黃土高原的金黃，月色則是皎潔的白。</p>
+        <p><strong>所見之外，有無限可能。</strong>山頂的金色大圓是太陽，前面較小的白色圓是明月。日與月錯位，看起來就像一彎金色的月牙——眼睛看到的，不一定是完整的樣子。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 產區手札 -->
+  <section class="mss-sec">
+    <div class="mss-head">
+      <p class="mss-eyebrow">Origin Notes</p>
+      <h2 class="mss-h2">產區手札：一杯咖啡，從哪座山來</h2>
+      <p class="mss-sub">五位手藝人選的豆子，來自三大洲、六個國家的高山。</p>
+    </div>
+    <div class="mss-origins">
+      <div><h3 class="mss-h4">肯亞・麒麟雅加</h3><p class="mss-meta">海拔約 1,600–1,900 公尺｜Emily</p><p>肯亞山南麓的火山紅土孕育出明亮的酸質，水洗處理常帶黑醋栗與莓果調性。AA 是依顆粒大小分級的最高等級。</p></div>
+      <div><h3 class="mss-h4">印尼・蘇門答臘</h3><p class="mss-meta">曼特寧｜Warren・Fetod</p><p>名字源自曼特寧族，濕剝法帶出厚實醇度與可可、草本氣息；Fetod 選用 Solok 的日曬曼特寧，甜感與香氣更明顯。</p></div>
+      <div><h3 class="mss-h4">瓜地馬拉・微微特南果</h3><p class="mss-meta">海拔約 1,500–2,000 公尺｜Warren・寶哥 & Chuck</p><p>西北部高地，乾熱氣流讓高山不易結霜，風味乾淨、甜感飽滿。</p></div>
+      <div><h3 class="mss-h4">衣索比亞・耶加雪菲</h3><p class="mss-meta">海拔約 1,700–2,200 公尺｜Warren</p><p>阿拉比卡咖啡的原鄉，以花香與柑橘調聞名；日曬處理多了熟果般的甜。</p></div>
+      <div><h3 class="mss-h4">哥倫比亞・Supremo</h3><p class="mss-meta">安地斯山脈｜Warren</p><p>Supremo 是篩網 17 號以上的大顆粒分級，風味均衡、甜感圓潤。</p></div>
+      <div><h3 class="mss-h4">宏都拉斯</h3><p class="mss-meta">海拔約 1,400–1,550 公尺｜Dahe・Elias</p><p>中美洲近年進步很快的精品產國，小農與家族莊園常嘗試蜜處理、厭氧發酵等實驗性處理。</p></div>
+    </div>
+    <p class="mss-note">海拔為各產區常見範圍，實際依批次與莊園而異。</p>
+  </section>
+
+  <!-- 7. 耶誕微光計畫 -->
+  <section class="mss-sec mss-giving">
+    <div class="mss-giving__num">5%</div>
+    <div>
+      <p class="mss-eyebrow">Impact & Giving</p>
+      <h2 class="mss-h2">耶誕微光計畫</h2>
+      <p>這一批耶誕首發預購的每一盒，我們都以含稅售價的 5%（不含運費）捐出，定向支持 LIA 五明國際學苑實驗教育的藝術與音樂深度探索課程。</p>
+      <p>這個冬天，你手中的咖啡是一場風味的旅行，也是一份送給孩子們的藝術禮物。這一批出貨完成後，我們會公開撥付金額與課程紀實。</p>
+    </div>
+  </section>
+
+  <!-- 8. 沖煮 -->
+  <section class="mss-sec mss-sec--paper" id="brew">
+    <div class="mss-head">
+      <p class="mss-eyebrow">How to Brew</p>
+      <h2 class="mss-h2">一杯熱水，五個步驟</h2>
+      <p class="mss-sub">建議水溫 88–92℃，每包注水 150–180 ml。</p>
+    </div>
+    <ol class="mss-steps">
+      <li><span>1</span>輕拍袋身讓咖啡粉下沉，沿虛線撕開濾袋。</li>
+      <li><span>2</span>拉開兩側掛耳，平穩跨掛在杯口。</li>
+      <li><span>3</span>先注少許熱水，悶蒸 20 秒。</li>
+      <li><span>4</span>分次注水至 150–180 ml。</li>
+      <li><span>5</span>取出濾袋輕輕瀝乾，就可以享用。</li>
+    </ol>
+  </section>
+
+  <!-- 9. 訂購須知 FAQ -->
+  <section class="mss-sec" id="faq">
+    <div class="mss-head">
+      <p class="mss-eyebrow">Ordering & FAQ</p>
+      <h2 class="mss-h2">訂購須知</h2>
+    </div>
+    <div class="mss-faq">
+      <details open><summary>出貨時間與運費</summary><p>12/01 起依訂單順序出貨，商品未售完前持續接單。12/18 前完成下單與付款，可望在耶誕節前送達。全館滿 NT$1,000 免運；未滿額，台灣本島常溫配送運費 NT$85。</p></details>
+      <details><summary>怎麼付款？</summary><p>目前提供銀行轉帳：下單後，匯款帳號會顯示在訂單完成頁與確認信中。請於 3 天內完成匯款，並到<a href="/pages/remit">匯款回報</a>填寫訂單編號與帳號末五碼；確認收款後依訂單順序出貨。逾期未付款，名額將釋出給下一位。信用卡付款即將開放。</p></details>
+      <details><summary>企業可以大量訂購嗎？</summary><p>可以。100 組以上享企業專屬報價，也歡迎訂製客製聯名禮盒：紙盒印上貴公司 logo、挑選組合內容，適合年終謝禮、展會贈品與客戶禮品。請填寫<a href="/pages/business">企業洽詢表單</a>，我們會另外報價。</p></details>
+      <details><summary>耶誕節過後還買得到嗎？</summary><p>可以。五包組與十包組是日月山的常態商品，耶誕首發售完或耶誕節過後仍可加訂，新一批的出貨時間會另外公告。尊榮禮盒是耶誕限定組合，售完為止。</p></details>
+      <details><summary>咖啡可以放多久？</summary><p>未開封常溫保存 12 個月。請放在陰涼乾燥處，避免高溫潮濕與陽光直射。開封後請儘速沖泡飲用。</p></details>
+      <details><summary>商品標示</summary>
+        <table class="mss-table">
+          <tr><th>品名</th><td>日月山 精品濾掛咖啡</td></tr>
+          <tr><th>內容物名稱</th><td>100% 研磨咖啡粉</td></tr>
+          <tr><th>食品添加物</th><td>無</td></tr>
+          <tr><th>淨重</th><td>10g ± 1g／包（單包裝）</td></tr>
+          <tr><th>生豆產地</th><td>肯亞、宏都拉斯、瓜地馬拉等，依各款標示</td></tr>
+          <tr><th>製造地</th><td>台灣</td></tr>
+          <tr><th>有效日期</th><td>標示於包裝封口處（西元年/月/日）</td></tr>
+          <tr><th>保存期限</th><td>12 個月（未開封常溫保存）</td></tr>
+          <tr><th>產品責任險</th><td>已投保新台幣 1,000 萬元</td></tr>
+          <tr><th>出品單位</th><td>費陀有限公司（Fetod Ltd.）</td></tr>
+        </table>
+      </details>
+    </div>
+  </section>
+
+  <!-- 10. LINE / 企業 -->
+  <section class="mss-sec mss-sec--paper">
+    <div class="mss-cta">
+      <div class="mss-cta__card">
+        <img src="https://mountsunmoon.com/assets/line-qr.png" alt="日月山 LINE 官方帳號 QR code" width="120" height="120" loading="lazy">
+        <div>
+          <h3 class="mss-h3">加入日月山 LINE</h3>
+          <p>匯款後傳訂單編號與帳號末五碼、詢問訂購，都可以直接在 LINE 找我們。</p>
+          <a class="mss-btn" href="https://lin.ee/qiXpWYM" target="_blank" rel="noopener">加入 LINE 好友</a>
+        </div>
+      </div>
+      <div class="mss-cta__card">
+        <div>
+          <h3 class="mss-h3">企業訂購與聯名禮盒</h3>
+          <p>100 組以上享企業專屬報價，可印上貴公司 logo，適合年終謝禮、展會贈品與客戶禮品。</p>
+          <a class="mss-btn mss-btn--ghost" href="/pages/business">企業洽詢</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{% schema %}
+{
+  "name": "日月山首頁",
+  "settings": [],
+  "presets": [{ "name": "日月山首頁" }]
+}
+{% endschema %}
