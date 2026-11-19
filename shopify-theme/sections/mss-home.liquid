@@ -2,6 +2,11 @@
 {%- assign p5 = all_products['mss-5-pack'] -%}
 {%- assign p10 = all_products['mss-10-gift'] -%}
 {%- assign pbox = all_products['mss-christmas-box'] -%}
+{%- assign img_hero = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/a-single-ceramic-cup-of-black-coffee-on-light-oak-beside-a-window-with-soft-morning-sunlight-and-gentle-leaf-shadows-in-a-bright-minimalist-japanese-scandinavian-interior.png?v=1' -%}
+{%- assign img_pour = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/close-up-of-hot-water-pouring-from-a-matte-black-gooseneck-kettle-into-an-unbranded-drip-coffee-bag-on-a-white-mug-in-soft-morning-window-light.png?v=1' -%}
+{%- assign img_pouch = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/natural-cotton-drawstring-pouch-filled-with-unbranded-drip-coffee-bags-beside-a-cup-of-coffee-and-a-small-pine-sprig-on-light-oak-in-soft-morning-light.png?v=1' -%}
+{%- assign img_gift = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/open-navy-gift-box-with-a-thin-gold-ribbon-a-matte-black-gooseneck-kettle-and-plain-drip-coffee-bags-beside-a-blank-cream-card-and-pine-sprig-in-soft-morning-light.png?v=1' -%}
+{%- assign img_farm = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/highland-coffee-farm-at-sunrise-with-ripe-red-coffee-cherries-in-the-foreground-green-shrub-rows-and-misty-mountain-ridges-in-soft-golden-light.png?v=1' -%}
 {% render 'mss-styles' %}
 
 <div class="mss">
@@ -9,15 +14,15 @@
   <!-- 1. 主視覺 -->
   <section class="mss-hero">
     <div class="mss-hero__media">
-      <img src="{{ 'mss-hero.jpg' | asset_url }}" alt="日月山掛耳咖啡與手沖壺，放在自然光下的木桌上" width="1264" height="848" fetchpriority="high">
+      <img src="{{ img_hero }}&width=1800" alt="窗邊晨光下，木桌上的一杯手沖咖啡" width="1536" height="1024" fetchpriority="high">
     </div>
     <div class="mss-hero__text">
-      <p class="mss-eyebrow">2026 耶誕首發・限量 195 盒</p>
+      <p class="mss-eyebrow">日月山精品掛耳咖啡・2026 耶誕限量發行</p>
       <h1 class="mss-h1">山不說話，<br>靜承日月光芒。</h1>
       <p class="mss-lead">五位烘豆師，五種火候，收進同一個盒子。<br>一杯好咖啡，讓生活更有光。</p>
       <div class="mss-btns">
         <a class="mss-btn" href="#shop">立即選購</a>
-        <a class="mss-btn mss-btn--ghost" href="#artisans">認識五位手藝人</a>
+        <a class="mss-btn mss-btn--ghost" href="#artisans">認識五位烘豆師</a>
       </div>
     </div>
   </section>
@@ -42,21 +47,21 @@
         {%- case p -%}
 {%- when 1 -%}
 {%- assign prod = p5 -%}
-{%- assign img = 'mss-p5.jpg' | asset_url -%}
+{%- assign img = img_pour | append: '&width=1100' -%}
 {%- assign tag = '自用嘗鮮' -%}
 {%- assign limit = '首發限量 100 盒' -%}
 {%- assign give = '每盒捐出約 NT$13' -%}
 {%- assign cups = '5 包・可沖 5 杯' -%}
 {%- when 2 -%}
 {%- assign prod = p10 -%}
-{%- assign img = 'mss-p10.jpg' | asset_url -%}
+{%- assign img = img_pouch | append: '&width=1100' -%}
 {%- assign tag = '送禮自用' -%}
 {%- assign limit = '首發限量 70 盒' -%}
 {%- assign give = '每盒捐出 NT$26' -%}
 {%- assign cups = '10 包・可沖 10 杯' -%}
 {%- when 3 -%}
 {%- assign prod = pbox -%}
-{%- assign img = pbox.featured_image | image_url: width: 1100 -%}
+{%- assign img = img_gift | append: '&width=1100' -%}
 {%- assign tag = '耶誕限定' -%}
 {%- assign limit = '限量 25 盒' -%}
 {%- assign give = '每盒捐出 NT$59' -%}
@@ -79,6 +84,13 @@
             </a></h3>
             <p class="mss-plan__price">{{ prod.price | money_without_currency | remove: '.00' | prepend: 'NT$' }}</p>
             <p class="mss-plan__cups">{{ cups }}</p>
+            <p class="mss-plan__anchor">
+              {%- case p -%}
+                {%- when 1 -%}<s>單包 NT$55 × 5 = NT$275</s><span>平均每包 NT$53</span>
+                {%- when 2 -%}<s>單包 NT$55 × 10 = NT$550</s><span>平均每包 NT$52</span>
+                {%- when 3 -%}<span>耶誕限定組合：十包咖啡＋手沖壺＋煎餅，一盒送到位</span>
+              {%- endcase -%}
+            </p>
             <ul class="mss-list">
               {%- case p -%}
                 {%- when 1 -%}
@@ -112,7 +124,7 @@
         {%- endif -%}
       {%- endfor -%}
     </div>
-    <p class="mss-note">五包組平均每包 NT$53，十包組平均每包 NT$52。全館滿 NT$1,000 免運，未滿額運費 NT$85（台灣本島常溫配送）。</p>
+    <p class="mss-note">單包散裝 NT$55，買越多每包越划算。全館滿 NT$1,000 免運，未滿額運費 NT$85（台灣本島常溫配送）。商品照為情境示意，實際包裝以出貨為準。</p>
     <p class="mss-note">企業大宗採購：100 組以上享企業專屬報價，也歡迎訂製客製聯名禮盒。<a href="/pages/business">企業洽詢 →</a></p>
   </section>
 
@@ -122,9 +134,9 @@
       <div>
         <p class="mss-eyebrow">Our Positioning</p>
         <h2 class="mss-h2">一個盒子，五種手藝</h2>
-        <p>咖啡市場很滿，大多數人都在比產區、比深淺焙、比 CP 值。日月山沒有走向單一風格，而是做一座「策展型平台」。</p>
-        <p>好咖啡不只有一種樣子，每位烘豆師都有自己的火候與品味。與其由一個品牌說一種標準，不如邀請五位生命歷練各異的手藝人，各自詮釋風土，再由日月山挑選、整理，放進同一個盒子。</p>
-        <p>一盒濾掛式咖啡，五種風味，像一張風味地圖。只要一杯熱水、一個杯子，就能慢慢認識五位手藝人，也找到自己喜歡的那一種。五種風味放在一起，取金、木、水、火、土的整體平衡之意。</p>
+        <p>日月山不是只有一種口味的烘豆廠，而是一座<strong>策展型</strong>的咖啡品牌。打開盒子，就像走進一場小型咖啡展，或展開一趟咖啡旅行：五位烘豆師各自帶來最能代表自己的一支豆子——有人專精精準俐落的淺焙果酸，有人投入咖啡教育二十年，有人從家族莊園一路把生豆帶到台灣。</p>
+        <p>這裡說的<strong>「手藝人」，指的就是烘豆師</strong>。同一顆生豆，火候、時間、溫度的拿捏不同，杯裡的味道就完全不同；烘豆，是把風土翻譯成味道的手藝。</p>
+        <p>日月山負責策展：挑選、整理、把每一支豆子的來歷說清楚，再收進同一個盒子。一天一包，五天走過五座山、五種火候，也慢慢找到你最喜歡的那一種。五種風味放在一起，也取金、木、水、火、土的整體平衡之意。</p>
       </div>
       <div class="mss-compare">
         <div class="mss-compare__row"><span>大師署名策展</span><p>一次收藏五位獨立烘豆師的火候，每包皆有名字與故事。</p></div>
@@ -139,8 +151,8 @@
   <section class="mss-sec" id="artisans">
     <div class="mss-head">
       <p class="mss-eyebrow">The Artisans</p>
-      <h2 class="mss-h2">五位咖啡手藝人，五種火候</h2>
-      <p class="mss-sub">每位手藝人各選一款代表豆，收進同一個盒子。第五款為 Elias 的宏都拉斯限量豆或 Fetod 的印尼黃金曼特寧，每盒隨機搭配其一，無法指定。</p>
+      <h2 class="mss-h2">五位烘豆師，五種火候</h2>
+      <p class="mss-sub">日月山的「手藝人」就是烘豆師。每位烘豆師各選一款代表豆，收進同一個盒子。第五款為 Elias 的宏都拉斯限量豆或 Fetod 的印尼黃金曼特寧，每盒隨機搭配其一，無法指定。</p>
     </div>
     <div class="mss-artisans">
       {%- render 'mss-artisan', no: '01', name: '蔡詩敏 Emily', role: 'YOLO’s CAFE 烘豆師・鴉埠咖啡 YABOO 共同創辦人', bean: '肯亞 麒麟雅加 AA Top 粉象 水洗', roast: '淺焙', notes: '黑醋栗・烏梅・果香', quote: '在精準的火候中，雕刻出果酸最純粹俐落的幾何線條。', bio: '擁有咖啡師、烘豆師、杯測師三項證照與國際考官資格，深耕台北精品咖啡十餘年。' -%}
@@ -185,8 +197,9 @@
     <div class="mss-head">
       <p class="mss-eyebrow">Origin Notes</p>
       <h2 class="mss-h2">產區手札：一杯咖啡，從哪座山來</h2>
-      <p class="mss-sub">五位手藝人選的豆子，來自三大洲、六個國家的高山。</p>
+      <p class="mss-sub">五位烘豆師選的豆子，來自三大洲、六個國家的高山。</p>
     </div>
+    <img class="mss-wide" src="{{ img_farm }}&width=1600" alt="清晨雲霧中的高山咖啡園" loading="lazy" width="1536" height="1024">
     <div class="mss-origins">
       <div><h3 class="mss-h4">肯亞・麒麟雅加</h3><p class="mss-meta">海拔約 1,600–1,900 公尺｜Emily</p><p>肯亞山南麓的火山紅土孕育出明亮的酸質，水洗處理常帶黑醋栗與莓果調性。AA 是依顆粒大小分級的最高等級。</p></div>
       <div><h3 class="mss-h4">印尼・蘇門答臘</h3><p class="mss-meta">曼特寧｜Warren・Fetod</p><p>名字源自曼特寧族，濕剝法帶出厚實醇度與可可、草本氣息；Fetod 選用 Solok 的日曬曼特寧，甜感與香氣更明顯。</p></div>
@@ -213,9 +226,10 @@
   <section class="mss-sec mss-sec--paper" id="brew">
     <div class="mss-head">
       <p class="mss-eyebrow">How to Brew</p>
-      <h2 class="mss-h2">一杯熱水，五個步驟</h2>
+      <h2 class="mss-h2">早晨慢慢沖一杯，五個步驟</h2>
       <p class="mss-sub">建議水溫 88–92℃，每包注水 150–180 ml。</p>
     </div>
+    <img class="mss-wide" src="{{ img_pour }}&width=1600" alt="用細口手沖壺沖泡掛在馬克杯上的掛耳咖啡" loading="lazy" width="1536" height="1024">
     <ol class="mss-steps">
       <li><span>1</span>輕拍袋身讓咖啡粉下沉，沿虛線撕開濾袋。</li>
       <li><span>2</span>拉開兩側掛耳，平穩跨掛在杯口。</li>
@@ -232,7 +246,10 @@
       <h2 class="mss-h2">訂購須知</h2>
     </div>
     <div class="mss-faq">
-      <details open><summary>出貨時間與運費</summary><p>12/01 起依訂單順序出貨，商品未售完前持續接單。12/18 前完成下單與付款，可望在耶誕節前送達。全館滿 NT$1,000 免運；未滿額，台灣本島常溫配送運費 NT$85。</p></details>
+      <details open><summary>日月山是什麼品牌？</summary><p>日月山 Mount Sun Moon 是台灣的精品掛耳咖啡品牌，由費陀有限公司出品。每一盒收錄五位獨立烘豆師的代表豆，產區涵蓋肯亞、印尼、瓜地馬拉、衣索比亞、哥倫比亞與宏都拉斯，讓人在家用一杯熱水就能比較五種風味。</p></details>
+      <details><summary>一盒有哪五位烘豆師？</summary><p>Emily（肯亞 AA，淺焙）、Warren（幸福的滋味配方豆，淺中焙）、寶哥 &amp; Chuck（瓜地馬拉，中深焙）、Dahe（宏都拉斯，中淺焙），第五包為 Elias（宏都拉斯厭氧蜜處理）或 Fetod（印尼黃金曼特寧）隨機其一。</p></details>
+      <details><summary>一包掛耳可以沖幾杯？</summary><p>每包咖啡粉 10g ± 1g，沖一杯 150–180 ml。五包組可沖 5 杯，十包組與尊榮禮盒可沖 10 杯。</p></details>
+      <details><summary>出貨時間與運費</summary><p>12/01 起依訂單順序出貨，商品未售完前持續接單。12/18 前完成下單與付款，可望在耶誕節前送達。全館滿 NT$1,000 免運；未滿額，台灣本島常溫配送運費 NT$85。</p></details>
       <details><summary>怎麼付款？</summary><p>目前提供銀行轉帳：下單後，匯款帳號會顯示在訂單完成頁與確認信中。請於 3 天內完成匯款，並到<a href="/pages/remit">匯款回報</a>填寫訂單編號與帳號末五碼；確認收款後依訂單順序出貨。逾期未付款，名額將釋出給下一位。信用卡付款即將開放。</p></details>
       <details><summary>企業可以大量訂購嗎？</summary><p>可以。100 組以上享企業專屬報價，也歡迎訂製客製聯名禮盒：紙盒印上貴公司 logo、挑選組合內容，適合年終謝禮、展會贈品與客戶禮品。請填寫<a href="/pages/business">企業洽詢表單</a>，我們會另外報價。</p></details>
       <details><summary>耶誕節過後還買得到嗎？</summary><p>可以。五包組與十包組是日月山的常態商品，耶誕首發售完或耶誕節過後仍可加訂，新一批的出貨時間會另外公告。尊榮禮盒是耶誕限定組合，售完為止。</p></details>
@@ -276,6 +293,53 @@
   </section>
 
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mountsunmoon.com/#brand",
+      "name": "日月山 Mount Sun Moon",
+      "alternateName": ["日月山", "Mount Sun Moon"],
+      "url": "https://mountsunmoon.com",
+      "logo": "https://mountsunmoon.com/assets/logo.png",
+      "email": "hello@mountsunmoon.com",
+      "description": "台灣精品掛耳咖啡品牌，每盒收錄五位獨立烘豆師的代表豆，由費陀有限公司出品。",
+      "parentOrganization": { "@type": "Organization", "name": "費陀有限公司 Fetod Ltd." },
+      "sameAs": ["https://mountsunmoon.com", "https://lin.ee/qiXpWYM"]
+    },
+    {
+      "@type": "WebSite",
+      "name": "日月山線上商店",
+      "url": {{ shop.url | json }},
+      "inLanguage": "zh-TW",
+      "publisher": { "@id": "https://mountsunmoon.com/#brand" }
+    },
+    {
+      "@type": "ItemList",
+      "name": "日月山 2026 耶誕掛耳咖啡方案",
+      "itemListElement": [
+        {%- for prod in (1..3) -%}
+          {%- case prod -%}{%- when 1 -%}{%- assign x = p5 -%}{%- when 2 -%}{%- assign x = p10 -%}{%- when 3 -%}{%- assign x = pbox -%}{%- endcase -%}
+          { "@type": "ListItem", "position": {{ prod }}, "url": {{ shop.url | append: x.url | json }}, "name": {{ x.title | json }} }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "日月山是什麼品牌？", "acceptedAnswer": { "@type": "Answer", "text": "日月山 Mount Sun Moon 是台灣的精品掛耳咖啡品牌，由費陀有限公司出品。每一盒收錄五位獨立烘豆師的代表豆，產區涵蓋肯亞、印尼、瓜地馬拉、衣索比亞、哥倫比亞與宏都拉斯。" } },
+        { "@type": "Question", "name": "一包掛耳可以沖幾杯？", "acceptedAnswer": { "@type": "Answer", "text": "每包咖啡粉 10g ± 1g，沖一杯 150–180 ml。五包組可沖 5 杯，十包組與尊榮禮盒可沖 10 杯。" } },
+        { "@type": "Question", "name": "運費與出貨怎麼安排？", "acceptedAnswer": { "@type": "Answer", "text": "全館滿 NT$1,000 免運；未滿額，台灣本島常溫配送運費 NT$85。12 月 1 日起依訂單順序出貨，12 月 18 日前完成付款可望在耶誕節前送達。" } },
+        { "@type": "Question", "name": "耶誕節過後還買得到嗎？", "acceptedAnswer": { "@type": "Answer", "text": "可以。五包組與十包組是常態商品，耶誕過後仍可加訂；尊榮禮盒是耶誕限定組合，售完為止。" } },
+        { "@type": "Question", "name": "咖啡可以放多久？", "acceptedAnswer": { "@type": "Answer", "text": "未開封常溫保存 12 個月，請放在陰涼乾燥處，開封後請儘速沖泡飲用。" } }
+      ]
+    }
+  ]
+}
+</script>
 
 {% schema %}
 {
