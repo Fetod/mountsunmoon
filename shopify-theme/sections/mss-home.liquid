@@ -3,9 +3,9 @@
 {%- assign p10 = all_products['mss-10-gift'] -%}
 {%- assign pbox = all_products['mss-christmas-box'] -%}
 {%- assign img_hero = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/a-single-ceramic-cup-of-black-coffee-on-light-oak-beside-a-window-with-soft-morning-sunlight-and-gentle-leaf-shadows-in-a-bright-minimalist-japanese-scandinavian-interior.png?v=1' -%}
-{%- assign img_pour = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/close-up-of-hot-water-pouring-from-a-matte-black-gooseneck-kettle-into-an-unbranded-drip-coffee-bag-on-a-white-mug-in-soft-morning-window-light.png?v=1' -%}
-{%- assign img_pouch = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/natural-cotton-drawstring-pouch-filled-with-unbranded-drip-coffee-bags-beside-a-cup-of-coffee-and-a-small-pine-sprig-on-light-oak-in-soft-morning-light.png?v=1' -%}
-{%- assign img_gift = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/open-navy-gift-box-with-a-thin-gold-ribbon-a-matte-black-gooseneck-kettle-and-plain-drip-coffee-bags-beside-a-blank-cream-card-and-pine-sprig-in-soft-morning-light.png?v=1' -%}
+{%- assign img_pour = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/bright-airy-pour-over-coffee-scene-with-a-small-matte-black-kettle-white-drip-bag-and-ceramic-mug-on-a-light-oak-table.png?v=1' -%}
+{%- assign img_pouch = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/black-cotton-drawstring-pouch-with-white-drip-coffee-bags-beside-a-cup-of-black-coffee-and-a-pine-sprig-in-soft-morning-light.png?v=1' -%}
+{%- assign img_gift = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/navy-holiday-gift-box-with-a-walnut-lid-black-kettle-white-drip-coffee-bags-and-rice-crackers-beside-a-blank-cream-card-and-pine-sprig.png?v=1' -%}
 {%- assign img_farm = 'https://cdn.shopify.com/s/files/1/0765/2940/2054/files/highland-coffee-farm-at-sunrise-with-ripe-red-coffee-cherries-in-the-foreground-green-shrub-rows-and-misty-mountain-ridges-in-soft-golden-light.png?v=1' -%}
 {% render 'mss-styles' %}
 
@@ -52,6 +52,7 @@
 {%- assign limit = '首發限量 100 盒' -%}
 {%- assign give = '每盒捐出約 NT$13' -%}
 {%- assign cups = '5 包・可沖 5 杯' -%}
+{%- assign cap = '' -%}
 {%- when 2 -%}
 {%- assign prod = p10 -%}
 {%- assign img = img_pouch | append: '&width=1100' -%}
@@ -59,6 +60,7 @@
 {%- assign limit = '首發限量 70 盒' -%}
 {%- assign give = '每盒捐出 NT$26' -%}
 {%- assign cups = '10 包・可沖 10 杯' -%}
+{%- assign cap = '情境示意：束口袋為黑色棉布，以實際商品為準' -%}
 {%- when 3 -%}
 {%- assign prod = pbox -%}
 {%- assign img = img_gift | append: '&width=1100' -%}
@@ -66,12 +68,14 @@
 {%- assign limit = '限量 25 盒' -%}
 {%- assign give = '每盒捐出 NT$59' -%}
 {%- assign cups = '10 包＋手沖壺＋煎餅' -%}
+{%- assign cap = '禮盒為示意圖，包裝定案後更新實拍' -%}
 {%- endcase -%}
         {%- if prod != blank -%}
         <article class="mss-plan{% if p == 3 %} mss-plan--feature{% endif %}">
           <a href="{{ prod.url }}" class="mss-plan__img">
             <img src="{{ img }}" alt="{{ prod.title | escape }}" loading="lazy" width="1100" height="1100">
             <span class="mss-badge">{{ tag }}</span>
+            {%- if cap != blank -%}<span class="mss-cap">{{ cap }}</span>{%- endif -%}
           </a>
           <div class="mss-plan__body">
             <p class="mss-plan__limit">{{ limit }}{% unless prod.available %}・已售完{% endunless %}</p>
@@ -219,6 +223,16 @@
       <h2 class="mss-h2">耶誕微光計畫</h2>
       <p>這一批耶誕首發預購的每一盒，我們都以含稅售價的 5%（不含運費）捐出，定向支持 LIA 五明國際學苑實驗教育的藝術與音樂深度探索課程。</p>
       <p>這個冬天，你手中的咖啡是一場風味的旅行，也是一份送給孩子們的藝術禮物。這一批出貨完成後，我們會公開撥付金額與課程紀實。</p>
+      <div class="mss-tally">
+        {%- if section.settings.donation_total > 0 -%}
+          <p class="mss-tally__label">目前累積捐款</p>
+          <p class="mss-tally__num">NT${{ section.settings.donation_total }}</p>
+          <p class="mss-tally__meta">來自 {{ section.settings.donation_boxes }} 盒已付款訂單・統計至 {{ section.settings.donation_updated }}・每週更新</p>
+        {%- else -%}
+          <p class="mss-tally__label">目前累積捐款</p>
+          <p class="mss-tally__meta">預購剛開始，第一筆訂單確認付款後開始累積，每週更新。</p>
+        {%- endif -%}
+      </div>
     </div>
   </section>
 
@@ -344,7 +358,11 @@
 {% schema %}
 {
   "name": "日月山首頁",
-  "settings": [],
+  "settings": [
+    { "type": "number", "id": "donation_total", "label": "累積捐款金額（NT$）", "default": 0 },
+    { "type": "number", "id": "donation_boxes", "label": "已付款盒數", "default": 0 },
+    { "type": "text", "id": "donation_updated", "label": "統計日期", "default": "" }
+  ],
   "presets": [{ "name": "日月山首頁" }]
 }
 {% endschema %}
