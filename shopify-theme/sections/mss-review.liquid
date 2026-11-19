@@ -1,0 +1,125 @@
+<style>
+  .mrv { --navy:#17496b; --gold:#b48537; --ink:#2e2b26; --muted:#6f695e; --line:#e4dccd; --paper:#f3ede2;
+    background:#fbf8f2; color:var(--ink); font-family:-apple-system,'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif; line-height:1.8; padding:clamp(32px,6vw,72px) 16px; }
+  .mrv__in { max-width:620px; margin:0 auto; }
+  .mrv__eyebrow { font-size:12px; letter-spacing:.22em; color:var(--gold); font-weight:600; margin:0 0 .6em; text-transform:uppercase; }
+  .mrv h1 { font-family:'Noto Serif TC','Songti TC',serif; font-size:clamp(26px,5vw,36px); font-weight:600; letter-spacing:.06em; margin:0 0 .4em; }
+  .mrv__lead { color:var(--muted); margin:0 0 28px; }
+  .mrv__card { background:#fff; border:1px solid var(--line); border-radius:18px; padding:clamp(20px,5vw,36px); }
+  .mrv label, .mrv legend { display:block; font-weight:600; font-size:15px; margin:0 0 8px; }
+  .mrv fieldset { border:0; padding:0; margin:0 0 22px; }
+  .mrv__field { margin:0 0 22px; }
+  .mrv input[type=text], .mrv input[type=email], .mrv select, .mrv textarea { width:100%; box-sizing:border-box; font:inherit; font-size:16px; padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:#fff; color:var(--ink); }
+  .mrv textarea { min-height:140px; resize:vertical; }
+  .mrv__hint { font-size:13px; color:var(--muted); margin:6px 0 0; font-weight:400; }
+  .mrv__chips { display:flex; flex-wrap:wrap; gap:8px; }
+  .mrv__chips label { font-weight:400; margin:0; }
+  .mrv__chips input { position:absolute; opacity:0; pointer-events:none; }
+  .mrv__chips span { display:inline-block; padding:8px 16px; border:1px solid var(--line); border-radius:999px; cursor:pointer; font-size:15px; }
+  .mrv__chips input:checked + span { background:var(--navy); border-color:var(--navy); color:#fff; }
+  .mrv__chips input:focus-visible + span { outline:2px solid var(--gold); outline-offset:2px; }
+  .mrv__stars { display:flex; flex-direction:row-reverse; justify-content:flex-end; gap:4px; }
+  .mrv__stars input { position:absolute; opacity:0; pointer-events:none; }
+  .mrv__stars label { font-size:34px; line-height:1; color:#d9cfbd; cursor:pointer; margin:0; font-weight:400; }
+  .mrv__stars input:checked ~ label, .mrv__stars label:hover, .mrv__stars label:hover ~ label { color:var(--gold); }
+  .mrv__stars input:focus-visible + label { outline:2px solid var(--navy); border-radius:4px; }
+  .mrv__consent { display:flex; gap:10px; align-items:flex-start; font-weight:400 !important; font-size:14px !important; color:var(--muted); }
+  .mrv__consent input { margin-top:5px; width:18px; height:18px; flex:0 0 18px; }
+  .mrv__btn { display:flex; width:100%; min-height:52px; align-items:center; justify-content:center; background:var(--navy); color:#fff; border:0; border-radius:999px; font:inherit; font-size:16px; letter-spacing:.12em; cursor:pointer; }
+  .mrv__btn:hover { background:#103650; }
+  .mrv__ok { background:var(--paper); border-radius:14px; padding:18px 20px; margin:0 0 20px; }
+  .mrv__err { color:#a33; margin:0 0 16px; }
+  .mrv__foot { text-align:center; font-size:14px; color:var(--muted); margin-top:24px; }
+  .mrv__foot a { color:var(--navy); }
+</style>
+
+<div class="mrv">
+  <div class="mrv__in">
+    <p class="mrv__eyebrow">Your Review</p>
+    <h1>{{ section.settings.heading | default: '喝過日月山了嗎？' }}</h1>
+    <p class="mrv__lead">{{ section.settings.lead | default: '謝謝你試喝日月山。你的一句心得，是下一位朋友選咖啡的參考，也是五位烘豆師最大的鼓勵。填寫約 1 分鐘。' }}</p>
+
+    <div class="mrv__card">
+      {%- form 'contact', id: 'mss-review-form' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="mrv__ok"><strong>收到了，謝謝你！</strong><br>我們會好好讀每一則心得。若你同意公開，整理後會刊登在商店與社群上。</div>
+        {%- endif -%}
+        {%- if form.errors -%}
+          <p class="mrv__err">{{ form.errors | default_errors }}</p>
+        {%- endif -%}
+
+        <input type="hidden" name="contact[表單]" value="顧客心得評價">
+
+        <fieldset>
+          <legend>整體評分</legend>
+          <div class="mrv__stars">
+            <input type="radio" id="mrv-s5" name="contact[評分]" value="5 星" required><label for="mrv-s5" title="5 星">★</label>
+            <input type="radio" id="mrv-s4" name="contact[評分]" value="4 星"><label for="mrv-s4" title="4 星">★</label>
+            <input type="radio" id="mrv-s3" name="contact[評分]" value="3 星"><label for="mrv-s3" title="3 星">★</label>
+            <input type="radio" id="mrv-s2" name="contact[評分]" value="2 星"><label for="mrv-s2" title="2 星">★</label>
+            <input type="radio" id="mrv-s1" name="contact[評分]" value="1 星"><label for="mrv-s1" title="1 星">★</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>你喝的是</legend>
+          <div class="mrv__chips">
+            <label><input type="radio" name="contact[品項]" value="試喝" checked><span>試喝</span></label>
+            <label><input type="radio" name="contact[品項]" value="五包掛耳體驗組"><span>五包組</span></label>
+            <label><input type="radio" name="contact[品項]" value="十包掛耳禮品組"><span>十包組</span></label>
+            <label><input type="radio" name="contact[品項]" value="耶誕限定尊榮禮盒"><span>尊榮禮盒</span></label>
+          </div>
+        </fieldset>
+
+        <div class="mrv__field">
+          <label for="mrv-fav">最喜歡哪一位烘豆師的豆子？</label>
+          <select id="mrv-fav" name="contact[最喜歡的烘豆師]">
+            <option value="還沒決定">還沒決定／都喜歡</option>
+            <option value="Emily｜肯亞 AA">Emily｜肯亞 AA（明亮果酸）</option>
+            <option value="Warren｜幸福的滋味配方">Warren｜幸福的滋味配方</option>
+            <option value="寶哥 & Chuck｜瓜地馬拉">寶哥 &amp; Chuck｜瓜地馬拉</option>
+            <option value="Dahe｜宏都拉斯">Dahe｜宏都拉斯</option>
+            <option value="Elias｜宏都拉斯厭氧蜜">Elias｜宏都拉斯厭氧蜜</option>
+            <option value="Fetod｜黃金曼特寧">Fetod｜黃金曼特寧</option>
+          </select>
+        </div>
+
+        <div class="mrv__field">
+          <label for="mrv-body">你的心得</label>
+          <textarea id="mrv-body" name="contact[body]" required placeholder="例如：第一包肯亞的酸很乾淨，早上配煎餅剛剛好⋯⋯"></textarea>
+        </div>
+
+        <div class="mrv__field">
+          <label for="mrv-name">顯示名稱</label>
+          <input type="text" id="mrv-name" name="contact[name]" autocomplete="nickname" placeholder="例如：台北 王小姐、Amy">
+          <p class="mrv__hint">刊登時只會顯示這個名稱。</p>
+        </div>
+
+        <div class="mrv__field">
+          <label for="mrv-email">Email</label>
+          <input type="email" id="mrv-email" name="contact[email]" autocomplete="email" required inputmode="email">
+          <p class="mrv__hint">只用來聯絡你，不會公開。</p>
+        </div>
+
+        <div class="mrv__field">
+          <label class="mrv__consent"><input type="checkbox" name="contact[同意公開]" value="同意刊登在商店與社群（僅顯示名稱）">我同意日月山將這則心得與顯示名稱刊登在商店與社群上</label>
+        </div>
+
+        <button type="submit" class="mrv__btn">送出心得</button>
+      {%- endform -%}
+    </div>
+
+    <p class="mrv__foot"><a href="/">回到日月山線上商店</a>・<a href="https://lin.ee/qiXpWYM" target="_blank" rel="noopener">LINE 官方帳號</a></p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "日月山心得評價表單",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "標題", "default": "喝過日月山了嗎？" },
+    { "type": "textarea", "id": "lead", "label": "說明" }
+  ],
+  "presets": [{ "name": "日月山心得評價表單" }]
+}
+{% endschema %}
