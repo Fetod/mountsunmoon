@@ -77,7 +77,7 @@
                 {%- when 3 -%}耶誕限定尊榮禮盒
               {%- endcase -%}
             </a></h3>
-            <p class="mss-plan__price">{{ prod.price | money_without_trailing_zeros }}</p>
+            <p class="mss-plan__price">{{ prod.price | money_without_currency | remove: '.00' | prepend: 'NT$' }}</p>
             <p class="mss-plan__cups">{{ cups }}</p>
             <ul class="mss-list">
               {%- case p -%}
