@@ -158,6 +158,29 @@
   .mss[lang=en] .mss-h2 { letter-spacing: .01em; }
   .mss[lang=en] .mss-hero__btns .mss-btn { font-size: 13px; letter-spacing: .02em; }
   .mss-next { text-align: center; margin-top: clamp(24px, 4vw, 40px); }
+  /* English lean layout */
+  .mss[lang=en] .mss-hero .mss-h1 { font-size: clamp(30px, 4vw, 52px); }
+  .mss-plan--lean .mss-plan__body { gap: 0; }
+  .mss-plan__line { font-size: 15px; color: var(--mss-muted); margin-bottom: .5em !important; }
+  .mss-plan__per { font-family: var(--mss-sans); font-size: 13px; color: var(--mss-muted); margin-left: 6px; }
+  .mss-plan--lean .mss-plan__form { margin-top: 10px; }
+  .mss-roasters { display: grid; gap: 10px; grid-template-columns: 1fr; max-width: 900px; margin: 0 auto; }
+  @media (min-width: 750px) { .mss-roasters { grid-template-columns: repeat(5, 1fr); } }
+  .mss-roasters > div { background: #fff; border: 1px solid var(--mss-line); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px; font-size: 14px; }
+  .mss-roasters b { font-family: var(--mss-serif); font-size: 16px; }
+  .mss-roasters span { color: var(--mss-muted); }
+  .mss-roasters em { font-style: normal; color: var(--mss-navy); }
+  .mss-more { max-width: 900px; margin: 18px auto 0; border-top: 1px solid var(--mss-line); border-bottom: 1px solid var(--mss-line); }
+  .mss-more > summary { cursor: pointer; list-style: none; padding: 14px 4px; font-family: var(--mss-serif); font-size: 16px; color: var(--mss-navy); text-align: center; }
+  .mss-more > summary::-webkit-details-marker { display: none; }
+  .mss-more > summary::after { content: ' +'; color: var(--mss-gold); }
+  .mss-more[open] > summary::after { content: ' −'; }
+  .mss-more > *:not(summary) { margin-top: 8px; margin-bottom: 20px; }
+  .mss-more__body p { font-size: 15px; }
+  .mss-steps--3 { max-width: 900px; }
+  @media (min-width: 900px) { .mss-steps--3 { grid-template-columns: repeat(3, 1fr); } }
+  .mss-originlist { list-style: none; padding: 0; margin: 0; font-size: 15px; display: grid; gap: 6px; }
+  .mss-originlist b { font-family: var(--mss-serif); margin-right: 6px; }
   /* language toggle */
   .mss-lang { display: inline-flex; flex: none; white-space: nowrap; writing-mode: horizontal-tb; line-height: 1; align-items: center; justify-content: center; min-width: 44px; height: 30px; padding: 0 10px; margin: 0 4px; align-self: center; border: 1px solid currentColor; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-decoration: none; color: inherit; }
   /* footer */
