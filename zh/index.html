@@ -197,6 +197,7 @@ section > .wrap > .sub-en + .lead { margin-top: 6px; }
 .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); }
 .plan { padding: 32px 26px 30px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .plan + .plan { border-left: 1px solid var(--line); }
+.planimg { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border: 1px solid var(--line); }
 .plan.feature { background: var(--ink-2); }
 .plan .tag { font-family: var(--latin); letter-spacing: 0.22em; font-size: 14px; color: var(--gold); text-transform: uppercase; }
 .plan h3 { font-size: 22px; }
@@ -599,13 +600,14 @@ header nav { margin-left: auto; }
           <p class="for">适合初次尝鲜、个人晨间日常品味。</p>
         </div>
         <div class="plan feature">
+          <img class="planimg" src="../assets/pouch-wood.jpg" alt="日月山黑色棉质束口袋实拍" loading="lazy" width="1400" height="1400">
           <span class="tag">Plan 2</span>
           <h3>十包挂耳礼品组</h3>
           <p class="price"><small>¥</small>115</p>
           <p class="limit">限量 70 盒</p>
           <ul>
             <li>五位烘豆师各 2 包，共 10 包</li>
-            <li>附天然棉质束口袋</li>
+            <li>附黑色棉质束口袋（烫金日月山图腾）</li>
           </ul>
           <p class="for">适合送礼自用，重视生活美学的藏家。</p>
         </div>
