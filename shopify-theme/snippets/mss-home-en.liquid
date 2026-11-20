@@ -74,7 +74,7 @@
       {%- for p in (1..3) -%}
         {%- case p -%}
           {%- when 1 -%}{%- assign prod = p5 -%}{%- assign img = img_pour | append: '&width=1100' -%}{%- assign tag = 'For yourself' -%}{%- assign limit = 'First release: 100 boxes' -%}{%- assign give = 'About NT$13 per box' -%}{%- assign cups = '5 bags · 5 cups' -%}{%- assign cap = '' -%}{%- assign name = 'Drip-Bag Discovery Set (5)' -%}
-          {%- when 2 -%}{%- assign prod = p10 -%}{%- assign img = img_pouch | append: '&width=1100' -%}{%- assign tag = 'To give or keep' -%}{%- assign limit = 'First release: 70 boxes' -%}{%- assign give = 'NT$26 per box' -%}{%- assign cups = '10 bags · 10 cups' -%}{%- assign cap = 'Styled image: black cotton pouch, actual item may vary' -%}{%- assign name = 'Drip-Bag Gift Set (10)' -%}
+          {%- when 2 -%}{%- assign prod = p10 -%}{%- assign img = p10.featured_image | image_url: width: 1100 -%}{%- assign tag = 'To give or keep' -%}{%- assign limit = 'First release: 70 boxes' -%}{%- assign give = 'NT$26 per box' -%}{%- assign cups = '10 bags · 10 cups' -%}{%- assign cap = '' -%}{%- assign name = 'Drip-Bag Gift Set (10)' -%}
           {%- when 3 -%}{%- assign prod = pbox -%}{%- assign img = img_gift | append: '&width=1100' -%}{%- assign tag = 'Christmas only' -%}{%- assign limit = 'Limited to 25 boxes' -%}{%- assign give = 'NT$59 per box' -%}{%- assign cups = '10 bags + kettle + rice crackers' -%}{%- assign cap = 'Styled image; real photos once packaging is final' -%}{%- assign name = 'Christmas Collector’s Gift Box' -%}
         {%- endcase -%}
         {%- if prod != blank -%}
@@ -104,7 +104,7 @@
                   <li>A first taste, or your own morning ritual</li>
                 {%- when 2 -%}
                   <li>Two bags from each of the five roasters</li>
-                  <li>Comes in a cotton drawstring pouch</li>
+                  <li>Comes in a black cotton drawstring pouch with the gold Mount Sun Moon mark</li>
                   <li>For gifting, or for yourself</li>
                 {%- when 3 -%}
                   <li>Two bags from each of the five roasters</li>

@@ -102,12 +102,12 @@
 {%- assign cap = '' -%}
 {%- when 2 -%}
 {%- assign prod = p10 -%}
-{%- assign img = img_pouch | append: '&width=1100' -%}
+{%- assign img = p10.featured_image | image_url: width: 1100 -%}
 {%- assign tag = '送禮自用' -%}
 {%- assign limit = '首發限量 70 盒' -%}
 {%- assign give = '每盒捐出 NT$26' -%}
 {%- assign cups = '10 包・可沖 10 杯' -%}
-{%- assign cap = '情境示意：束口袋為黑色棉布，以實際商品為準' -%}
+{%- assign cap = '' -%}
 {%- when 3 -%}
 {%- assign prod = pbox -%}
 {%- assign img = img_gift | append: '&width=1100' -%}
@@ -150,7 +150,7 @@
                   <li>適合初次嘗鮮、個人晨間日常</li>
                 {%- when 2 -%}
                   <li>五位烘豆師各 2 包，共 10 包</li>
-                  <li>附天然棉質束口袋</li>
+                  <li>附黑色棉質束口袋（燙金日月山圖騰）</li>
                   <li>適合送禮自用、重視生活美學的你</li>
                 {%- when 3 -%}
                   <li>五位烘豆師各 2 包，共 10 包</li>
