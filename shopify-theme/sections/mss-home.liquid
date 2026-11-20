@@ -24,10 +24,11 @@
       <h1 class="mss-h1">山不說話，<br>靜承日月光芒。</h1>
       <p class="mss-lead">五位烘豆師，五種火候，收進同一個盒子。<br>一杯好咖啡，讓生活更有光。</p>
       <div class="mss-btns mss-hero__btns">
-        <a class="mss-btn" href="#shop">立即選購</a>
         <a class="mss-btn mss-btn--ghost" href="#positioning">品牌定位</a>
-        <a class="mss-btn mss-btn--ghost" href="#artisans">認識五位烘豆師</a>
-        <a class="mss-btn mss-btn--ghost" href="#gifting">企業送禮・客製禮盒</a>
+        <a class="mss-btn mss-btn--ghost" href="#glimmer">微光計畫</a>
+        <a class="mss-btn" href="#shop">立即選購</a>
+        <a class="mss-btn mss-btn--ghost mss-btn--wide" href="#artisans">認識五位烘豆師</a>
+        <a class="mss-btn mss-btn--ghost mss-btn--wide" href="#gifting">企業送禮・客製禮盒</a>
       </div>
     </div>
   </section>
@@ -39,6 +40,47 @@
     <li><strong>滿 NT$1,000</strong>免運</li>
     <li><strong>5%</strong>捐給孩子的藝術課</li>
   </ul>
+
+  <!-- 3. 品牌定位 -->
+  <section class="mss-sec mss-sec--paper" id="positioning">
+    <div class="mss-split">
+      <div>
+        <p class="mss-eyebrow">Our Positioning</p>
+        <h2 class="mss-h2">一個盒子，五種手藝</h2>
+        <p>日月山不是只有一種口味的烘豆廠，而是一個<strong>策展型</strong>的咖啡品牌。打開盒子，就像走進一場小型咖啡展，或展開一趟咖啡旅行：五位烘豆師各自帶來最能代表自己的一支豆子——有人專精精準俐落的淺焙果酸，有人投入咖啡教育二十年，有人從家族莊園一路把生豆帶到台灣。</p>
+        <p>這裡說的<strong>「手藝人」，指的就是烘豆師</strong>。同一顆生豆，火候、時間、溫度的拿捏不同，杯裡的味道就完全不同；烘豆，是把風土翻譯成味道的手藝。</p>
+        <p>日月山負責策展：挑選、整理、把每一支豆子的來歷說清楚，再收進同一個盒子。一天一包，五天走過五座山、五種火候，也慢慢找到你最喜歡的那一種。五種風味放在一起，也取金、木、水、火、土的整體平衡之意。</p>
+      </div>
+      <div class="mss-compare">
+        <div class="mss-compare__row"><span>大師署名策展</span><p>一次收藏五位獨立烘豆師的火候，每包皆有名字與故事。</p></div>
+        <div class="mss-compare__row"><span>五行平衡風味</span><p>打破門戶界線，以一個盒子拼出完整而平衡的味覺地圖。</p></div>
+        <div class="mss-compare__row"><span>極簡低調文藝</span><p>減塑布質、藏青金銀的克制美學，能長久陪伴日常。</p></div>
+        <div class="mss-compare__row"><span>回歸風土與純粹</span><p>專注於風味層次、手藝人精神與生活美感，讓每一包咖啡都有名字可以負責。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 耶誕微光計畫 -->
+  <section class="mss-sec mss-giving" id="glimmer">
+    <div class="mss-giving__num">5%</div>
+    <div>
+      <p class="mss-eyebrow">Impact & Giving</p>
+      <h2 class="mss-h2">耶誕微光計畫</h2>
+      <p>這一批耶誕首發預購的每一盒，我們都以含稅售價的 5%（不含運費）捐出，定向支持 LIA 五明國際學苑實驗教育的藝術與音樂深度探索課程。</p>
+      <p>這個冬天，你手中的咖啡是一場風味的旅行，也是一份送給孩子們的藝術禮物。這一批出貨完成後，我們會公開撥付金額與課程紀實。</p>
+      <div class="mss-tally">
+        {%- if section.settings.donation_total > 0 -%}
+          <p class="mss-tally__label">目前累積捐款</p>
+          <p class="mss-tally__num">NT${{ section.settings.donation_total }}</p>
+          <p class="mss-tally__meta">來自 {{ section.settings.donation_boxes }} 盒已付款訂單・統計至 {{ section.settings.donation_updated }}・每週更新</p>
+        {%- else -%}
+          <p class="mss-tally__label">目前累積捐款</p>
+          <p class="mss-tally__meta">預購剛開始，第一筆訂單確認付款後開始累積，每週更新。</p>
+        {%- endif -%}
+      </div>
+      <div class="mss-btns"><a class="mss-btn" href="#shop">選一盒，一起點亮微光</a></div>
+    </div>
+  </section>
 
   <!-- 2. 方案 -->
   <section class="mss-sec" id="shop">
@@ -158,25 +200,6 @@
     </div>
   </section>
 
-  <!-- 3. 品牌定位 -->
-  <section class="mss-sec mss-sec--paper" id="positioning">
-    <div class="mss-split">
-      <div>
-        <p class="mss-eyebrow">Our Positioning</p>
-        <h2 class="mss-h2">一個盒子，五種手藝</h2>
-        <p>日月山不是只有一種口味的烘豆廠，而是一個<strong>策展型</strong>的咖啡品牌。打開盒子，就像走進一場小型咖啡展，或展開一趟咖啡旅行：五位烘豆師各自帶來最能代表自己的一支豆子——有人專精精準俐落的淺焙果酸，有人投入咖啡教育二十年，有人從家族莊園一路把生豆帶到台灣。</p>
-        <p>這裡說的<strong>「手藝人」，指的就是烘豆師</strong>。同一顆生豆，火候、時間、溫度的拿捏不同，杯裡的味道就完全不同；烘豆，是把風土翻譯成味道的手藝。</p>
-        <p>日月山負責策展：挑選、整理、把每一支豆子的來歷說清楚，再收進同一個盒子。一天一包，五天走過五座山、五種火候，也慢慢找到你最喜歡的那一種。五種風味放在一起，也取金、木、水、火、土的整體平衡之意。</p>
-      </div>
-      <div class="mss-compare">
-        <div class="mss-compare__row"><span>大師署名策展</span><p>一次收藏五位獨立烘豆師的火候，每包皆有名字與故事。</p></div>
-        <div class="mss-compare__row"><span>五行平衡風味</span><p>打破門戶界線，以一個盒子拼出完整而平衡的味覺地圖。</p></div>
-        <div class="mss-compare__row"><span>極簡低調文藝</span><p>減塑布質、藏青金銀的克制美學，能長久陪伴日常。</p></div>
-        <div class="mss-compare__row"><span>回歸風土與純粹</span><p>專注於風味層次、手藝人精神與生活美感，讓每一包咖啡都有名字可以負責。</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- 4. 五位手藝人 -->
   <section class="mss-sec" id="artisans">
     <div class="mss-head">
@@ -241,27 +264,6 @@
     </div>
     <p class="mss-swipe">← 左右滑動看更多 →</p>
     <p class="mss-note">海拔為各產區常見範圍，實際依批次與莊園而異。</p>
-  </section>
-
-  <!-- 7. 耶誕微光計畫 -->
-  <section class="mss-sec mss-giving">
-    <div class="mss-giving__num">5%</div>
-    <div>
-      <p class="mss-eyebrow">Impact & Giving</p>
-      <h2 class="mss-h2">耶誕微光計畫</h2>
-      <p>這一批耶誕首發預購的每一盒，我們都以含稅售價的 5%（不含運費）捐出，定向支持 LIA 五明國際學苑實驗教育的藝術與音樂深度探索課程。</p>
-      <p>這個冬天，你手中的咖啡是一場風味的旅行，也是一份送給孩子們的藝術禮物。這一批出貨完成後，我們會公開撥付金額與課程紀實。</p>
-      <div class="mss-tally">
-        {%- if section.settings.donation_total > 0 -%}
-          <p class="mss-tally__label">目前累積捐款</p>
-          <p class="mss-tally__num">NT${{ section.settings.donation_total }}</p>
-          <p class="mss-tally__meta">來自 {{ section.settings.donation_boxes }} 盒已付款訂單・統計至 {{ section.settings.donation_updated }}・每週更新</p>
-        {%- else -%}
-          <p class="mss-tally__label">目前累積捐款</p>
-          <p class="mss-tally__meta">預購剛開始，第一筆訂單確認付款後開始累積，每週更新。</p>
-        {%- endif -%}
-      </div>
-    </div>
   </section>
 
   <!-- 8. 沖煮 -->

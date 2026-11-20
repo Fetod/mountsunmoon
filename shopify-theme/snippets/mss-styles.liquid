@@ -41,7 +41,9 @@
   .mss-hero { position: relative; }
   .mss-hero__media img { display: block; width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; }
   .mss-hero__text { padding: 22px 20px 28px; }
-  .mss-hero__btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; max-width: 520px; }
+  .mss-hero__btns { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 20px; max-width: 540px; }
+  .mss-hero__btns .mss-btn { grid-column: span 2; }
+  .mss-hero__btns .mss-btn--wide { grid-column: span 3; }
   .mss-hero__btns .mss-btn { padding: 0 12px; min-height: 46px; font-size: 14px; letter-spacing: .06em; text-align: center; }
   @media (max-width: 899px) {
     .mss-hero__media img { aspect-ratio: 16/9; }

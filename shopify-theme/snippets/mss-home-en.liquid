@@ -10,10 +10,11 @@
       <h1 class="mss-h1">The mountain keeps its silence,<br>and holds the light of sun and moon.</h1>
       <p class="mss-lead">Five roasters, five fires, one box.<br>A good cup of coffee brings more light to life.</p>
       <div class="mss-btns mss-hero__btns">
+        <a class="mss-btn mss-btn--ghost" href="#positioning">Our story</a>
+        <a class="mss-btn mss-btn--ghost" href="#glimmer">Glimmer Project</a>
         <a class="mss-btn" href="#shop">Shop now</a>
-        <a class="mss-btn mss-btn--ghost" href="#positioning">Our positioning</a>
-        <a class="mss-btn mss-btn--ghost" href="#artisans">Meet the five roasters</a>
-        <a class="mss-btn mss-btn--ghost" href="#gifting">Corporate & custom gifts</a>
+        <a class="mss-btn mss-btn--ghost mss-btn--wide" href="#artisans">Meet the five roasters</a>
+        <a class="mss-btn mss-btn--ghost mss-btn--wide" href="#gifting">Corporate & custom gifts</a>
       </div>
     </div>
   </section>
@@ -24,6 +25,44 @@
     <li><strong>NT$1,000+</strong>free shipping in Taiwan</li>
     <li><strong>5%</strong>to children's arts classes</li>
   </ul>
+
+  <section class="mss-sec mss-sec--paper" id="positioning">
+    <div class="mss-split">
+      <div>
+        <p class="mss-eyebrow">Our Positioning</p>
+        <h2 class="mss-h2">One box, five crafts</h2>
+        <p>Mount Sun Moon is not a roastery with a single house style. It is a <strong>curated</strong> coffee brand. Opening the box is like walking into a small coffee exhibition, or setting out on a coffee journey: five roasters each bring the one bean that best represents them — one is known for precise, clean light-roast acidity, one has taught coffee for twenty years, one carries green beans from his family's farm all the way to Taiwan.</p>
+        <p>When we say <strong>“artisans”, we mean the roasters</strong>. The same green bean tastes completely different depending on how the heat, time and temperature are handled; roasting is the craft of translating a place into flavour.</p>
+        <p>Mount Sun Moon is the curator: we select, arrange and tell the story behind every bean, then put all five into one box. One bag a day, five days, five mountains, five fires — and along the way you find the one you love. Together the five flavours stand for balance across the five elements: metal, wood, water, fire and earth.</p>
+      </div>
+      <div class="mss-compare">
+        <div class="mss-compare__row"><span>Curated and signed</span><p>Collect the craft of five independent roasters at once; every bag carries a name and a story.</p></div>
+        <div class="mss-compare__row"><span>A balanced map of flavour</span><p>Crossing the lines between houses to draw a complete, balanced map of taste in one box.</p></div>
+        <div class="mss-compare__row"><span>Quiet and minimal</span><p>Less plastic, cloth materials and a restrained palette of navy, gold and silver, made to stay with you day to day.</p></div>
+        <div class="mss-compare__row"><span>Back to the land</span><p>Focused on layers of flavour, the roaster's spirit and everyday beauty, so every bag has a name that answers for it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mss-sec mss-giving" id="glimmer">
+    <div class="mss-giving__num">5%</div>
+    <div>
+      <p class="mss-eyebrow">Impact & Giving</p>
+      <h2 class="mss-h2">Christmas Glimmer Project</h2>
+      <p>For every box in this Christmas first release, we donate 5% of the tax-inclusive price (excluding shipping) to the arts and music programmes of LIA Lumière International Academy, an experimental school in Taiwan.</p>
+      <p>This winter, the coffee in your hands is a journey of flavour and a gift of art for children. Once this batch has shipped, we will publish the amount donated and a record of the classes.</p>
+      <div class="mss-tally">
+        <p class="mss-tally__label">Donated so far</p>
+        {%- if donation_total > 0 -%}
+          <p class="mss-tally__num">NT${{ donation_total }}</p>
+          <p class="mss-tally__meta">From {{ donation_boxes }} paid boxes · as of {{ donation_updated }} · updated weekly</p>
+        {%- else -%}
+          <p class="mss-tally__meta">Pre-orders have just opened; the total starts with the first paid order and is updated weekly.</p>
+        {%- endif -%}
+      </div>
+      <div class="mss-btns"><a class="mss-btn" href="#shop">Choose a box and share the light</a></div>
+    </div>
+  </section>
 
   <section class="mss-sec" id="shop">
     <div class="mss-head">
@@ -114,24 +153,6 @@
     </div>
   </section>
 
-  <section class="mss-sec mss-sec--paper" id="positioning">
-    <div class="mss-split">
-      <div>
-        <p class="mss-eyebrow">Our Positioning</p>
-        <h2 class="mss-h2">One box, five crafts</h2>
-        <p>Mount Sun Moon is not a roastery with a single house style. It is a <strong>curated</strong> coffee brand. Opening the box is like walking into a small coffee exhibition, or setting out on a coffee journey: five roasters each bring the one bean that best represents them — one is known for precise, clean light-roast acidity, one has taught coffee for twenty years, one carries green beans from his family's farm all the way to Taiwan.</p>
-        <p>When we say <strong>“artisans”, we mean the roasters</strong>. The same green bean tastes completely different depending on how the heat, time and temperature are handled; roasting is the craft of translating a place into flavour.</p>
-        <p>Mount Sun Moon is the curator: we select, arrange and tell the story behind every bean, then put all five into one box. One bag a day, five days, five mountains, five fires — and along the way you find the one you love. Together the five flavours stand for balance across the five elements: metal, wood, water, fire and earth.</p>
-      </div>
-      <div class="mss-compare">
-        <div class="mss-compare__row"><span>Curated and signed</span><p>Collect the craft of five independent roasters at once; every bag carries a name and a story.</p></div>
-        <div class="mss-compare__row"><span>A balanced map of flavour</span><p>Crossing the lines between houses to draw a complete, balanced map of taste in one box.</p></div>
-        <div class="mss-compare__row"><span>Quiet and minimal</span><p>Less plastic, cloth materials and a restrained palette of navy, gold and silver, made to stay with you day to day.</p></div>
-        <div class="mss-compare__row"><span>Back to the land</span><p>Focused on layers of flavour, the roaster's spirit and everyday beauty, so every bag has a name that answers for it.</p></div>
-      </div>
-    </div>
-  </section>
-
   <section class="mss-sec" id="artisans">
     <div class="mss-head">
       <p class="mss-eyebrow">The Artisans</p>
@@ -193,25 +214,6 @@
     </div>
     <p class="mss-swipe">← Swipe for more →</p>
     <p class="mss-note">Altitudes are typical ranges for each region and vary by lot and farm.</p>
-  </section>
-
-  <section class="mss-sec mss-giving">
-    <div class="mss-giving__num">5%</div>
-    <div>
-      <p class="mss-eyebrow">Impact & Giving</p>
-      <h2 class="mss-h2">Christmas Glimmer Project</h2>
-      <p>For every box in this Christmas first release, we donate 5% of the tax-inclusive price (excluding shipping) to the arts and music programmes of LIA Lumière International Academy, an experimental school in Taiwan.</p>
-      <p>This winter, the coffee in your hands is a journey of flavour and a gift of art for children. Once this batch has shipped, we will publish the amount donated and a record of the classes.</p>
-      <div class="mss-tally">
-        <p class="mss-tally__label">Donated so far</p>
-        {%- if donation_total > 0 -%}
-          <p class="mss-tally__num">NT${{ donation_total }}</p>
-          <p class="mss-tally__meta">From {{ donation_boxes }} paid boxes · as of {{ donation_updated }} · updated weekly</p>
-        {%- else -%}
-          <p class="mss-tally__meta">Pre-orders have just opened; the total starts with the first paid order and is updated weekly.</p>
-        {%- endif -%}
-      </div>
-    </div>
   </section>
 
   <section class="mss-sec mss-sec--paper" id="brew">
