@@ -1,4 +1,31 @@
 {% render 'mss-styles' %}
+{%- if request.locale.iso_code == 'en' -%}
+<section class="mss-px" lang="en">
+  <div class="mss-px__in">
+    <div class="mss-px__card">
+      <h3 class="mss-h3">The five roasters in the box</h3>
+      <ul>
+        <li>Emily | Kenya AA · light · blackcurrant, sour plum</li>
+        <li>Warren | “Taste of Happiness” blend · light-medium · longan honey, cocoa</li>
+        <li>Kason & Chuck | Guatemala · medium-dark · nuts, toffee</li>
+        <li>Dahe | Honduras · light-medium · caramel, honey</li>
+        <li>Elias or Fetod, at random | Honduras anaerobic honey / Indonesian Golden Mandheling</li>
+      </ul>
+      <p style="margin-top:12px"><a href="{{ routes.root_url }}#artisans">Meet the roasters →</a></p>
+    </div>
+    <div class="mss-px__card">
+      <h3 class="mss-h3">How to brew</h3>
+      <p>Water at 88–92°C. Hang the filter on your cup, bloom with a little water for 20 seconds, then pour in stages up to 150–180 ml. Lift out and drain the filter.</p>
+      <p><a href="{{ routes.root_url }}#brew">Full brewing steps →</a></p>
+    </div>
+    <div class="mss-px__card">
+      <h3 class="mss-h3">Shipping · payment · giving</h3>
+      <p>Ships within Taiwan from 1 December; orders paid by 18 December should arrive before Christmas. Free shipping over NT$1,000, otherwise NT$85.</p>
+      <p>Bank transfer for now. For every Christmas first-release box, 5% of the price goes to children's arts and music classes.</p>
+    </div>
+  </div>
+</section>
+{%- else -%}
 <section class="mss-px">
   <div class="mss-px__in">
     <div class="mss-px__card">
@@ -24,6 +51,7 @@
     </div>
   </div>
 </section>
+{%- endif -%}
 
 {% schema %}
 {

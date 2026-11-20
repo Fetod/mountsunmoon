@@ -1,0 +1,272 @@
+{%- comment -%} Mount Sun Moon — English homepage (rendered from sections/mss-home.liquid when the store language is English) {%- endcomment -%}
+<div class="mss" lang="en">
+
+  <section class="mss-hero">
+    <div class="mss-hero__media">
+      <img src="{{ img_hero }}&width=1800" alt="A cup of pour-over coffee on a wooden table in soft morning window light" width="1536" height="1024" fetchpriority="high">
+    </div>
+    <div class="mss-hero__text">
+      <p class="mss-eyebrow">Specialty drip-bag coffee from Taiwan · Christmas 2026 limited release</p>
+      <h1 class="mss-h1">The mountain keeps its silence,<br>and holds the light of sun and moon.</h1>
+      <p class="mss-lead">Five roasters, five fires, one box.<br>A good cup of coffee brings more light to life.</p>
+      <div class="mss-btns mss-hero__btns">
+        <a class="mss-btn" href="#shop">Shop now</a>
+        <a class="mss-btn mss-btn--ghost" href="#positioning">Our positioning</a>
+        <a class="mss-btn mss-btn--ghost" href="#artisans">Meet the five roasters</a>
+        <a class="mss-btn mss-btn--ghost" href="#gifting">Corporate & custom gifts</a>
+      </div>
+    </div>
+  </section>
+
+  <ul class="mss-trust">
+    <li><strong>5</strong>independent roasters</li>
+    <li><strong>6</strong>high-mountain origins</li>
+    <li><strong>NT$1,000+</strong>free shipping in Taiwan</li>
+    <li><strong>5%</strong>to children's arts classes</li>
+  </ul>
+
+  <section class="mss-sec" id="shop">
+    <div class="mss-head">
+      <p class="mss-eyebrow">Pre-order Collection</p>
+      <h2 class="mss-h2">Choose a box, meet five ways of roasting</h2>
+      <p class="mss-sub">Limited Christmas first release, while stocks last. The 5-pack and 10-pack stay in our regular range after Christmas.</p>
+    </div>
+    <div class="mss-plans">
+      {%- for p in (1..3) -%}
+        {%- case p -%}
+          {%- when 1 -%}{%- assign prod = p5 -%}{%- assign img = img_pour | append: '&width=1100' -%}{%- assign tag = 'For yourself' -%}{%- assign limit = 'First release: 100 boxes' -%}{%- assign give = 'About NT$13 per box' -%}{%- assign cups = '5 bags · 5 cups' -%}{%- assign cap = '' -%}{%- assign name = 'Drip-Bag Discovery Set (5)' -%}
+          {%- when 2 -%}{%- assign prod = p10 -%}{%- assign img = img_pouch | append: '&width=1100' -%}{%- assign tag = 'To give or keep' -%}{%- assign limit = 'First release: 70 boxes' -%}{%- assign give = 'NT$26 per box' -%}{%- assign cups = '10 bags · 10 cups' -%}{%- assign cap = 'Styled image: black cotton pouch, actual item may vary' -%}{%- assign name = 'Drip-Bag Gift Set (10)' -%}
+          {%- when 3 -%}{%- assign prod = pbox -%}{%- assign img = img_gift | append: '&width=1100' -%}{%- assign tag = 'Christmas only' -%}{%- assign limit = 'Limited to 25 boxes' -%}{%- assign give = 'NT$59 per box' -%}{%- assign cups = '10 bags + kettle + rice crackers' -%}{%- assign cap = 'Styled image; real photos once packaging is final' -%}{%- assign name = 'Christmas Collector’s Gift Box' -%}
+        {%- endcase -%}
+        {%- if prod != blank -%}
+        <article class="mss-plan{% if p == 3 %} mss-plan--feature{% endif %}">
+          <a href="{{ prod.url }}" class="mss-plan__img">
+            <img src="{{ img }}" alt="{{ name | escape }}" loading="lazy" width="1100" height="1100">
+            <span class="mss-badge">{{ tag }}</span>
+            {%- if cap != blank -%}<span class="mss-cap">{{ cap }}</span>{%- endif -%}
+          </a>
+          <div class="mss-plan__body">
+            <p class="mss-plan__limit">{{ limit }}{% unless prod.available %} · Sold out{% endunless %}</p>
+            <h3 class="mss-h3"><a href="{{ prod.url }}">{{ name }}</a></h3>
+            <p class="mss-plan__price">{{ prod.price | money_without_currency | remove: '.00' | prepend: 'NT$' }}</p>
+            <p class="mss-plan__cups">{{ cups }}</p>
+            <p class="mss-plan__anchor">
+              {%- case p -%}
+                {%- when 1 -%}<s>NT$55 × 5 = NT$275</s><span>NT$53 per bag</span>
+                {%- when 2 -%}<s>NT$55 × 10 = NT$550</s><span>NT$52 per bag</span>
+                {%- when 3 -%}<span>Christmas-only set: 10 bags, a pour-over kettle and rice crackers in one box</span>
+              {%- endcase -%}
+            </p>
+            <ul class="mss-list">
+              {%- case p -%}
+                {%- when 1 -%}
+                  <li>One bag from each of the five roasters</li>
+                  <li>Paper box with a carry string, no plastic bag</li>
+                  <li>A first taste, or your own morning ritual</li>
+                {%- when 2 -%}
+                  <li>Two bags from each of the five roasters</li>
+                  <li>Comes in a cotton drawstring pouch</li>
+                  <li>For gifting, or for yourself</li>
+                {%- when 3 -%}
+                  <li>Two bags from each of the five roasters</li>
+                  <li>Limited Kobayashi rice crackers</li>
+                  <li>Mount Sun Moon travel pour-over kettle</li>
+                  <li>Gift box with a Mount Sun Moon Christmas card</li>
+              {%- endcase -%}
+            </ul>
+            <p class="mss-plan__give">{{ give }} goes to children's arts and music classes</p>
+            {%- if prod.available -%}
+              <form method="post" action="{{ routes.cart_add_url }}" class="mss-plan__form">
+                <input type="hidden" name="id" value="{{ prod.selected_or_first_available_variant.id }}">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="mss-btn mss-btn--full">Add to cart</button>
+              </form>
+            {%- else -%}
+              <span class="mss-btn mss-btn--full mss-btn--disabled">Sold out</span>
+            {%- endif -%}
+            <a href="{{ prod.url }}" class="mss-link">View details →</a>
+          </div>
+        </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    <p class="mss-swipe">← Swipe for more →</p>
+    <p class="mss-note">Single bag NT$55 — the more you buy, the less each bag costs. Free shipping in Taiwan on orders over NT$1,000; otherwise NT$85. Photos are styled images; actual packaging may vary.</p>
+  </section>
+
+  <section class="mss-sec mss-biz" id="gifting">
+    <div class="mss-biz__card">
+      <div class="mss-biz__text">
+        <p class="mss-eyebrow">Gifting & Custom Orders</p>
+        <h2 class="mss-h2">Corporate gifts, year-end parties and custom coffee gift boxes</h2>
+        <p class="mss-meta">Co-branded boxes · your logo · year-end gifts · Lunar New Year · staff benefits · client thank-yous</p>
+        <p>For year-end parties, Lunar New Year greetings, staff gifts, client thank-yous, trade-show giveaways or group orders, Mount Sun Moon can put together specialty drip-bag coffee gift sets for you. Orders of 100 sets or more receive corporate pricing, and we can print your logo on the box for a co-branded gift.</p>
+        <ol class="mss-biz__steps">
+          <li><span>1</span>Tell us on LINE or by email: purpose, quantity, budget and delivery date</li>
+          <li><span>2</span>We suggest a set and send a quote</li>
+          <li><span>3</span>Once the content and design are confirmed, we produce and ship</li>
+        </ol>
+        <div class="mss-btns">
+          <a class="mss-btn" href="https://lin.ee/qiXpWYM" target="_blank" rel="noopener">Ask on LINE</a>
+          <a class="mss-btn mss-btn--ghost" href="mailto:hello@mountsunmoon.com">Email us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mss-sec mss-sec--paper" id="positioning">
+    <div class="mss-split">
+      <div>
+        <p class="mss-eyebrow">Our Positioning</p>
+        <h2 class="mss-h2">One box, five crafts</h2>
+        <p>Mount Sun Moon is not a roastery with a single house style. It is a <strong>curated</strong> coffee brand. Opening the box is like walking into a small coffee exhibition, or setting out on a coffee journey: five roasters each bring the one bean that best represents them — one is known for precise, clean light-roast acidity, one has taught coffee for twenty years, one carries green beans from his family's farm all the way to Taiwan.</p>
+        <p>When we say <strong>“artisans”, we mean the roasters</strong>. The same green bean tastes completely different depending on how the heat, time and temperature are handled; roasting is the craft of translating a place into flavour.</p>
+        <p>Mount Sun Moon is the curator: we select, arrange and tell the story behind every bean, then put all five into one box. One bag a day, five days, five mountains, five fires — and along the way you find the one you love. Together the five flavours stand for balance across the five elements: metal, wood, water, fire and earth.</p>
+      </div>
+      <div class="mss-compare">
+        <div class="mss-compare__row"><span>Curated and signed</span><p>Collect the craft of five independent roasters at once; every bag carries a name and a story.</p></div>
+        <div class="mss-compare__row"><span>A balanced map of flavour</span><p>Crossing the lines between houses to draw a complete, balanced map of taste in one box.</p></div>
+        <div class="mss-compare__row"><span>Quiet and minimal</span><p>Less plastic, cloth materials and a restrained palette of navy, gold and silver, made to stay with you day to day.</p></div>
+        <div class="mss-compare__row"><span>Back to the land</span><p>Focused on layers of flavour, the roaster's spirit and everyday beauty, so every bag has a name that answers for it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mss-sec" id="artisans">
+    <div class="mss-head">
+      <p class="mss-eyebrow">The Artisans</p>
+      <h2 class="mss-h2">Five roasters, five fires</h2>
+      <p class="mss-sub">Our “artisans” are the roasters. Each chose one signature bean for the box. The fifth bag is either Elias's limited Honduras or Fetod's Indonesian Golden Mandheling, at random (it cannot be chosen).</p>
+    </div>
+    <div class="mss-artisans">
+      {%- render 'mss-artisan', no: '01', name: 'Emily 蔡詩敏', role: 'Roaster at YOLO’s CAFE · Co-founder of YABOO Coffee', bean: 'Kenya Kirinyaga AA Top, washed', roast: 'Light', notes: 'Blackcurrant · Sour plum · Fruit', quote: 'In a precise fire, carving acidity into its purest, cleanest geometry.', bio: 'Certified barista, roaster and cupper and an international examiner, with more than ten years in Taipei specialty coffee.', lbl_bean: 'Bean', lbl_roast: 'Roast', lbl_notes: 'Notes' -%}
+      {%- render 'mss-artisan', no: '02', name: 'Warren 陳啟仁', role: 'Owner of WAZZA Coffee · International certified examiner', bean: '“Taste of Happiness” blend (Mandheling · Huehuetenango · Yirgacheffe · Supremo)', roast: 'Light-medium', notes: 'Longan honey · Almond · Cocoa', quote: 'With warm hand-brewed moments, living life as an unfolding poem.', bio: 'Nearly 20 years in coffee, former Taiwan ambassador for Maxwell House; he brews specialty coffee into a poem.', lbl_bean: 'Bean', lbl_roast: 'Roast', lbl_notes: 'Notes' -%}
+      {%- render 'mss-artisan', no: '03', name: 'Kason & Chuck 寶哥', role: 'Founder of Kason Coffee Education Center · 2020 Schweitzer Beverage Master', bean: 'Guatemala Huehuetenango, washed', roast: 'Medium-dark', notes: 'Nuts · Toffee · Gentle sweetness', quote: 'Letting coffee flow like water, nourishing every moment of everyday senses.', bio: 'A coffee practitioner bringing together farm, science, education and daily life, with his own science-based healthy roast curve.', lbl_bean: 'Bean', lbl_roast: 'Roast', lbl_notes: 'Notes' -%}
+      {%- render 'mss-artisan', no: '04', name: 'Dahe', role: 'Founder of NINECA STUDIO', bean: 'Honduras “Mountain Mist Awakening”, washed', roast: 'Light-medium', notes: 'Caramel · Honey · Tangerine', quote: 'Through focused fire, gathering the warmth of the sun into a cup that wakes the light within.', bio: 'Roasts in focus and stillness, talking with the green beans with a clear mind; known for clean, pure cups.', lbl_bean: 'Bean', lbl_roast: 'Roast', lbl_notes: 'Notes' -%}
+      {%- render 'mss-artisan', no: '05', name: 'Elias', role: 'Founder of Lunas Coffee · random pick · limited', bean: 'Honduras La Paz, Finca Iris, orange anaerobic honey', roast: 'Medium', notes: 'Red apple · Honey · Lime · Almond', quote: 'Rooted in the high mountain soil of Honduras, carrying the earth’s simplest, warmest confession.', bio: 'Heir to a family farm in Honduras, farming naturally without chemicals and shipping his own green beans to Taiwan.', lbl_bean: 'Bean', lbl_roast: 'Roast', lbl_notes: 'Notes' -%}
+      {%- render 'mss-artisan', no: '05', name: 'Fetod', role: 'Founder of Mount Sun Moon · random pick', bean: 'Indonesia Golden Mandheling G1, natural (Solok, West Sumatra)', roast: 'Medium', notes: 'Caramel · Dark chocolate · Nuts', quote: 'Taking the first fire from my teacher’s hands, and slowly roasting it into my own light.', bio: 'Learned to roast with Kason, starting from a first batch of Golden Mandheling — the bean where Fetod’s coffee story began.', lbl_bean: 'Bean', lbl_roast: 'Roast', lbl_notes: 'Notes' -%}
+    </div>
+    <p class="mss-swipe">← Swipe for more →</p>
+  </section>
+
+  <section class="mss-sec mss-sec--paper">
+    <div class="mss-head">
+      <p class="mss-eyebrow">Our Story</p>
+      <h2 class="mss-h2">Heaven, earth and people in a name</h2>
+      <p class="mss-sub">Sun, moon, mountain: three characters that paint a picture of heaven, earth and people.</p>
+    </div>
+    <div class="mss-trio">
+      <div><span class="mss-trio__k">天</span><h3 class="mss-h3">Heaven · Sun and moon</h3><p>The fullest light by day, the soft moon by night, and the stars farther still. Light comes from above; it makes all things grow and gives time its rhythm.</p></div>
+      <div><span class="mss-trio__k">地</span><h3 class="mss-h3">Earth · The mountain</h3><p>The mountain never speaks, yet it holds everything. Coffee trees on its slopes take in the land and the light of sun and moon — that is where the taste of every bean begins.</p></div>
+      <div><span class="mss-trio__k">人</span><h3 class="mss-h3">People · The roasters, and you</h3><p>Five roasters turn the land into flavour through fire. You, drinking this cup, are the final brushstroke of the painting.</p></div>
+    </div>
+    <div class="mss-spirit">
+      <p class="mss-eyebrow">Brand Spirit</p>
+      <p class="mss-quote">Still at heart as the mountain, radiant in celestial light.</p>
+      <p>A mountain stands firm not because it escapes wind and rain, but because its roots run deep. Boil the water, wait, let the aroma rise, and sit down steady, like a mountain. The light of sun and moon falls on us, but we carry light of our own too — the warmth people feel around someone whose heart is settled and kind.</p>
+      <p>Brewing yourself a cup every morning is a ritual, a taste, and a way of living.</p>
+    </div>
+    <div class="mss-split mss-logo-meaning">
+      <img src="https://mountsunmoon.com/assets/mark.png" alt="Mount Sun Moon symbol" loading="lazy" width="300" height="194">
+      <div>
+        <h3 class="mss-h3">The symbol in our logo</h3>
+        <p><strong>Two peaks, climbing high to see far.</strong> The mountain line rises in two peaks, as if leading you onward. The gold of the mountain and the sun comes from the Loess Plateau; the moon is a clear, bright white.</p>
+        <p><strong>Beyond what we see, endless possibility.</strong> The large gold circle is the sun; the smaller white circle in front is the moon. Offset, they form a golden crescent — what the eye sees is not always the whole picture.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mss-sec">
+    <div class="mss-head">
+      <p class="mss-eyebrow">Origin Notes</p>
+      <h2 class="mss-h2">Which mountain does your cup come from?</h2>
+      <p class="mss-sub">The five roasters' beans come from high mountains in six countries on three continents.</p>
+    </div>
+    <img class="mss-wide" src="{{ img_farm }}&width=1600" alt="A highland coffee farm in the morning mist" loading="lazy" width="1536" height="1024">
+    <div class="mss-origins">
+      <div><h3 class="mss-h4">Kenya · Kirinyaga</h3><p class="mss-meta">approx. 1,600–1,900 m | Emily</p><p>Red volcanic soil on the southern slopes of Mount Kenya gives bright acidity; washed Kenyans often show blackcurrant and berry. AA is the top screen grade.</p></div>
+      <div><h3 class="mss-h4">Indonesia · Sumatra</h3><p class="mss-meta">Mandheling | Warren · Fetod</p><p>Wet-hulling brings a heavy body with cocoa and herbal notes; Fetod's natural-process Solok Mandheling is sweeter and more aromatic.</p></div>
+      <div><h3 class="mss-h4">Guatemala · Huehuetenango</h3><p class="mss-meta">approx. 1,500–2,000 m | Warren · Kason & Chuck</p><p>Northwestern highlands where warm dry winds keep frost away; clean cups with full sweetness.</p></div>
+      <div><h3 class="mss-h4">Ethiopia · Yirgacheffe</h3><p class="mss-meta">approx. 1,700–2,200 m | Warren</p><p>The birthplace of Arabica, famous for florals and citrus; natural processing adds ripe-fruit sweetness.</p></div>
+      <div><h3 class="mss-h4">Colombia · Supremo</h3><p class="mss-meta">Andes | Warren</p><p>Supremo is a size grade (screen 17 and up); balanced flavour, round sweetness.</p></div>
+      <div><h3 class="mss-h4">Honduras</h3><p class="mss-meta">approx. 1,400–1,550 m | Dahe · Elias</p><p>A fast-rising specialty origin where small farms experiment with honey and anaerobic processing.</p></div>
+    </div>
+    <p class="mss-swipe">← Swipe for more →</p>
+    <p class="mss-note">Altitudes are typical ranges for each region and vary by lot and farm.</p>
+  </section>
+
+  <section class="mss-sec mss-giving">
+    <div class="mss-giving__num">5%</div>
+    <div>
+      <p class="mss-eyebrow">Impact & Giving</p>
+      <h2 class="mss-h2">Christmas Glimmer Project</h2>
+      <p>For every box in this Christmas first release, we donate 5% of the tax-inclusive price (excluding shipping) to the arts and music programmes of LIA Lumière International Academy, an experimental school in Taiwan.</p>
+      <p>This winter, the coffee in your hands is a journey of flavour and a gift of art for children. Once this batch has shipped, we will publish the amount donated and a record of the classes.</p>
+      <div class="mss-tally">
+        <p class="mss-tally__label">Donated so far</p>
+        {%- if donation_total > 0 -%}
+          <p class="mss-tally__num">NT${{ donation_total }}</p>
+          <p class="mss-tally__meta">From {{ donation_boxes }} paid boxes · as of {{ donation_updated }} · updated weekly</p>
+        {%- else -%}
+          <p class="mss-tally__meta">Pre-orders have just opened; the total starts with the first paid order and is updated weekly.</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+
+  <section class="mss-sec mss-sec--paper" id="brew">
+    <div class="mss-head">
+      <p class="mss-eyebrow">How to Brew</p>
+      <h2 class="mss-h2">A slow morning cup in five steps</h2>
+      <p class="mss-sub">Water at 88–92°C, 150–180 ml per bag.</p>
+    </div>
+    <figure class="mss-fig">
+      <img class="mss-wide" src="{{ 'mss-senbei.jpg' | asset_url }}" alt="Rice crackers stamped with the Mount Sun Moon symbol beside a cup of coffee in morning light" loading="lazy" width="1264" height="848">
+      <figcaption>A rice cracker with your coffee, and a slow morning. The Collector's Gift Box includes limited Kobayashi rice crackers (styled image).</figcaption>
+    </figure>
+    <ol class="mss-steps">
+      <li><span>1</span>Tap the bag so the grounds settle, then tear along the dotted line.</li>
+      <li><span>2</span>Open the side hooks and hang the filter on your cup.</li>
+      <li><span>3</span>Pour a little hot water and let it bloom for 20 seconds.</li>
+      <li><span>4</span>Pour in stages up to 150–180 ml.</li>
+      <li><span>5</span>Lift out the filter, let it drain, and enjoy.</li>
+    </ol>
+  </section>
+
+  <section class="mss-sec" id="faq">
+    <div class="mss-head">
+      <p class="mss-eyebrow">Ordering & FAQ</p>
+      <h2 class="mss-h2">Ordering information</h2>
+    </div>
+    <div class="mss-faq">
+      <details open><summary>What is Mount Sun Moon?</summary><p>Mount Sun Moon (日月山) is a Taiwanese specialty drip-bag coffee brand by Fetod Ltd. Every box holds signature beans from five independent roasters, from Kenya, Indonesia, Guatemala, Ethiopia, Colombia and Honduras, so you can compare five flavours at home with nothing but hot water.</p></details>
+      <details><summary>Do you ship outside Taiwan?</summary><p>Online orders currently ship within Taiwan. For overseas orders or corporate gifts, please contact us on LINE or at hello@mountsunmoon.com.</p></details>
+      <details><summary>Shipping time and cost</summary><p>Orders ship in order from 1 December. Orders paid by 18 December should arrive before Christmas. Free shipping on orders over NT$1,000; otherwise NT$85 within Taiwan.</p></details>
+      <details><summary>How do I pay?</summary><p>Bank transfer for now: the account details appear on the order confirmation page and email. Please transfer within 3 days and report your order number and the last five digits of your account on the <a href="/pages/remit">payment report page</a>. Card payment is coming soon.</p></details>
+      <details><summary>Can you make corporate or custom gift boxes?</summary><p>Yes. Orders of 100 sets or more receive corporate pricing, and we can print your logo on the box or card — ideal for year-end parties, Lunar New Year, staff benefits, client thank-yous and trade shows. Contact us on LINE or by email for a quote.</p></details>
+      <details><summary>How many cups does one bag make?</summary><p>Each bag holds 10 g ± 1 g of ground coffee for one 150–180 ml cup.</p></details>
+      <details><summary>How long does the coffee keep?</summary><p>12 months unopened at room temperature. Keep it cool and dry, away from sunlight, and brew soon after opening.</p></details>
+    </div>
+  </section>
+
+  <section class="mss-sec mss-sec--paper">
+    <div class="mss-cta">
+      <div class="mss-cta__card">
+        <img src="https://mountsunmoon.com/assets/line-qr.png" alt="Mount Sun Moon LINE official account QR code" width="120" height="120" loading="lazy">
+        <div>
+          <h3 class="mss-h3">Add us on LINE</h3>
+          <p>Questions about orders, payment or gifts? Message us on LINE.</p>
+          <a class="mss-btn" href="https://lin.ee/qiXpWYM" target="_blank" rel="noopener">Add on LINE</a>
+        </div>
+      </div>
+      <div class="mss-cta__card">
+        <div>
+          <h3 class="mss-h3">Write to us</h3>
+          <p>We are happy to help in English or Chinese.</p>
+          <a class="mss-btn mss-btn--ghost" href="mailto:hello@mountsunmoon.com">hello@mountsunmoon.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

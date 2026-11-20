@@ -1,4 +1,40 @@
 {% render 'mss-styles' %}
+{%- if request.locale.iso_code == 'en' -%}
+<footer class="mss-foot" lang="en">
+  <div class="mss-foot__in">
+    <div class="mss-foot__brand">
+      <div class="mss-foot__logo">Mount Sun Moon</div>
+      <p>日月山 · Collector-grade specialty coffee from Taiwan</p>
+      <p>Five roasters, five fires, one box. A good cup of coffee brings more light to life.</p>
+      <p>Our proceeds support the education programmes of LIA Lumière International Academy.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="{{ routes.all_products_collection_url }}">All products</a></li>
+        <li><a href="{{ routes.root_url }}#gifting">Corporate & custom gifts</a></li>
+        <li><a href="{{ routes.root_url }}#faq">Ordering & FAQ</a></li>
+        <li><a href="{{ routes.search_url }}">Search</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://lin.ee/qiXpWYM" target="_blank" rel="noopener">LINE official account</a></li>
+        <li><a href="mailto:hello@mountsunmoon.com">hello@mountsunmoon.com</a></li>
+        <li><a href="https://mountsunmoon.com/en/" target="_blank" rel="noopener">Mount Sun Moon brand site</a></li>
+        {%- for link in shop.policies -%}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+  <div class="mss-foot__bottom">
+    <span>By Fetod Ltd. (費陀有限公司), Taiwan | Tax ID 00160662 | <a href="mailto:hello@mountsunmoon.com">hello@mountsunmoon.com</a></span>
+    <span>&copy; {{ 'now' | date: '%Y' }} Mount Sun Moon</span>
+  </div>
+</footer>
+{%- else -%}
 <footer class="mss-foot">
   <div class="mss-foot__in">
     <div class="mss-foot__brand">
@@ -35,6 +71,36 @@
     <span>&copy; {{ 'now' | date: '%Y' }} 日月山 Mount Sun Moon</span>
   </div>
 </footer>
+{%- endif -%}
+
+{%- if shop.published_locales.size > 1 -%}
+  {%- assign zh_path = request.path -%}
+  {%- if request.locale.iso_code == 'en' -%}
+    {%- assign zh_path = request.path | remove_first: '/en' -%}
+    {%- if zh_path == '' -%}{%- assign zh_path = '/' -%}{%- endif -%}
+    {%- capture lang_href -%}{{ zh_path }}{%- endcapture -%}
+    {%- assign lang_label = '中文' -%}
+    {%- assign lang_title = '切換到中文' -%}
+  {%- else -%}
+    {%- capture lang_href -%}/en{% if request.path != '/' %}{{ request.path }}{% endif %}{%- endcapture -%}
+    {%- assign lang_label = 'EN' -%}
+    {%- assign lang_title = 'Switch to English' -%}
+  {%- endif -%}
+  <script>
+    (function () {
+      function addLang() {
+        if (document.querySelector('.mss-lang')) return;
+        var acct = document.querySelector('header a[href*="/account"], header [class*="account"] a, header account-button, header .header-actions__action');
+        var a = document.createElement('a');
+        a.className = 'mss-lang'; a.href = {{ lang_href | json }}; a.textContent = {{ lang_label | json }};
+        a.title = {{ lang_title | json }}; a.setAttribute('aria-label', {{ lang_title | json }}); a.setAttribute('hreflang', {{ lang_label | json }} === 'EN' ? 'en' : 'zh-TW');
+        if (acct && acct.parentNode) { acct.parentNode.insertBefore(a, acct); }
+        else { a.style.cssText = 'position:fixed;top:12px;right:120px;z-index:50;background:#fbf8f2'; document.body.appendChild(a); }
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addLang); else addLang();
+    })();
+  </script>
+{%- endif -%}
 
 {% schema %}
 {

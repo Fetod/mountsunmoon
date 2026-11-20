@@ -4,9 +4,9 @@
   <p class="mss-meta">{{ role }}</p>
   <p class="mss-artisan__bio">{{ bio }}</p>
   <dl class="mss-artisan__spec">
-    <div><dt>推薦豆款</dt><dd>{{ bean }}</dd></div>
-    <div><dt>烘焙度</dt><dd>{{ roast }}</dd></div>
-    <div><dt>風味筆記</dt><dd>{{ notes }}</dd></div>
+    <div><dt>{{ lbl_bean | default: "推薦豆款" }}</dt><dd>{{ bean }}</dd></div>
+    <div><dt>{{ lbl_roast | default: "烘焙度" }}</dt><dd>{{ roast }}</dd></div>
+    <div><dt>{{ lbl_notes | default: "風味筆記" }}</dt><dd>{{ notes }}</dd></div>
   </dl>
-  <p class="mss-artisan__quote">「{{ quote }}」</p>
+  <p class="mss-artisan__quote">{% if lbl_bean %}“{{ quote }}”{% else %}「{{ quote }}」{% endif %}</p>
 </article>
