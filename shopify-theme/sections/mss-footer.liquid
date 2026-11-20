@@ -90,11 +90,12 @@
     (function () {
       function addLang() {
         if (document.querySelector('.mss-lang')) return;
-        var acct = document.querySelector('header a[href*="/account"], header [class*="account"] a, header account-button, header .header-actions__action');
+        var acct = document.querySelector('header-actions .account-button') || document.querySelector('header-actions .header-actions__action');
         var a = document.createElement('a');
         a.className = 'mss-lang'; a.href = {{ lang_href | json }}; a.textContent = {{ lang_label | json }};
         a.title = {{ lang_title | json }}; a.setAttribute('aria-label', {{ lang_title | json }}); a.setAttribute('hreflang', {{ lang_label | json }} === 'EN' ? 'en' : 'zh-TW');
         if (acct && acct.parentNode) { acct.parentNode.insertBefore(a, acct); }
+        else if (document.querySelector('header-actions')) { document.querySelector('header-actions').prepend(a); }
         else { a.style.cssText = 'position:fixed;top:12px;right:120px;z-index:50;background:#fbf8f2'; document.body.appendChild(a); }
       }
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addLang); else addLang();
