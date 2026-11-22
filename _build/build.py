@@ -82,11 +82,11 @@ nav { gap: 16px; font-size: 12.5px; }
 
 META = {
     "en": ("Mount Sun Moon 日月山",
-           "Mount Sun Moon Collector Series Christmas pre-order: five roasters, five fires, one box. 5% of every pre-order supports children's arts and music programmes."),
+           "Mount Sun Moon Collector Series Christmas pre-order: five roasters, five fires, one box. 5% of every box in the 2026 Christmas first release (195 boxes) supports children's arts and music programmes."),
     "zh-Hans": ("日月山 Mount Sun Moon",
-                "日月山 Mount Sun Moon 藏家系列圣诞预购：五位烘豆师、五种火候、一个盒子。每笔预购提拨商品售价 5% 支持孩子的艺术与音乐课程。"),
+                "日月山 Mount Sun Moon 藏家系列圣诞预购：五位烘豆师、五种火候、一个盒子。2026 圣诞首发限量 195 盒，每盒提拨含税售价 5% 支持孩子的艺术与音乐课程。"),
     "ja": ("日月山 Mount Sun Moon",
-           "日月山 Mount Sun Moon コレクターズシリーズ クリスマス予約：五人の焙煎士、五つの火、ひとつの箱。ご予約ごとに商品価格の 5% を子どもたちの芸術・音楽の授業に。"),
+           "日月山 Mount Sun Moon コレクターズシリーズ クリスマス予約：五人の焙煎士、五つの火、ひとつの箱。2026 年クリスマス初回限定 195 箱、1 箱ごとに税込価格の 5% を子どもたちの芸術・音楽の授業に。"),
 }
 
 head_end = src.index("</head>")
