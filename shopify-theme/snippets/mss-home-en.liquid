@@ -21,7 +21,7 @@
     <li><strong>5</strong>independent roasters</li>
     <li><strong>10 g</strong>one bag, one cup</li>
     <li><strong>NT$1,000+</strong>free shipping in Taiwan</li>
-    <li><strong>5%</strong>to children's arts classes</li>
+    {%- if glimmer_done -%}<li><strong>Complete</strong>Christmas Glimmer Project</li>{%- else -%}<li><strong>5%</strong>of each Christmas first-release box to children's arts classes</li>{%- endif -%}
   </ul>
 
   <section class="mss-sec" id="shop">
@@ -62,7 +62,7 @@
       {%- endfor -%}
     </div>
     <p class="mss-swipe">← Swipe for more →</p>
-    <p class="mss-note">5% of every Christmas first-release box goes to children's arts and music classes.</p>
+    {%- if glimmer_done -%}<p class="mss-note">The Christmas Glimmer Project is complete — thank you.</p>{%- else -%}<p class="mss-note">5% of every Christmas first-release box goes to children's arts and music classes (first release: 195 boxes).</p>{%- endif -%}
   </section>
 
   <section class="mss-sec mss-biz" id="gifting">
@@ -119,17 +119,25 @@
   <section class="mss-sec mss-giving" id="glimmer">
     <div class="mss-giving__num">5%</div>
     <div>
+      {%- if glimmer_done -%}
+      <h2 class="mss-h2">Christmas Glimmer Project: complete</h2>
+      <p>All 195 boxes of the 2026 Christmas first release are done, and NT${{ donation_total }} has been given to arts and music classes at LIA Lumière International Academy. Thank you, everyone. We will publish the payment and a record of the classes.</p>
+      <p>The 5-pack and 10-pack stay available; our next giving project will be announced separately.</p>
+      {%- else -%}
       <h2 class="mss-h2">Christmas Glimmer Project</h2>
       <p>5% of every box in this Christmas release goes to arts and music classes at LIA Lumière International Academy in Taiwan. We will publish the total and a record of the classes once this batch has shipped.</p>
       <div class="mss-tally">
         <p class="mss-tally__label">Donated so far</p>
         {%- if donation_total > 0 -%}
           <p class="mss-tally__num">NT${{ donation_total }}</p>
-          <p class="mss-tally__meta">From {{ donation_boxes }} paid boxes · as of {{ donation_updated }} · updated weekly</p>
+          <p class="mss-tally__meta">From {{ donation_boxes }} paid boxes · as of {{ donation_updated }} · updated with each paid order</p>
+          <p class="mss-tally__meta">First release: {{ donation_boxes }} / 195 boxes</p>
         {%- else -%}
-          <p class="mss-tally__meta">Starts with the first paid order · updated weekly</p>
+          <p class="mss-tally__meta">Starts with the first paid order · updated with each paid order</p>
         {%- endif -%}
       </div>
+      <p class="mss-note" style="text-align:left">The Glimmer Project covers the 195 boxes of the 2026 Christmas first release and is complete once they sell out. The 5-pack and 10-pack stay available, and our next giving project will be announced separately.</p>
+      {%- endif -%}
     </div>
   </section>
 
@@ -170,6 +178,7 @@
       <details><summary>Do you ship outside Taiwan?</summary><p>Online orders ship within Taiwan. For overseas orders, email hello@mountsunmoon.com.</p></details>
       <details><summary>Shipping time and cost</summary><p>From 1 December, in order. Paid by 18 December should arrive before Christmas. Free over NT$1,000, otherwise NT$85.</p></details>
       <details><summary>How do I pay?</summary><p>Bank transfer for now — details appear after checkout. Please pay within 3 days and report it on the <a href="{{ routes.root_url | append: '/pages/remit' | replace: '//', '/' }}">payment report page</a>. Card payment coming soon.</p></details>
+      <details><summary>Will you keep donating after the first release sells out?</summary><p>The Glimmer Project covers the 195 boxes of the 2026 Christmas first release and is complete once they sell out. The 5-pack and 10-pack stay available, and our next giving project will be announced separately.</p></details>
       <details><summary>How long does the coffee keep?</summary><p>12 months unopened, cool and dry.</p></details>
     </div>
   </section>
